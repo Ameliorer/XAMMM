@@ -39,7 +39,6 @@ $html_header .= "</header>\n";
 
 echo($html_header);
 
-//test
 ?>
 
 <?php 
