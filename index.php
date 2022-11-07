@@ -24,13 +24,10 @@ $html_header .= "<ul id='menu'>\n";
 $html_header .= "<li><a href='pages/parachutisme_histoire.php'>L'histoire du parachutisme</a></li>\n";
 $html_header .= "<li><a href='pages/processus_de_saut.php'>Processus de saut</a></li>\n";
 $html_header .= "<li><a href='pages/faq_tandem.php'>FAQ Tandem</a></li>\n";
-//Les reseaux : ??? directement dans le footer ???
 $html_header .= "<li><a href='pages/reseaux.php'>Nos réseaux</a></li>\n";
-//Promos et Prestatios / Offres : ??? Une meme page ou 2 bien separees ???
 $html_header .= "<li><a href='pages/promotion.php'>Nos promotions actuels</a></li>\n";
 $html_header .= "<li><a href='pages/prestations.php'>Prestations / Offres</a></li>\n";
 $html_header .= "<li><a href='pages/avis_clients.php'>Avis clients</a></li>\n";
-//Le panier : ??? page à include quelque part (??? Translation de cote vers la page ???)
 $html_header .= "<li><a href='pages/panier.php'>Panier</a></li>\n";
 $html_header .= "<li><a href='pages/confirmation_commande.php'>Confirmation de commande</a></li>\n";
 $html_header .= "<li><a href='pages/actualites.php'>Actualites</a></li>\n";
