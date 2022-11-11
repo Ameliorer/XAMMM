@@ -9,7 +9,7 @@ $html_head .= "<title>test crud</title>\n";
 $html_head .= "</head>\n";
 $html_head .= "<body>\n";
 
-echo($html_head);
+echo $html_head;
 
 //include BDD connect
 include("../db/db_connect.php");
@@ -25,12 +25,215 @@ include("../crud/crud_users.php");
 
 ?>
 
+<?php
+// ---  envoie données BDD  ---
+
+//var_dump($_POST);
+
+//blog
+if(isset($_POST["blogTitle"])){
+    $blogTitle = $_POST["blogTitle"];
+}
+if(isset($_POST["blogContent"])){
+    $blogContent = $_POST["blogContent"];
+}
+if(isset($_POST["blogDate"])){
+    $blogDate = $_POST["blogDate"];
+}
+if(isset($_POST["blogAction"])){
+    $blogAction = $_POST["blogAction"];
+}
+
+//codes
+$codesCodes = "";
+if(isset($_POST["codesCodes"])){
+    $codesCodes = $_POST["codesCodes"];
+    var_dump($_POST);
+}
+if(isset($_POST["codesIdType"])){
+    $codesIdType = $_POST["codesIdType"];
+}
+if(isset($_POST["codesDateD"])){
+    $codesDateD = $_POST["codesDateD"];
+}
+if(isset($_POST["codesDateF"])){
+    $codesDateF = $_POST["codesDateF"];
+}
+if(isset($_POST["codesPercentage"])){
+    $codesPercentage = $_POST["codesPercentage"];
+}
+$codesAction = "";
+if(isset($_POST["codesAction"])){
+    $codesAction = $_POST["codesAction"];
+}
+
+// --- codes create
+if($codesCodes != "" and isset($codesIdType) and isset($codesDateD) and isset($codesDateF) and isset($codesPercentage) and $codesAction == "create"){
+    if(CreateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF, $codesPercentage)){
+        echo "<p>create codes success</p>";
+    }else{
+        echo "<p>create codes failure</p>";
+    }
+}
+
+// --- codes update
+if($codesCodes != "" and isset($codesIdType) and isset($codesDateD) and isset($codesDateF) and isset($codesPercentage) and $codesAction == "update"){
+    if(UpdateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF, $codesPercentage)){
+        echo "<p>update codes success</p>";
+    }else{
+        echo "<p>update codes failure</p>";
+    }
+}
+
+// --- codes delete
+if($codesCodes =! "" and $codesAction == "delete"){
+    if(DeleteCodes($conn, $codesCodes)){
+        echo "<p>delete codes success</p>";
+    }else{
+        echo "<p>delete codes failure</p>";
+    }
+}
+
+// --- codes select
+if(isset($codesIdType) and $codesAction == "select"){
+    if($ret_codesType = SelectCodes_type($conn, $codesIdType)){
+        echo "<p>select codes success</p>";
+        var_dump($ret_codesType);
+    }else{
+        echo "<p>select codes failure</p>";
+    }
+}
+
+
+
+//images
+if(isset($_POST["imagesNom"])){
+    $imagesNom = $_POST["imagesNom"];
+}
+if(isset($_POST["imagesIdBlog"])){
+    $imagesIdBlog = $_POST["imagesIdBlog"];
+}
+if(isset($_POST["imagesAction"])){
+    $imagesAction = $_POST["imagesAction"];
+}
+
+//produit
+if(isset($_POST["produitNom"])){
+    $produitNom = $_POST["produitNom"];
+}
+if(isset($_POST["produitPrix"])){
+    $produitPrix = $_POST["produitPrix"];
+}
+if(isset($_POST["produitDateD"])){
+    $produitDateD = $_POST["produitDateD"];
+}
+if(isset($_POST["produitDateF"])){
+    $produitDateF = $_POST["produitDateF"];
+}
+if(isset($_POST["produitAgeMin"])){
+    $produitAgeMin = $_POST["produitAgeMin"];
+}
+if(isset($_POST["produitAgeMax"])){
+    $produitAgeMax = $_POST["produitAgeMax"];
+}
+if(isset($_POST["produitPoidsMin"])){
+    $produitPoidsMin = $_POST["produitPoidsMin"];
+}
+if(isset($_POST["produitPoidsMax"])){
+    $produitPoidsMax = $_POST["produitPoidsMax"];
+}
+if(isset($_POST["produitTailleMin"])){
+    $produitTailleMin = $_POST["produitTailleMin"];
+}
+if(isset($_POST["produitTailleMax"])){
+    $produitTailleMax = $_POST["produitTailleMax"];
+}
+if(isset($_POST["produitAction"])){
+    $produitAction = $_POST["produitAction"];
+}
+
+//promos
+if(isset($_POST["promosNom"])){
+    $promosNom = $_POST["promosNom"];
+}
+if(isset($_POST["promosDateD"])){
+    $promosDateD = $_POST["promosDateD"];
+}
+if(isset($_POST["promosDateF"])){
+    $promosDateF = $_POST["promosDateF"];
+}
+if(isset($_POST["promosDescription"])){
+    $promosDescription = $_POST["promosDescription"];
+}
+if(isset($_POST["promosAction"])){
+    $promosAction = $_POST["promosAction"];
+}
+
+//reservation
+if(isset($_POST["reservationIdUser"])){
+    $reservationIdUser = $_POST["reservationIdUser"];
+}
+if(isset($_POST["reservationTailleUser"])){
+    $reservationTailleUser = $_POST["reservationTailleUser"];
+}
+if(isset($_POST["reservationPoidsUser"])){
+    $reservationPoidsUser = $_POST["reservationPoidsUser"];
+}
+if(isset($_POST["reservationAgeUser"])){
+    $reservationAgeUser = $_POST["reservationAgeUser"];
+}
+if(isset($_POST["reservationIdPruduit"])){
+    $reservationIdPruduit = $_POST["reservationIdPruduit"];
+}
+if(isset($_POST["reservationDate"])){
+    $reservationDate = $_POST["reservationDate"];
+}
+if(isset($_POST["reservationAction"])){
+    $reservationAction = $_POST["reservationAction"];
+}
+
+//users
+if(isset($_POST["utilisateurNom"])){
+    $utilisateurNom = $_POST["utilisateurNom"];
+}
+if(isset($_POST["utilisateurPrenom"])){
+    $utilisateurPrenom = $_POST["utilisateurPrenom"];
+}
+if(isset($_POST["utilisateurMail"])){
+    $utilisateurMail = $_POST["utilisateurMail"];
+}
+if(isset($_POST["utilisateurPassword"])){
+    $utilisateurPassword = $_POST["utilisateurPassword"];
+}
+if(isset($_POST["utilisateurNumTel"])){
+    $utilisateurNumTel = $_POST["utilisateurNumTel"];
+}
+if(isset($_POST["utilisateurTaille"])){
+    $utilisateurTaille = $_POST["utilisateurTaille"];
+}
+if(isset($_POST["utilisateurPoids"])){
+    $utilisateurPoids = $_POST["utilisateurPoids"];
+}
+if(isset($_POST["utilisateurAge"])){
+    $utilisateurAge = $_POST["utilisateurAge"];
+}
+if(isset($_POST["utilisateurAdmin"])){
+    $utilisateurAdmin = $_POST["utilisateurAdmin"];
+}
+if(isset($_POST["utilisateurAction"])){
+    $utilisateurAction = $_POST["utilisateurAction"];
+}
+
+?>
+
+
+
 <p><a href="../index.php">ACCUEIL</a></p>
 
 <div>
     <div>
         <h3>blog</h3>
-        <form action="" method="post" name="blogForm" id="blogForm">
+        <form action="" method="post" name="blogForm" id="blogForm" class="form">
             <label for="blogTitle">Titre du Post : </label>
             <input type="text" placeholder="titre" id="blogTitle" name="blogTitle"/>
 
@@ -55,7 +258,7 @@ include("../crud/crud_users.php");
 
     <div>
         <h3>codes</h3>
-        <form action="" method="post" name="codesForm" id="codesForm">
+        <form action="" method="post" name="codesForm" id="codesForm" class="form">
             <label for="codesCodes">code du Codes : </label>
             <input type="text" placeholder="code" name="codesCodes" id="codesCodes"/>
 
@@ -86,7 +289,7 @@ include("../crud/crud_users.php");
 
     <div>
         <h3>images</h3>
-        <form action="" method="post" name="imagesForm" id="imagesForm">
+        <form action="" method="post" name="imagesForm" id="imagesForm" class="form">
             <label for="imagesNom">Nom de l'image : </label>
             <input type="text" placeholder="nom" name="imagesNom" id="imagesNom"/>
             
@@ -108,7 +311,7 @@ include("../crud/crud_users.php");
 
     <div>
         <h3>produit</h3>
-        <form action="" method="post" name="produitForm" id="produitForm">
+        <form action="" method="post" name="produitForm" id="produitForm" class="form">
             <label for="produitNom">Nom du produit : </label>
             <input type="text" placeholder="nom" name="produitNom" id="produitNom"/>
 
@@ -154,7 +357,7 @@ include("../crud/crud_users.php");
 
     <div>
         <h3>promos</h3>
-        <form action="" method="post" name="promosForm" id="promosForm">
+        <form action="" method="post" name="promosForm" id="promosForm" class="form">
             <label for="promosNom">Nom de la promo : </label>
             <input type="text" placeholder="nom" name="promosNom" id="promosNom"/>
 
@@ -182,7 +385,7 @@ include("../crud/crud_users.php");
 
     <div>
         <h3>reservation</h3>
-        <form action="" method="post" name="reservationForm" id="reservationForm">
+        <form action="" method="post" name="reservationForm" id="reservationForm" class="form">
             <label for="reservationIdUser">Id de l'utilisateur ayant fait la réservation : </label>
             <input type="number" placeholder="id user" name="reservationIdUser" id="reservationIdUser"/>
 
@@ -216,7 +419,7 @@ include("../crud/crud_users.php");
 
     <div>
         <h3>utilisateur</h3>
-        <form action="" method="post" name="utilisateurForm" id="utilisateurForm">
+        <form action="" method="post" name="utilisateurForm" id="utilisateurForm" class="form">
             <label for="utilisateurNom">Nom de l'utilisateur : </label>
             <input type="text" placeholder="nom" name="utilisateurNom" id="utilisateurNom"/>
 
@@ -226,10 +429,8 @@ include("../crud/crud_users.php");
             <label for="utilisateurMail">Mail de l'utilisateur : </label>
             <input type="mail" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
 
-            <!--
             <label for="utilisateurPassword">mot de passe de l'utilisateur : </label>
             <input type="text" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword"/>
-            -->
 
             <label for="utilisateurNumTel">numero de telephone de l'utilisateur : </label>
             <input type="tel" placeholder="numero telephone" name="utilisateurNumTel" id="utilisateurNumTel"/>
@@ -263,48 +464,15 @@ include("../crud/crud_users.php");
     </div>
 </div>
 
-<?php
-// ---  envoie données BDD  ---
+<script>
+    console.log("pop");
+    let forms = document.querySelectorAll(".form");
 
-//blog
-var_dump($_POST);
-
-//codes
-var_dump($_POST);/*
-if(isset($_POST["code"])){
-    $code = $_POST["code"];
-}
-if(isset($_POST["type"])){
-    $type = $_POST["type"];
-}
-if(isset($_POST["dateDebut"])){
-    $dateDebut = $_POST["dateDebut"];
-}
-if(isset($_POST["dateFin"])){
-    $dateFin = $_POST["dateFin"];
-}
-if(isset($_POST["pourcentage"])){
-    $pourcentage = $_POST["pourcentage"];
-}*/
-
-
-
-//images
-var_dump($_POST);
-
-//produit
-var_dump($_POST);
-
-//promos
-var_dump($_POST);
-
-//reservation
-var_dump($_POST);
-
-//users
-var_dump($_POST);
-
-?>
+    for(let form of forms){
+        form.reset();
+        console.log(form);
+    }
+</script>
 
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
@@ -314,6 +482,6 @@ var_dump($_POST);
 include("../db/db_disconnect.php");
 
 //Include du footer
-include("footer_index.php");
+include("footer.php");
 
 ?>

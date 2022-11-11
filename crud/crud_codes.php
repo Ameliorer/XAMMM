@@ -31,8 +31,8 @@ UpdateCodes($conn, $code, $type, $deteDebut, $dateFin, $pourcentage) -> $return
 
     $return : boolean := Indicate the status of the query
 */
-function UpdateCodes($conn, $code, $type, $deteDebut, $dateFin, $pourcentage){
-    $query="UPDATE `codes` set `type`='$type', `deteDebut`='$deteDebut', `dateFin`='$dateFin', `pourcentage`='$pourcentage',  WHERE `code`='$code'";
+function UpdateCodes($conn, $code, $type, $dateDebut, $dateFin, $pourcentage){
+    $query="UPDATE `codes` SET `type`='$type', `dateDebut`='$dateDebut', `dateFin`='$dateFin', `pourcentage`='$pourcentage' WHERE `code`='$code'";
 	$return=mysqli_query($conn, $query);
     return $return;
 }
@@ -46,7 +46,7 @@ DeleteCodes($conn, $code) -> $return
     $return : boolean := Indicate the status of the query
 */
 function DeleteCodes($conn, $code){
-    $query="DELETE FROM `codes` WHERE `code`=$code" ;
+    $query="DELETE FROM `codes` WHERE `code`='$code'" ;
 	$return=mysqli_query($conn, $query) ;
 	return $return;
 }
@@ -61,7 +61,7 @@ SelectImage($conn, ) -> $return
     $return : array | boolean | null := Contains the response or indicate a connection error
 */
 function SelectCodes_type($conn, $type){
-    $query="SELECT * FROM `codes` WHERE `type`=$type" ;
+    $query="SELECT * FROM `codes` WHERE `type`='$type'" ;
 	if($response=mysqli_query($conn, $query)){
 		$return=mysqli_fetch_assoc($response);
 	} else {
