@@ -41,12 +41,14 @@ include("head_index.php");
             <label for="codesCodes">code du Codes : </label>
             <input type="text" placeholder="code" name="codesCodes" id="codesCodes"/>
 
+            <label for="codesIdType">Id du type de produit du Codes : </label>
+            <input type="number" placeholder="id type" name="codesIdType" id="codesIdType"/>
+
             <label for="codesDateD">date de début du Codes : </label>
             <input type="date" placeholder="date debut" name="codesDateD" id="codesDateD"/>
 
             <label for="codesDateF">date de fin du Codes : </label>
             <input type="date" placeholder="date fin" name="codesDateF" id="codesDateF"/>
-
 
             <label for="codesPercentage">pourcentage du Codes : </label>
             <input type="number" placeholder="pourcentage" name="codesPercentage" id="codesPercentage"/>
