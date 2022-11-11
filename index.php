@@ -36,6 +36,10 @@ $html_header .= "<li><a href='pages/testCrudUserCreate.php'>Test User CRUD Creat
 $html_header .= "<li><a href='pages/testCrudUserRead.php'>Test User CRUD Read</a></li>\n";
 $html_header .= "<li><a href='pages/testCrudUserUpdate.php'>Test User CRUD Update</a></li>\n";
 $html_header .= "<li><a href='pages/testCrudUserDelete.php'>Test User CRUD Delete</a></li>\n";
+$html_header .= "<li><a href='pages/testCrudBlogCreate.php'>Test Blog CRUD Create</a></li>\n";
+$html_header .= "<li><a href='pages/testCrudBlogRead.php'>Test Blog CRUD Read</a></li>\n";
+$html_header .= "<li><a href='pages/testCrudBlogUpdate.php'>Test BlogCRUD Update</a></li>\n";
+$html_header .= "<li><a href='pages/testCrudBlogDelete.php'>Test Blog CRUD Delete</a></li>\n";
 
 $html_header .= "</ul>\n";
 $html_header .= "</div>\n";
