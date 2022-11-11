@@ -1,0 +1,80 @@
+<?php
+/*---------------------------------------
+CRUD images
+---------------------------------------*/
+
+/*
+CreateUser($conn, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin) -> $return
+    $conn : mysqli := Connection to the SQL database
+
+    $lastName : string := VALUE user's last name,
+    $firstName: string := VALUE user's first name,
+    $mail : string := VALUE user's mail,
+    $phoneNum : int := VALUE user's phone number,
+    $height : int := VALUE user's height,
+    $weight : int := VALUE user's weight,
+    $age : int := VALUE user's age,
+    $admin : tinyint := VALUE admin or user,
+
+    $return : boolean := Indicate the status of the query
+*/
+function CreateUser($conn, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin){
+    $query="INSERT INTO `utilisateurs` (`nom`, `prenom`, `mail`, `numTel`, `taille`, `poids`, `age`, `admin`) VALUES ('$lastName', '$firstName', '$mail', '$phoneNum', '$height', '$weight', '$age', '$admin')";
+    $return=mysqli_query($conn, $query);
+    return $return ;
+}
+
+/*
+UpdateUser($conn, $id, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin) -> $return
+    $conn : mysqli := Connection to the SQL database
+
+    $id : int := PRIMARY KEY user's unique id,
+    $lastName : string := VALUE user's last name,
+    $firstName: string := VALUE user's first name,
+    $mail : string := VALUE user's mail,
+    $phoneNum : int := VALUE user's phone number,
+    $height : int := VALUE user's height,
+    $weight : int := VALUE user's weight,
+    $age : int := VALUE user's age,
+    $admin : tinyint := VALUE admin or user,
+
+    $return : boolean := Indicate the status of the query
+*/
+function UpdateUser($conn, $id, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin){
+    $query="UPDATE `utilisateurs` SET `nom`= '$lastName', `prenom`= '$firstName', `mail`= '$mail', `numTel`= '$phoneNum', `taille`= '$height', `poids`= '$weight', `age`= '$age', `admin`= '$admin' WHERE `id`='$id' ";
+    $return=mysqli_query($conn, $query);
+    return $return;
+}
+
+/*
+DeleteUser($conn, $id) -> $return
+    $conn : mysqli := Connection to the SQL database
+
+    $id : int := PRIMARY KEY user's unique id,
+
+    $return : boolean := Indicate the status of the query
+*/
+function DeleteUser($conn, $id){
+    $query="DELETE FROM `utilisateurs` WHERE `id`='$id' " ;
+    $return=mysqli_query($conn, $query) ;
+    return $return;
+}
+
+/*
+SelectUser() -> $return
+    $conn : mysqli := Connection to the SQL database
+
+    $id : int := PRIMARY KEY user's unique id,
+
+    $return : array | boolean | null := Contains the response or indicate a connection error
+*/
+function SelectUser($conn, $id){
+    $query="SELECT * FROM `utilisateurs` WHERE `id`='$id' " ;
+    if($response=mysqli_query($conn, $query)){
+        $return=mysqli_fetch_assoc($response);
+    } else {
+        $return=false;
+    }
+    return $return;
+}
+?>
