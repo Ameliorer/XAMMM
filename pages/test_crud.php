@@ -2,8 +2,26 @@
 //Premiere balise PHP pour includes les principaux fichiers (Head,db_connect...) ainsi que pour s'occuper des sessions (visiteur,admin)
 //–––––––––––––––
 
-//Include du head
-include("head_index.php");
+$html_head = "<!DOCTYPE html>\n";
+$html_head .= "<html>\n<head>\n";
+$html_head .= "<meta charset='utf-8' />\n";
+$html_head .= "<title>test crud</title>\n";
+$html_head .= "</head>\n";
+$html_head .= "<body>\n";
+
+echo($html_head);
+
+//include BDD connect
+include("../db/db_connect.php");
+
+//include cruds
+include("../crud/crud_blog.php");
+include("../crud/crud_codes.php");
+include("../crud/crud_images.php");
+include("../crud/crud_produit.php");
+include("../crud/crud_promos.php");
+include("../crud/crud_reservations.php");
+include("../crud/crud_users.php");
 
 ?>
 
@@ -12,7 +30,7 @@ include("head_index.php");
 <div>
     <div>
         <h3>blog</h3>
-        <form name="blogForm" id="blogForm">
+        <form action="" method="post" name="blogForm" id="blogForm">
             <label for="blogTitle">Titre du Post : </label>
             <input type="text" placeholder="titre" id="blogTitle" name="blogTitle"/>
 
@@ -37,7 +55,7 @@ include("head_index.php");
 
     <div>
         <h3>codes</h3>
-        <form name="codesForm" id="codesForm">
+        <form action="" method="post" name="codesForm" id="codesForm">
             <label for="codesCodes">code du Codes : </label>
             <input type="text" placeholder="code" name="codesCodes" id="codesCodes"/>
 
@@ -68,7 +86,7 @@ include("head_index.php");
 
     <div>
         <h3>images</h3>
-        <form name="imagesForm" id="imagesForm">
+        <form action="" method="post" name="imagesForm" id="imagesForm">
             <label for="imagesNom">Nom de l'image : </label>
             <input type="text" placeholder="nom" name="imagesNom" id="imagesNom"/>
             
@@ -90,7 +108,7 @@ include("head_index.php");
 
     <div>
         <h3>produit</h3>
-        <form name="produitForm" id="produitForm">
+        <form action="" method="post" name="produitForm" id="produitForm">
             <label for="produitNom">Nom du produit : </label>
             <input type="text" placeholder="nom" name="produitNom" id="produitNom"/>
 
@@ -136,7 +154,7 @@ include("head_index.php");
 
     <div>
         <h3>promos</h3>
-        <form name="promosForm" id="promosForm">
+        <form action="" method="post" name="promosForm" id="promosForm">
             <label for="promosNom">Nom de la promo : </label>
             <input type="text" placeholder="nom" name="promosNom" id="promosNom"/>
 
@@ -164,7 +182,7 @@ include("head_index.php");
 
     <div>
         <h3>reservation</h3>
-        <form name="reservationForm" id="reservationForm">
+        <form action="" method="post" name="reservationForm" id="reservationForm">
             <label for="reservationIdUser">Id de l'utilisateur ayant fait la réservation : </label>
             <input type="number" placeholder="id user" name="reservationIdUser" id="reservationIdUser"/>
 
@@ -198,7 +216,7 @@ include("head_index.php");
 
     <div>
         <h3>utilisateur</h3>
-        <form name="utilisateurForm" id="utilisateurForm">
+        <form action="" method="post" name="utilisateurForm" id="utilisateurForm">
             <label for="utilisateurNom">Nom de l'utilisateur : </label>
             <input type="text" placeholder="nom" name="utilisateurNom" id="utilisateurNom"/>
 
@@ -245,9 +263,55 @@ include("head_index.php");
     </div>
 </div>
 
+<?php
+// ---  envoie données BDD  ---
+
+//blog
+var_dump($_POST);
+
+//codes
+var_dump($_POST);/*
+if(isset($_POST["code"])){
+    $code = $_POST["code"];
+}
+if(isset($_POST["type"])){
+    $type = $_POST["type"];
+}
+if(isset($_POST["dateDebut"])){
+    $dateDebut = $_POST["dateDebut"];
+}
+if(isset($_POST["dateFin"])){
+    $dateFin = $_POST["dateFin"];
+}
+if(isset($_POST["pourcentage"])){
+    $pourcentage = $_POST["pourcentage"];
+}*/
+
+
+
+//images
+var_dump($_POST);
+
+//produit
+var_dump($_POST);
+
+//promos
+var_dump($_POST);
+
+//reservation
+var_dump($_POST);
+
+//users
+var_dump($_POST);
+
+?>
+
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
 //–––––––––––––––
+
+//include BDD disconnect
+include("../db/db_disconnect.php");
 
 //Include du footer
 include("footer_index.php");

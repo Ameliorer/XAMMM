@@ -5,4 +5,6 @@
 $html_footer = "</body>\n";
 $html_footer .= "</html>\n";
 
+echo $html_footer;
+
 ?>
