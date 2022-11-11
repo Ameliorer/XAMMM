@@ -7,12 +7,12 @@ include("head_index.php");
 
 ?>
 
-<p><a href="../index.php">ACCEUIL</a></p>
+<p><a href="../index.php">ACCUEIL</a></p>
 
 <div>
     <div>
         <h3>blog</h3>
-        <form>
+        <form name="blogForm" id="blogForm">
             <label for="blogTitle">Titre du Post : </label>
             <input type="text" placeholder="titre" id="blogTitle" name="blogTitle"/>
 
@@ -37,7 +37,7 @@ include("head_index.php");
 
     <div>
         <h3>codes</h3>
-        <form>
+        <form name="codesForm" id="codesForm">
             <label for="codesCodes">code du Codes : </label>
             <input type="text" placeholder="code" name="codesCodes" id="codesCodes"/>
 
@@ -66,7 +66,7 @@ include("head_index.php");
 
     <div>
         <h3>images</h3>
-        <form>
+        <form name="imagesForm" id="imagesForm">
             <label for="imagesNom">Nom de l'image : </label>
             <input type="text" placeholder="nom" name="imagesNom" id="imagesNom"/>
             
@@ -88,7 +88,7 @@ include("head_index.php");
 
     <div>
         <h3>produit</h3>
-        <form>
+        <form name="produitForm" id="produitForm">
             <label for="produitNom">Nom du produit : </label>
             <input type="text" placeholder="nom" name="produitNom" id="produitNom"/>
 
@@ -134,18 +134,18 @@ include("head_index.php");
 
     <div>
         <h3>promos</h3>
-        <form>
-            <label for="promoNom">Nom de la promo : </label>
-            <input type="text" placeholder="nom" name="promoNom" id="promoNom"/>
+        <form name="promosForm" id="promosForm">
+            <label for="promosNom">Nom de la promo : </label>
+            <input type="text" placeholder="nom" name="promosNom" id="promosNom"/>
 
-            <label for="promoDateD">Date de début de la promo : </label>
-            <input type="date" placeholder="date debut" name="promoDateD" id="promoDateD"/>
+            <label for="promosDateD">Date de début de la promo : </label>
+            <input type="date" placeholder="date debut" name="promosDateD" id="promosDateD"/>
 
-            <label for="promoDateF">Date de fin de la promo : </label>
-            <input type="date" placeholder="date fin" name="promoDateF" id="promoDateF"/>
+            <label for="promosDateF">Date de fin de la promo : </label>
+            <input type="date" placeholder="date fin" name="promosDateF" id="promosDateF"/>
 
-            <label for="promoDescription">Description de le promo : </label>
-            <textarea name="promoDescription" rows="10" cols="30" id="promoDescription">Description</textarea>
+            <label for="promosDescription">Description de le promo : </label>
+            <textarea name="promosDescription" rows="10" cols="30" id="promosDescription">Description</textarea>
 
             <label for="promosAction">Action à faire : </label>
             <select name="promosAction" id="promosAction">
@@ -162,7 +162,7 @@ include("head_index.php");
 
     <div>
         <h3>reservation</h3>
-        <form>
+        <form name="reservationForm" id="reservationForm">
             <label for="reservationIdUser">Id de l'utilisateur ayant fait la réservation : </label>
             <input type="number" placeholder="id user" name="reservationIdUser" id="reservationIdUser"/>
 
@@ -196,7 +196,7 @@ include("head_index.php");
 
     <div>
         <h3>utilisateur</h3>
-        <form>
+        <form name="utilisateurForm" id="utilisateurForm">
             <label for="utilisateurNom">Nom de l'utilisateur : </label>
             <input type="text" placeholder="nom" name="utilisateurNom" id="utilisateurNom"/>
 
