@@ -152,6 +152,48 @@ if(isset($_POST["produitAction"])){
     $produitAction = $_POST["produitAction"];
 }
 
+//CreateProduit debugging information
+if(isset($produitNom) && isset($produitPrix) && isset($produitDateD) && isset($produitDateF) && isset($produitAgeMin) && isset($produitAgeMax) && isset($produitPoidsMin) && isset($produitPoidsMax) && isset($produitTailleMin) && isset($produitTailleMax) && $produitAction == "create"){
+    if(CreateProduit($conn,$produitNom,$produitPrix,$produitDateD,$produitDateF,$produitAgeMin,$produitAgeMax,$produitPoidsMin,$produitPoidsMax,$produitTailleMin,$produitTailleMax)){
+        echo("Product is created and stocked in the DB");
+    }
+    else{
+        echo("Creation of the product FAILED");
+    }
+
+}
+
+//UpdateProduit debugging information
+if(isset($produitNom) && isset($produitPrix) && isset($produitDateD) && isset($produitDateF) && isset($produitAgeMin) && isset($produitAgeMax) && isset($produitPoidsMin) && isset($produitPoidsMax) && isset($produitTailleMin) && isset($produitTailleMax) && $produitAction == "update"){
+    if(UpdateProduit($conn,$produitNom,$produitPrix,$produitDateD,$produitDateF,$produitAgeMin,$produitAgeMax,$produitPoidsMin,$produitPoidsMax,$produitTailleMin,$produitTailleMax)){
+        echo("Product named : '$produitNom' is updated in the DB");
+    }
+    else{
+        echo("Update of the product FAILED : Is the product in the DB?");
+    }
+
+}
+//DeleteProduit debugging information
+if(isset($produitNom) && $produitAction == "delete"){
+    if(DeleteProduit($conn,$produitNom)){
+        echo("Product named : '$produitNom' is deleted from the DB");
+    }
+    else{
+        echo("Delete of the product FAILED | Is the product named : '$produitNom' in the DB?");
+    }
+
+}
+//SelectProduit debugging information
+if(isset($produitNom) && $produitAction == "select"){
+    if($produit = SelectProduit($conn,$produitNom)){
+        echo("Product named : '$produitNom' is : $produit[prix] ...ect");
+    }
+    else{
+        echo("Selection FAILED| Is the product named : '$produitNom' in the DB?");
+    }
+
+}
+
 //promos
 if(isset($_POST["promosNom"])){
     $promosNom = $_POST["promosNom"];
@@ -182,8 +224,8 @@ if(isset($_POST["reservationPoidsUser"])){
 if(isset($_POST["reservationAgeUser"])){
     $reservationAgeUser = $_POST["reservationAgeUser"];
 }
-if(isset($_POST["reservationIdPruduit"])){
-    $reservationIdPruduit = $_POST["reservationIdPruduit"];
+if(isset($_POST["reservationIdProduit"])){
+    $reservationIdProduit = $_POST["reservationIdProduit"];
 }
 if(isset($_POST["reservationDate"])){
     $reservationDate = $_POST["reservationDate"];
@@ -191,6 +233,50 @@ if(isset($_POST["reservationDate"])){
 if(isset($_POST["reservationAction"])){
     $reservationAction = $_POST["reservationAction"];
 }
+
+
+//CreateReservation debugging information
+if(isset($reservationIdUser) && isset($reservationTailleUser) && isset($reservationPoidsUser) && isset($reservationAgeUser) && isset($reservationIdProduit) && isset($reservationDate) && $reservationAction == "create"){
+    if(CreateReservation($conn,$reservationIdUser,$reservationTailleUser,$reservationAgeUser,$reservationIdProduit,$reservationDate)){
+        echo("Reservation is created and stocked in the DB");
+    }
+    else{
+        echo("Creation of the Reservation FAILED");
+    }
+
+}
+
+//UpdateReservation debugging information
+if(isset($reservationIdUser) && isset($reservationTailleUser) && isset($reservationAgeUser) && isset($reservationIdProduit) && isset($reservationDate) && $reservationAction == "update"){
+    if(UpdateReservation($conn,$reservationIdUser,$reservationTailleUser,$reservationAgeUser,$reservationIdProduit,$reservationDate)){
+        echo("Reservation named : '$reservationIdUser' is updated in the DB");
+    }
+    else{
+        echo("Update of the Reservation FAILED : Is the Reservation in the DB?");
+    }
+
+}
+//DeleteReservation debugging information
+if(isset($reservationIdUser) && $reservationAction == "delete"){
+    if(DeleteReservation($conn,$reservationIdUser)){
+        echo("Reservation named : '$reservationIdUser' is deleted from the DB");
+    }
+    else{
+        echo("Delete of the Reservation FAILED | Is the Reservation named : '$reservationIdUser' in the DB?");
+    }
+
+}
+//SelectReservation debugging information
+if(isset($reservationIdUser) && $reservationAction == "select"){
+    if($produit = SelectReservation($conn,$reservationIdUser)){
+        echo("Reservation named : '$reservationIdUser' is : $reservation[tailleUser] ...ect");
+    }
+    else{
+        echo("Selection FAILED| Is the Reservation named : '$reservationIdUser' in the DB?");
+    }
+
+}
+
 
 //users
 if(isset($_POST["utilisateurNom"])){
@@ -399,7 +485,7 @@ if(isset($_POST["utilisateurAction"])){
             <input type="number" placeholder="age user" name="reservationAgeUser" id="reservationAgeUser"/>
 
             <label for="reservationIdPruduit">Id du produit réservé : </label>
-            <input type="number" placeholder="id produit" name="reservationIdPruduit" id="reservationIdPruduit"/>
+            <input type="number" placeholder="id produit" name="reservationIdProduit" id="reservationIdProduit"/>
 
             <label for="reservationDate">Date de la réservation : </label>
             <input type="date" placeholder="date" name="reservationDate" id="reservationDate"/>
