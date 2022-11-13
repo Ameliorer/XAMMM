@@ -129,7 +129,7 @@ if(isset($_POST["admin"])){
 
 if (!empty($_POST["id"])&&!empty($_POST["lastName"])&&!empty($_POST["firstName"])&&!empty($_POST["mail"])&&!empty($_POST["password"])&&!empty($_POST["phoneNum"])&&!empty($_POST["height"])&&!empty($_POST["weight"])&&!empty($_POST["age"])){
 
-    $res = UpdateUser($conn, $id, $lastName, $firstName, $mail, $password $phoneNum, $height, $weight, $age, $admin);
+    $res = UpdateUser($conn, $id, $lastName, $firstName, $mail, $password, $phoneNum, $height, $weight, $age, $admin);
 
 
 
