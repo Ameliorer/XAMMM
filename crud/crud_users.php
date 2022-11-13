@@ -10,6 +10,7 @@ CreateUser($conn, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $ag
     $lastName : string := VALUE user's last name,
     $firstName: string := VALUE user's first name,
     $mail : string := VALUE user's mail,
+    $password : string := VALUE user's password,
     $phoneNum : int := VALUE user's phone number,
     $height : int := VALUE user's height,
     $weight : int := VALUE user's weight,
@@ -18,8 +19,8 @@ CreateUser($conn, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $ag
 
     $return : boolean := Indicate the status of the query
 */
-function CreateUser($conn, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin){
-    $query="INSERT INTO `utilisateurs` (`nom`, `prenom`, `mail`, `numTel`, `taille`, `poids`, `age`, `admin`) VALUES ('$lastName', '$firstName', '$mail', '$phoneNum', '$height', '$weight', '$age', '$admin')";
+function CreateUser($conn, $lastName, $firstName, $mail, $password, $phoneNum, $height, $weight, $age, $admin){
+    $query="INSERT INTO `utilisateurs` (`nom`, `prenom`, `mail`, `mdp` `numTel`, `taille`, `poids`, `age`, `admin`) VALUES ('$lastName', '$firstName', '$mail', '$password', '$phoneNum', '$height', '$weight', '$age', '$admin')";
     $return=mysqli_query($conn, $query);
     return $return ;
 }
@@ -32,6 +33,7 @@ UpdateUser($conn, $id, $lastName, $firstName, $mail, $phoneNum, $height, $weight
     $lastName : string := VALUE user's last name,
     $firstName: string := VALUE user's first name,
     $mail : string := VALUE user's mail,
+    $password : string := VALUE user's password,
     $phoneNum : int := VALUE user's phone number,
     $height : int := VALUE user's height,
     $weight : int := VALUE user's weight,
@@ -40,8 +42,8 @@ UpdateUser($conn, $id, $lastName, $firstName, $mail, $phoneNum, $height, $weight
 
     $return : boolean := Indicate the status of the query
 */
-function UpdateUser($conn, $id, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin){
-    $query="UPDATE `utilisateurs` SET `nom`= '$lastName', `prenom`= '$firstName', `mail`= '$mail', `numTel`= '$phoneNum', `taille`= '$height', `poids`= '$weight', `age`= '$age', `admin`= '$admin' WHERE `id`='$id' ";
+function UpdateUser($conn, $id, $lastName, $firstName, $mail, $password, $phoneNum, $height, $weight, $age, $admin){
+    $query="UPDATE `utilisateurs` SET `nom`= '$lastName', `prenom`= '$firstName', `mail`= '$mail', `mdp`= '$password', `numTel`= '$phoneNum', `taille`= '$height', `poids`= '$weight', `age`= '$age', `admin`= '$admin' WHERE `id`='$id' ";
     $return=mysqli_query($conn, $query);
     return $return;
 }

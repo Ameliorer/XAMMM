@@ -41,6 +41,10 @@ if(isset($_POST["mail"])){
     $mail = $_POST["mail"];
 }
 
+if(isset($_POST["password"])){
+    $password = $_POST["password"];
+}
+
 if(isset($_POST["phoneNum"])){
     $phoneNum = $_POST["phoneNum"];
 }
@@ -79,6 +83,9 @@ if(isset($_POST["admin"])){
 
                 <label for="mail">Mail de l'utilisateur : </label>
                 <input type="mail" placeholder="mail" name="mail" id="mail"/>
+
+                <label for="paswword">Mot de passe de l'utilisateur : </label>
+                <input type="text" placeholder="Mot de pass" name="password" id="password"/>
 
                 <label for="phoneNum">Numéro de téléphone de l'utilisateur : </label>
                 <input type="tel" placeholder="numéro telephone" name="phoneNum" id="phoneNum"/>
@@ -120,9 +127,9 @@ if(isset($_POST["admin"])){
 
 <?php
 
-if (!empty($_POST["id"])&&!empty($_POST["lastName"])&&!empty($_POST["firstName"])&&!empty($_POST["mail"])&&!empty($_POST["phoneNum"])&&!empty($_POST["height"])&&!empty($_POST["weight"])&&!empty($_POST["age"])){
+if (!empty($_POST["id"])&&!empty($_POST["lastName"])&&!empty($_POST["firstName"])&&!empty($_POST["mail"])&&!empty($_POST["password"])&&!empty($_POST["phoneNum"])&&!empty($_POST["height"])&&!empty($_POST["weight"])&&!empty($_POST["age"])){
 
-    $res = UpdateUser($conn, $id, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $age, $admin);
+    $res = UpdateUser($conn, $id, $lastName, $firstName, $mail, $password $phoneNum, $height, $weight, $age, $admin);
 
 
 
