@@ -2,73 +2,73 @@
 // --- CRUD produit ---
 
 
-/* CreateProduit($conn,$nom,$prix,$dateDebut,$dateFin,$ageMin,$ageMax,$poidsMin,$poidsMax,$tailleMin,$tailleMax) -> $return
+/* CreateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$minWeight,$maxWeight,$minHeight,$maxHeight) -> $return
     $conn : mysqli := Connection to the SQL database
-    $nom : string := VALUE name of the product
-    $prix : integer := VALUE price of the product
-    $dateDebut : date := VALUE starting date
-    $dateFin : date := VALUE ending date
-    $ageMin : integer := VALUE minimum age to do the activity
-    $ageMax : integer := VALUE maximum age to do the activity
-    $poidsMin : integer := VALUE minimum weight to practice
-    $poidsMax : integer := VALUE maximum weight to practice
-    $tailleMin : integer := VALUE minimum height
-    $tailleMax : integer := VALUE maximum height
+    $name : string := VALUE name of the product
+    $price : integer := VALUE price of the product
+    $dateStart : date := VALUE starting date
+    $dateEnd : date := VALUE ending date
+    $minAge : integer := VALUE minimum age to do the activity
+    $maxAge : integer := VALUE maximum age to do the activity
+    $minWeight : integer := VALUE minimum weight to practice
+    $maxWeight : integer := VALUE maximum weight to practice
+    $minHeight : integer := VALUE minimum height
+    $maxHeight : integer := VALUE maximum height
 
     $return : boolean := Indicate the status of the query
 */ 
 
-function CreateProduit($conn,$nom,$prix,$dateDebut,$dateFin,$ageMin,$ageMax,$poidsMin,$poidsMax,$tailleMin,$tailleMax){
-    $sql = "INSERT INTO `produit` (`nom`,`prix`,`dateDebut`,`dateFin`,`ageMin`,`ageMax`,`poidsMin`,`poidsMax`,`tailleMin`,`tailleMax`) VALUES ('$nom', '$prix', '$dateDebut', '$dateFin', '$ageMin', '$ageMax', '$poidsMin', '$poidsMax', '$tailleMin', '$tailleMax')";
+function CreateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$minWeight,$maxWeight,$minHeight,$maxHeight){
+    $sql = "INSERT INTO `produit` (`name`,`price`,`dateStart`,`dateEnd`,`minAge`,`maxAge`,`minWeight`,`maxWeight`,`minHeight`,`maxHeight`) VALUES ('$name', '$price', '$dateStart', '$dateEnd', '$minAge', '$maxAge', '$minWeight', '$maxWeight', '$minHeight', '$maxHeight')";
     $return = mysqli_query($conn, $sql);
 
     return $return;
 }
 
-/* UpdateProduit($conn,$nom,$prix,$dateDebut,$dateFin,$ageMin,$ageMax,$poidsMin,$poidsMax,$tailleMin,$tailleMax) -> $return
+/* UpdateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$minWeight,$maxWeight,$minHeight,$maxHeight) -> $return
     $conn : mysqli := Connection to the SQL database
-    $nom : string := VALUE name of the product
-    $prix : integer := VALUE price of the product
-    $dateDebut : date := VALUE starting date
-    $dateFin : date := VALUE ending date
-    $ageMin : integer := VALUE minimum age to do the activity
-    $ageMax : integer := VALUE maximum age to do the activity
-    $poidsMin : integer := VALUE minimum weight to practice
-    $poidsMax : integer := VALUE maximum weight to practice
-    $tailleMin : integer := VALUE minimum height
-    $tailleMax : integer := VALUE maximum height
+    $name : string := VALUE name of the product
+    $price : integer := VALUE price of the product
+    $dateStart : date := VALUE starting date
+    $dateEnd : date := VALUE ending date
+    $minAge : integer := VALUE minimum age to do the activity
+    $maxAge : integer := VALUE maximum age to do the activity
+    $minWeight : integer := VALUE minimum weight to practice
+    $maxWeight : integer := VALUE maximum weight to practice
+    $minHeight : integer := VALUE minimum height
+    $maxHeight : integer := VALUE maximum height
 
     $return : boolean := Indicate the status of the query
 */
 
-function UpdateProduit($conn,$nom,$prix,$dateDebut,$dateFin,$ageMin,$ageMax,$poidsMin,$poidsMax,$tailleMin,$tailleMax){
-    $sql = "UPDATE `produit` SET `prix` = '$prix', `dateDebut` = '$dateDebut', `dateFin` = '$dateFin', `ageMin` = '$ageMin', `ageMax` = '$ageMax', `poidsMin` = '$poidsMin', `poidsMax` = '$poidsMax', `tailleMin` = '$tailleMin', `tailleMax` = '$tailleMax' WHERE `nom` = '$nom'";
+function UpdateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$minWeight,$maxWeight,$minHeight,$maxHeight){
+    $sql = "UPDATE `produit` SET `price` = '$price', `dateStart` = '$dateStart', `dateEnd` = '$dateEnd', `minAge` = '$minAge', `maxAge` = '$maxAge', `minWeight` = '$minWeight', `maxWeight` = '$maxWeight', `minHeight` = '$minHeight', `maxHeight` = '$maxHeight' WHERE `name` = '$name'";
 
     $return = mysqli_query($conn, $sql);
 
     return $return;
 }
 
-/* DeleteProduit($conn,$nom) -> $return
+/* DeleteProduit($conn,$name) -> $return
     $conn : mysqli := Connection to the SQL database
-    $nom : string := VALUE name of the product
+    $name : string := VALUE name of the product
 */
 
-function DeleteProduit($conn,$nom){
+function DeleteProduit($conn,$name){
 
-    $sql = "DELETE FROM `produit` WHERE `nom` = '$nom'";
+    $sql = "DELETE FROM `produit` WHERE `name` = '$name'";
     $return = mysqli_query($conn, $sql);
     return $return;
 }
 
-/* SelectProduit($conn,$nom) -> $return
+/* SelectProduit($conn,$name) -> $return
     $conn : mysqli := Connection to the SQL database
-    $nom : VALUE name of the product
+    $name : VALUE name of the product
 
     $return : array or boolean or null : Contains the response or indicate a connection error
 */
-function SelectProduit($conn, $nom){
-    $query="SELECT * FROM `produit` WHERE `nom`='$nom'" ;
+function SelectProduit($conn, $name){
+    $query="SELECT * FROM `produit` WHERE `name`='$name'" ;
 	if($response=mysqli_query($conn, $query)){
 		$return=mysqli_fetch_assoc($response);
 	} else {

@@ -2,63 +2,60 @@
 // --- CRUD reservation ---
 
 
-/* CreateReservation($conn,$idUser,$tailleUser,$ageUser,$idProduit,$date) -> $return
+/* CreateReservation($conn,$userId,$userHeight,$userAge,$productId,$date) -> $return
     $conn : mysqli := Connection to the SQL database
-    $idUser : integer := VALUE to connect the reservation with the good user
-    $tailleUser : integer := VALUE the height of the user
-    $ageUser : integer := VALUE the age of the user
-    $idProduit : integer := VALUE to connect the reservation with the good product
+    $userId : integer := VALUE to connect the reservation with the good user
+    $userHeight : integer := VALUE the height of the user
+    $userAge : integer := VALUE the age of the user
+    $productId : integer := VALUE to connect the reservation with the good product
     $date : date := VALUE date of the reservation
 
     $return : boolean := Indicate the status of the query
 */ 
-function CreateReservation($conn,$idUser,$tailleUser,$ageUser,$idProduit,$date){
-    $sql = "INSERT INTO `reservations` (`idUser`, `tailleUser`, `ageUser`, `idProduit`,`date`) VALUES ('$idUser', '$tailleUser', '$ageUser', '$idProduit', '$date')";
-    echo($sql);
+function CreateReservation($conn,$userId,$userHeight,$userAge,$productId,$date){
+    $sql = "INSERT INTO `reservations` (`userId`, `userHeight`, `userAge`, `productId`,`date`) VALUES ('$userId', '$userHeight', '$userAge', '$productId', '$date')";
     $return = mysqli_query($conn, $sql);
-    echo("<br><br>");
-    echo("The return is : $return");
-    echo("<br><br>");
+
     return $return;
 }
 
 
-/* UpdateReservation($conn,$idUser,$tailleUser,$ageUser,$idProduit,$date) -> $return
+/* UpdateReservation($conn,$userId,$userHeight,$userAge,$productId,$date) -> $return
     $conn : mysqli := Connection to the SQL database
-    $idUser : integer := VALUE to connect the reservation with the good user
-    $tailleUser : integer := VALUE the height of the user
-    $ageUser : integer := VALUE the age of the user
-    $idProduit : integer := VALUE to connect the reservation with the good product
+    $userId : integer := VALUE to connect the reservation with the good user
+    $userHeight : integer := VALUE the height of the user
+    $userAge : integer := VALUE the age of the user
+    $productId : integer := VALUE to connect the reservation with the good product
     $date : date := VALUE date of the reservation
 
     $return : boolean := Indicate the status of the query
 */
-function UpdateReservation($conn,$idUser,$tailleUser,$ageUser,$idProduit,$date){
-    $sql = "UPDATE `reservations` SET `tailleUser` ='$tailleUser', `ageUser` ='$ageUser', `idProduit` = $idProduit, `date` ='$date' WHERE `idUser` = '$idUser'";
+function UpdateReservation($conn,$userId,$userHeight,$userAge,$productId,$date){
+    $sql = "UPDATE `reservations` SET `userHeight` ='$userHeight', `userAge` ='$userAge', `productId` = $productId, `date` ='$date' WHERE `userId` = '$userId'";
     $return = mysqli_query($conn, $sql);
 
     return $return;
 }
-/* DeleteReservation($conn,$idUser,$tailleUser,$ageUser,$idProduit,$date) -> $return
+/* DeleteReservation($conn,$userId) -> $return
     $conn : mysqli := Connection to the SQL database
-    $idUser : integer := VALUE to connect the reservation with the good user
+    $userId : integer := VALUE to connect the reservation with the good user
 
     $return : boolean := Indicate the status of the query
 */
-function DeleteReservation($conn,$idUser){
-    $sql = "DELETE FROM `reservations` WHERE `idUser`='$idUser'";
+function DeleteReservation($conn,$userId){
+    $sql = "DELETE FROM `reservations` WHERE `userId`='$userId'";
     $return = mysqli_query($conn,$sql);
 
     return $return;
 }
-/* SelectReservation($conn,$idUser,$tailleUser,$ageUser,$idProduit,$date) -> $return
+/* SelectReservation($conn,$userId) -> $return
     $conn : mysqli := Connection to the SQL database
-    $idUser : integer := VALUE to connect the reservation with the good user
+    $userId : integer := VALUE to connect the reservation with the good user
 
     $return : array or boolean or null := Indicate the status of the query
 */
-function SelectReservation($conn,$idUser){
-    $sql="SELECT * FROM `reservations` WHERE `idUser`='$idUser'" ;
+function SelectReservation($conn,$userId){
+    $sql="SELECT * FROM `reservations` WHERE `userId`='$userId'" ;
 	if($response=mysqli_query($conn, $sql)){
 		$return=mysqli_fetch_assoc($response);
 	} else {
