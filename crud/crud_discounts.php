@@ -16,7 +16,7 @@ CreateDiscount($conn, $idProduct, $nameDiscount, $percentage, $dateStart, $dateE
     $return : boolean := Indicate the status of the query
 */
 function CreateDiscount($conn, $idProduct, $nameDiscount, $percentage, $dateStart, $dateEnd, $description){
-    $query = "INSERT INTO `discounts` (`productId`, `discountName`, `percentage`, `dateStart`, `dateEnd`, `description`) VALUES ('$idProduct', '$nameDiscount', '$percentage', '$dateStart', '$dateEnd', '$description')";
+    $query = "INSERT INTO `discounts` (`idProduct`, `discountName`, `percentage`, `dateStart`, `dateEnd`, `description`) VALUES ('$idProduct', '$nameDiscount', '$percentage', '$dateStart', '$dateEnd', '$description')";
     $return = mysqli_query($conn, $query);
     return $return;
 }
@@ -35,7 +35,7 @@ UpdateDiscount($conn, $id, $idProduct, $nameDiscount, $percentage, $dateStart, $
     $return : boolean := Indicate the status of the query
 */
 function UpdateDiscount($conn, $id, $idProduct, $nameDiscount, $percentage, $dateStart, $dateEnd, $description){
-    $query = "UPDATE `discounts` set `productId`='$idProduct', `discountName`='$nameDiscount', `percentage`=$percentage, `dateStart`='$dateStart', `dateEnd`='$dateEnd', `description`='$description WHERE `id`='$id'";
+    $query = "UPDATE `discounts` set `idProduct`='$idProduct', `discountName`='$nameDiscount', `percentage`=$percentage, `dateStart`='$dateStart', `dateEnd`='$dateEnd', `description`='$description WHERE `id`='$id'";
     $return = mysqli_query($conn, $query);
     return $return;
 }
