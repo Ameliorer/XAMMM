@@ -19,7 +19,7 @@
 */ 
 
 function CreateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$minWeight,$maxWeight,$minHeight,$maxHeight){
-    $sql = "INSERT INTO `produit` (`name`,`price`,`dateStart`,`dateEnd`,`minAge`,`maxAge`,`minWeight`,`maxWeight`,`minHeight`,`maxHeight`) VALUES ('$name', '$price', '$dateStart', '$dateEnd', '$minAge', '$maxAge', '$minWeight', '$maxWeight', '$minHeight', '$maxHeight')";
+    $sql = "INSERT INTO `products` (`name`,`price`,`dateStart`,`dateEnd`,`minAge`,`maxAge`,`minWeight`,`maxWeight`,`minHeight`,`maxHeight`) VALUES ('$name', '$price', '$dateStart', '$dateEnd', '$minAge', '$maxAge', '$minWeight', '$maxWeight', '$minHeight', '$maxHeight')";
     $return = mysqli_query($conn, $sql);
 
     return $return;
@@ -42,7 +42,7 @@ function CreateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$m
 */
 
 function UpdateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$minWeight,$maxWeight,$minHeight,$maxHeight){
-    $sql = "UPDATE `produit` SET `price` = '$price', `dateStart` = '$dateStart', `dateEnd` = '$dateEnd', `minAge` = '$minAge', `maxAge` = '$maxAge', `minWeight` = '$minWeight', `maxWeight` = '$maxWeight', `minHeight` = '$minHeight', `maxHeight` = '$maxHeight' WHERE `name` = '$name'";
+    $sql = "UPDATE `products` SET `price` = '$price', `dateStart` = '$dateStart', `dateEnd` = '$dateEnd', `minAge` = '$minAge', `maxAge` = '$maxAge', `minWeight` = '$minWeight', `maxWeight` = '$maxWeight', `minHeight` = '$minHeight', `maxHeight` = '$maxHeight' WHERE `name` = '$name'";
 
     $return = mysqli_query($conn, $sql);
 
@@ -56,7 +56,7 @@ function UpdateProduit($conn,$name,$price,$dateStart,$dateEnd,$minAge,$maxAge,$m
 
 function DeleteProduit($conn,$name){
 
-    $sql = "DELETE FROM `produit` WHERE `name` = '$name'";
+    $sql = "DELETE FROM `products` WHERE `name` = '$name'";
     $return = mysqli_query($conn, $sql);
     return $return;
 }
@@ -68,7 +68,7 @@ function DeleteProduit($conn,$name){
     $return : array or boolean or null : Contains the response or indicate a connection error
 */
 function SelectProduit($conn, $name){
-    $query="SELECT * FROM `produit` WHERE `name`='$name'" ;
+    $query="SELECT * FROM `products` WHERE `name`='$name'" ;
 	if($response=mysqli_query($conn, $query)){
 		$return=mysqli_fetch_assoc($response);
 	} else {

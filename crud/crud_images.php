@@ -12,7 +12,7 @@ CreateImage($conn, $name, $idblog) -> $return
     $return : boolean := Indicate the status of the query
 */
 function CreateImage($conn, $name, $idblog){
-	$query = "INSERT INTO `images` (`nom`, `idblog`) VALUES ('$name', '$idblog')";
+	$query = "INSERT INTO `images` (`name`, `idblog`) VALUES ('$name', '$idblog')";
 	$return = mysqli_query($conn, $query);
 	return $return ;
 }
@@ -26,7 +26,7 @@ UpdateImage($conn, $name, $idblog) -> $return
     $return : boolean := Indicate the status of the query
 */
 function UpdateImage($conn, $name, $idblog){
-	$query = "UPDATE `images` set `idblog`='$idblog' WHERE `nom`='$name'";
+	$query = "UPDATE `images` set `idblog`='$idblog' WHERE `name`='$name'";
 	$return = mysqli_query($conn, $query);
     return $return;
 }
@@ -39,7 +39,7 @@ DeleteImage($conn, $name) -> $return
     $return : boolean := Indicate the status of the query
 */
 function DeleteImage($conn, $name){
-	$query = "DELETE FROM `images` WHERE `nom` = '$name'";
+	$query = "DELETE FROM `images` WHERE `name` = '$name'";
 	$return = mysqli_query($conn, $query) ;
 	return $return;
 }
@@ -52,7 +52,7 @@ SelectImage($conn, $name) -> $return
     $return : array | boolean | null := Contains the response or indicate a connection error
 */
 function SelectImage($conn, $name){
-	$query = "SELECT * FROM `images` WHERE `nom`=$name";
+	$query = "SELECT * FROM `images` WHERE `name`=$name";
 	if($response = mysqli_query($conn, $query)){
 		$return = mysqli_fetch_assoc($response);
 	} else {
