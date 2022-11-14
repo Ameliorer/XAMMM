@@ -30,7 +30,7 @@ UpdateUser($conn, $id, $title, $content, $datePost) -> $return
 
     $return : boolean := Indicate the status of the query
 */
-function UpdateBlog($conn, $id, $title, $content, $datePost){
+function UpdateBlog($conn,$id, $title, $content, $datePost){
     $query="UPDATE `blog` SET `title`= '$title', `content`= '$content', `datePost`= '$datePost' WHERE `id`='$id' ";
     $return=mysqli_query($conn, $query);
     return $return;
