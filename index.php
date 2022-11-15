@@ -40,6 +40,7 @@ $html_header .= "<li><a href='pages/testCrudBlogCreate.php'>Test Blog CRUD Creat
 $html_header .= "<li><a href='pages/testCrudBlogRead.php'>Test Blog CRUD Read</a></li>\n";
 $html_header .= "<li><a href='pages/testCrudBlogUpdate.php'>Test BlogCRUD Update</a></li>\n";
 $html_header .= "<li><a href='pages/testCrudBlogDelete.php'>Test Blog CRUD Delete</a></li>\n";
+$html_header .= "<li><a href='pages/testUploadImage.php'>Test Upload Image</a></li>\n";
 
 $html_header .= "</ul>\n";
 $html_header .= "</div>\n";
