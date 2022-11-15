@@ -1,0 +1,100 @@
+{
+   "1": {
+      "id": 1,
+      "title": "Quand puis je sauter ?",
+      "response": {
+         "text": "D’avril à fin Octobre 2018 en fonction de la météo sur l’aéroport de Gap Tallard !"
+      }
+   },
+   "2": {
+      "id": 2,
+      "title": "Quel est l’âge minimum pour sauter en parachute ?",
+      "response": {
+         "text": "L’âge minimum pour sauter en tandem en parachute est de 15 ans (avec autorisation parentale), ou 18 ans révolus (sans autorisation parentale)."
+      }
+   },
+   "3": {
+      "id": 3,
+      "title": "Y’a t’il un poids maximum  pour sauter en parachute ?",
+      "response": {
+         "text": "Jusqu'à 85 kg, vous pouvez pratiquer cette discipline sans aucun problème. Au-delà de ce poids, contactez nous via notre formulaire ou par téléphone au ou +33 6 60 83 12 84."
+      }
+   },
+   "4": {
+      "id": 4,
+      "title": "Le certificat médical est il obligatoire ?",
+      "response": {
+         "text": "Un certificat médical de non contre-indication pour un  saut en parachute  tandem est obligatoire. Il peut être délivré par votre médecin généraliste."
+      }
+   },
+   "5": {
+      "id": 5,
+      "title": "Que ce passe t’il en cas de météo défavorable ?",
+      "response": {
+         "text": "Si les prévisions ne sont pas bonnes on repoussera la réservation ! Si le jour du saut, la météo n'est pas favorable, nous repousserons le rendez vous à une date ultérieure de votre choix."
+      }
+   },
+   "6": {
+      "id": 6,
+      "title": "Quelle tenue porter ?",
+      "response": {
+         "text": "Il est conseillé de s’habiller de façon décontractée, sportive mais pas trop ample : Jeans, short, baskets et sweat-shirt ou polaire restent la tenue idéale. Pas de chaussures de villes ni de talons ! Si besoin une combinaison de saut pourra être mise à votre disposition."
+      }
+   },
+   "7": {
+      "id": 7,
+      "title": "Combien de temps sur place faut-il prévoir ?",
+      "response": {
+         "text": "Plusieurs facteurs (météo, nombre de parachutistes) pouvant intervenir dans l’organisation de la séance de saut, nous vous conseillons de prévoir la demie journée !"
+      }
+   },
+   "8": {
+      "id": 8,
+      "title": "J’ai peur ! Est ce normal ?",
+      "response": {
+         "text": "Quoi de plus normal  que de se poser cette question ? Monter dans un petit avion et s’en jeter alors qu’il est en parfait état de marche n’est pas quelque chose de commun !  Sachant  que l’être  humain  appréhende ce qu’il ne connaît pas on a peur ! Le briefing rassurant de votre  moniteur son professionnalisme et sa grande expérience vous mettront en confiance et vous permettront de vivre cette expérience formidable qui restera celle de votre vie !"
+      }
+   },
+   "9": {
+      "id": 9,
+      "title": "J’ai le vertige ! Est ce un handicap ?",
+      "response": {
+         "text": "Le vertige est une sensation très  stressante qu’on peut avoir lorsqu’on est en hauteur mais en contact avec le sol : en haut d’une échelle, d’un immeuble d’un pont ou d’une falaise : on ne le ressentira pas en avion !"
+      }
+   },
+   "10": {
+      "id": 10,
+      "title": "L’atterrissage est il violent ?",
+      "response": {
+         "text": "En tandem, c’est le moniteur qui gère l’atterrissage en douceur. Si vous levez correctement les jambes de façon à ce que ce soit celle du moniteur qui posent en premier !"
+      }
+   },
+   "11": {
+      "id": 11,
+      "title": "Suis je assuré pour ce saut en parachute ?",
+      "response": {
+         "text": "Oui toute personne effectuant un saut en parachute doit être assurée. Pierre possède une l’assurance professionnelle dont voici les extraits."
+      }
+   },
+   "12": {
+      "id": 12,
+      "title": "Mon moniteur est il diplômé ?",
+      "response": {
+         "text": "Evidement c’est obligatoire pour avoir une assurance professionnelle donc pour sauter avec des passagers ! Pierre est titulaire  d’un Brevet d’Etat de parachutisme délivré par la Fédération française de Parachutisme et d’une qualification tandem renouvelée chaque année !"
+      }
+   },
+   "13": {
+      "id": 13,
+      "title": "J’ai des lentilles ou des lunettes ! Est ce un problème ?",
+      "response": {
+         "text": "Non aucun ! Si vous avez le choix, choisissez les lentilles plus confortables avec les lunettes de chute libre que nous vous prêterons. Pour les personnes n’ayant que des lunettes correctrices , nous mettrons à votre disposition des sur-lunettes spécialement conçues pour le saut en parachute."
+      }
+   },
+   "14": {
+      "id": 14,
+      "title": "Si le parachute ne s’ouvre pas ?",
+      "response": {
+         "text": "Il s’ouvre de plus sous les parachutes sont équipés d’une voilure de secours, pliée et contrôlée chaque année par un plieur de secours qualifié qui inspecte chaque couture et chaque centimètre carré de tissus ! Se servir de son parachute de secours ne présente absolument aucun risque ! Et si le parachutiste ou le moniteur oublie la hauteur ou tombe dans les pommes un déclencheur de sécurité ouvrira automatiquement le parachute de secours ! "
+      }
+   }
+}
