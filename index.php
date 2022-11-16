@@ -31,15 +31,10 @@ $html_header .= "<li><a href='pages/avis_clients.php'>Avis clients</a></li>\n";
 $html_header .= "<li><a href='pages/panier.php'>Panier</a></li>\n";
 $html_header .= "<li><a href='pages/confirmation_commande.php'>Confirmation de commande</a></li>\n";
 $html_header .= "<li><a href='pages/actualites.php'>Actualites</a></li>\n";
+$html_header .= "<li><a href='pages/%20legal_notice.php'>Mentions Légales</a></li>\n<br>";
+
 $html_header .= "<li><a href='pages/test_crud.php'>TEST</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudUserCreate.php'>Test User CRUD Create</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudUserRead.php'>Test User CRUD Read</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudUserUpdate.php'>Test User CRUD Update</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudUserDelete.php'>Test User CRUD Delete</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudBlogCreate.php'>Test Blog CRUD Create</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudBlogRead.php'>Test Blog CRUD Read</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudBlogUpdate.php'>Test BlogCRUD Update</a></li>\n";
-$html_header .= "<li><a href='pages/testCrudBlogDelete.php'>Test Blog CRUD Delete</a></li>\n";
+
 
 $html_header .= "</ul>\n";
 $html_header .= "</div>\n";
