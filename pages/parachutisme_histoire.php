@@ -31,7 +31,7 @@ Ce n'est qu'en 2008 que le premier saut avec une réplique du parachute de Léon
 
 <h1>Le parachute de Garnerin</h1>
 
-<h2>Le premier saut parGarnerin</h2>
+<h2>Le premier saut par Garnerin</h2>
 <p> 
 Le premier saut en parachute a été effectué en 1797 par André Jacques Garnerin au-dessus d'un parc à Paris.
 Puis un siècle s'est déroulé avant que le parachute ne soit utilisé.

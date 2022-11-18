@@ -750,6 +750,10 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
 </script>
 
 <?php 
+//empty POST
+unset($_POST);
+$_POST = array();
+
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
 //–––––––––––––––
 

@@ -1,1 +1,1 @@
-C'est juste un fichier qui sert à rien mais sinon git add . le met pas sur github ;(
+C'est juste un fichier qui sert à rien mais sinon git add . le met pas sur github );
