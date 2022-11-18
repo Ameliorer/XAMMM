@@ -11,7 +11,7 @@ include("head.php");
 //Deuxieme balise PHP : La page
 //–––––––––––––––
 
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
+$html_acceuil= "<div><a href='../index.php'>ACCEUIL</a></div>";
 echo($html_acceuil);
 ?>
 
