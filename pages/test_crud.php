@@ -721,8 +721,8 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
 
             <label for="utilisateurAdmin">Droit admin de l'utilisateur : </label>
             <select name="utilisateurAdmin" id="utilisateurAdmin">
-                <option value="false">faux</option>
-                <option value="true">vrai</option>
+                <option value=0>faux</option>
+                <option value=1>vrai</option>
             </select>
 
             <label for="utilisateurAction">Action à faire : </label>
