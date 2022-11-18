@@ -104,9 +104,6 @@ if(isset($_POST["codesDateD"])){
 if(isset($_POST["codesDateF"])){
     $codesDateF = $_POST["codesDateF"];
 }
-if(isset($_POST["codesPercentage"])){
-    $codesPercentage = $_POST["codesPercentage"];
-}
 $codesAction = "";
 if(isset($_POST["codesAction"])){
     $codesAction = $_POST["codesAction"];
@@ -114,7 +111,7 @@ if(isset($_POST["codesAction"])){
 
 // --- codes create
 if($codesCodes != "" and isset($codesIdType) and isset($codesDateD) and isset($codesDateF)  and $codesAction == "create"){
-    if(CreateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF, $codesPercentage)){
+    if(CreateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF)){
         echo "<p>create codes success</p>";
     }else{
         echo "<p>create codes failure</p>";
@@ -123,7 +120,7 @@ if($codesCodes != "" and isset($codesIdType) and isset($codesDateD) and isset($c
 
 // --- codes update
 if($codesCodes != "" and isset($codesIdType) and isset($codesDateD) and isset($codesDateF) and $codesAction == "update"){
-    if(UpdateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF, $codesPercentage)){
+    if(UpdateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF)){
         echo "<p>update codes success</p>";
     }else{
         echo "<p>update codes failure</p>";
@@ -464,7 +461,7 @@ if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isse
 
 //UpdateUser debugging information
 if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isset($_POST["utilisateurMail"]) && isset($_POST["utilisateurPassword"]) && isset($_POST["utilisateurNumTel"]) && isset($_POST["utilisateurTaille"]) && isset($_POST["utilisateurPoids"]) && isset($_POST["utilisateurAge"]) && isset($_POST["utilisateurAdmin"]) && $utilisateurAction == "update"){
-    if(UpdateReservation($conn,$idUser,$utilisateurNom,$utilisateurPrenom,$utilisateurMail,$utilisateurPassword,$utilisateurNumTel,$utilisateurTaille,$utilisateurPoids,$utilisateurAge,$utilisateurAdmin)){
+    if(UpdateUser($conn,$idUser,$utilisateurNom,$utilisateurPrenom,$utilisateurMail,$utilisateurPassword,$utilisateurNumTel,$utilisateurTaille,$utilisateurPoids,$utilisateurAge,$utilisateurAdmin)){
         echo("User is updated in the DB");
     }
     else{
@@ -473,7 +470,7 @@ if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isse
 }
 //DeleteUser debugging information
 if(isset($_POST["idUser"]) && $utilisateurAction == "delete"){
-    if(DeleteReservation($conn,$idUser)){
+    if(DeleteUser($conn,$idUser)){
         echo("User is deleted from the DB");
     }
     else{
@@ -482,7 +479,7 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "delete"){
 }
 //SelectUser debugging information
 if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
-    if($user = SelectReservation($conn,$idUser)){
+    if($user = SelectUser($conn,$idUser)){
         echo("User named $user[lastname] ...ect");
     }
     else{
