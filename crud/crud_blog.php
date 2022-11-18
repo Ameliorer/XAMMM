@@ -14,7 +14,7 @@ CreateBlog($conn, $title, $content, $datePost) -> $return
     $return : boolean := Indicate the status of the query
 */
 function CreateBlog($conn, $title, $content, $datePost){
-    $query="INSERT INTO `blog` (`titre`, `contenu`, `datePost`) VALUES ('$title', '$content', '$datePost')";
+    $query="INSERT INTO `blog` (`title`, `content`, `datePost`) VALUES ('$title', '$content', '$datePost')";
     $return=mysqli_query($conn, $query);
     return $return ;
 }
@@ -30,8 +30,8 @@ UpdateUser($conn, $id, $title, $content, $datePost) -> $return
 
     $return : boolean := Indicate the status of the query
 */
-function UpdateBlog($conn, $id, $title, $content, $datePost){
-    $query="UPDATE `blog` SET `titre`= '$title', `contenu`= '$content', `datePost`= '$datePost' WHERE `id`='$id' ";
+function UpdateBlog($conn,$id, $title, $content, $datePost){
+    $query="UPDATE `blog` SET `title`= '$title', `content`= '$content', `datePost`= '$datePost' WHERE `id`='$id' ";
     $return=mysqli_query($conn, $query);
     return $return;
 }
