@@ -208,8 +208,8 @@ if(isset($_POST["iduser"])){
 if(isset($_POST["id"])){
     $id = $_POST["id"];
 }
-if(isset($_POST["texte"])){
-    $texte = $_POST["texte"];
+if(isset($_POST["text"])){
+    $text = $_POST["text"];
 }
 if(isset($_POST["grade"])){
     $grade = $_POST["grade"];
@@ -220,8 +220,8 @@ if(isset($_POST["opinionAction"])){
 
 
 //CreateOpinion debugging information
-if(isset($_POST["iduser"]) && isset($_POST["texte"]) && isset($_POST["grade"]) && $opinionAction == 'create'){
-    if(CreateOpinion($conn, $iduser, $texte, $grade)){
+if(isset($_POST["iduser"]) && isset($_POST["text"]) && isset($_POST["grade"]) && $opinionAction == 'create'){
+    if(CreateOpinion($conn, $iduser, $text, $grade)){
         echo("Opinion is created and stocked in the DB");
     }
     else{
@@ -230,8 +230,8 @@ if(isset($_POST["iduser"]) && isset($_POST["texte"]) && isset($_POST["grade"]) &
 }
 
 //UpdateOpinion debugging information
-if(isset($_POST["id"]) && isset($_POST["iduser"]) && isset($_POST["texte"]) && isset($_POST["grade"]) && $opinionAction == 'update'){
-    if(UpdateOpinion($conn, $id, $iduser, $texte, $grade)){
+if(isset($_POST["id"]) && isset($_POST["iduser"]) && isset($_POST["text"]) && isset($_POST["grade"]) && $opinionAction == 'update'){
+    if(UpdateOpinion($conn, $id, $iduser, $text, $grade)){
         echo("Opinion is update and stocked in the DB");
     }
     else{
@@ -638,8 +638,12 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
             <label for="iduser">Id de l'utilisateur : </label>
             <input type="number" placeholder="id user" name="iduser" id="iduser"/>
             
-            <label for="texte">Texte de l'opinion : </label>
-            <input type="text" placeholder="texte" name="texte" id="texte"/>
+            <label for="text">Texte de l'opinion : </label>
+            <input type="text" placeholder="texte" name="text" id="text"/>
+
+            <label for="grade">nombre d'étoiles : </label>
+            <input type="number" placeholder="entre 1 et 5" name="grade" id="grade"/>
+            
 
             <label for="opinionAction">Action à faire : </label>
             <select name="opinionAction" id="opinionAction">
@@ -649,7 +653,7 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
                 <option value="select">select</option>
             </select>
 
-            <label for="opinionSubmit">valider : </label>
+            <label for="opinionSubmit">Valider : </label>
             <input type="submit" name="opinionSubmit" id="opinionSubmit">
         </form>
     </div>
@@ -803,13 +807,10 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
 
             <label for="utilisateurAdmin">Droit admin de l'utilisateur : </label>
             <select name="utilisateurAdmin" id="utilisateurAdmin">
-<<<<<<< HEAD
-                <option value="0">faux</option>
-                <option value="1">vrai</option>
-=======
+
                 <option value=0>faux</option>
                 <option value=1>vrai</option>
->>>>>>> cc31abca27dd9cbd9520b69c7a223777c32337fb
+
             </select>
 
             <label for="utilisateurAction">Action à faire : </label>
