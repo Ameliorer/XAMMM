@@ -12,7 +12,7 @@ CreateOpinion($conn, $name, $idblog) -> $return
     $return : boolean := Indicate the status of the query
 */
 function CreateOpinion($conn, $iduser, $texte, $grade){
-    $query = "INSERT INTO `opinion`( `iduser`, `texte`, `grade`) VALUES ('$iduser','$texte','$grade')"
+    $query = "INSERT INTO `opinion`( `iduser`, `texte`, `grade`) VALUES ('$iduser','$texte','$grade')";
 	$return = mysqli_query($conn, $query);
 	return $return ;
 }
@@ -40,7 +40,7 @@ DeleteImage($conn, $name) -> $return
     
     $return : boolean := Indicate the status of the query
 */
-function DeleteImage($conn, $id){
+function DeleteOpinion($conn, $iduser){
 	$query = "DELETE FROM `opinion` WHERE `iduser` = '$iduser'";
 	$return = mysqli_query($conn, $query) ;
 	return $return;
@@ -53,7 +53,7 @@ SelectImage($conn, $name) -> $return
 
     $return : array | boolean | null := Contains the response or indicate a connection error
 */
-function SelectImage($conn, $iduser){
+function SelectOpinion($conn, $iduser){
 	$query = "SELECT * FROM `opinion` WHERE `iduser`=$iduser";
 	if($response = mysqli_query($conn, $query)){
 		$return = mysqli_fetch_assoc($response);

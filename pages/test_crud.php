@@ -22,6 +22,7 @@ include("../crud/crud_images.php");
 include("../crud/crud_products.php");
 include("../crud/crud_reservations.php");
 include("../crud/crud_users.php");
+include("../crud/crud_opinion.php")
 
 ?>
 
@@ -199,6 +200,65 @@ if(isset($_POST["imagesNom"]) && $imagesAction == 'select'){
     }
 }
 
+
+//opinion
+if(isset($_POST["iduser"])){
+    $iduser = $_POST["iduser"];
+}
+if(isset($_POST["id"])){
+    $id = $_POST["id"];
+}
+if(isset($_POST["texte"])){
+    $texte = $_POST["texte"];
+}
+if(isset($_POST["grade"])){
+    $grade = $_POST["grade"];
+}
+if(isset($_POST["opinionAction"])){
+    $opinionAction = $_POST["opinionAction"];
+}
+
+
+//CreateOpinion debugging information
+if(isset($_POST["iduser"]) && isset($_POST["texte"]) && isset($_POST["grade"]) && $opinionAction == 'create'){
+    if(CreateOpinion($conn, $iduser, $texte, $grade)){
+        echo("Opinion is created and stocked in the DB");
+    }
+    else{
+        echo("Creation of the opinion FAILED");
+    }
+}
+
+//UpdateOpinion debugging information
+if(isset($_POST["id"]) && isset($_POST["iduser"]) && isset($_POST["texte"]) && isset($_POST["grade"]) && $opinionAction == 'update'){
+    if(UpdateOpinion($conn, $id, $iduser, $texte, $grade)){
+        echo("Opinion is update and stocked in the DB");
+    }
+    else{
+        echo("Update of the opinion FAILED");
+    }
+}
+
+//DeleteOpinion debugging information
+if(isset($_POST["iduser"]) && $opinionAction == 'delete'){
+    if(DeleteOpinion($conn, $iduser)){
+        echo("Opinion is deleted from the DB");
+    }
+    else{
+        echo("Delete of the opinion FAILED");
+    }
+}
+
+//SelectOpinion debugging information
+if(isset($_POST["iduser"]) && $opinionAction == 'select'){
+    if($opinion = SelectOpinion($conn, $iduser)){
+        echo("Opinion for the $opinion[iduser] is selected");
+    }
+    else{
+        echo("Selection of the opinion FAILED");
+    }
+
+}
 //produit
 if(isset($_POST["produitNom"])){
     $produitNom = $_POST["produitNom"];
@@ -573,6 +633,28 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
     </div>
 
     <div>
+        <h3>Opinions</h3>
+        <form action="" method="post" name="opinionForm" id="opinionForm" class="form">
+            <label for="iduser">Id de l'utilisateur : </label>
+            <input type="number" placeholder="id user" name="iduser" id="iduser"/>
+            
+            <label for="texte">Texte de l'opinion : </label>
+            <input type="text" placeholder="texte" name="texte" id="texte"/>
+
+            <label for="opinionAction">Action à faire : </label>
+            <select name="opinionAction" id="opinionAction">
+                <option value="create">create</option>
+                <option value="update">update</option>
+                <option value="delete">delete</option>
+                <option value="select">select</option>
+            </select>
+
+            <label for="opinionSubmit">valider : </label>
+            <input type="submit" name="opinionSubmit" id="opinionSubmit">
+        </form>
+    </div>
+
+    <div>
         <h3>produit</h3>
         <form action="" method="post" name="produitForm" id="produitForm" class="form">
             <label for="produitNom">Nom du produit : </label>
@@ -721,8 +803,8 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
 
             <label for="utilisateurAdmin">Droit admin de l'utilisateur : </label>
             <select name="utilisateurAdmin" id="utilisateurAdmin">
-                <option value="false">faux</option>
-                <option value="true">vrai</option>
+                <option value="0">faux</option>
+                <option value="1">vrai</option>
             </select>
 
             <label for="utilisateurAction">Action à faire : </label>
