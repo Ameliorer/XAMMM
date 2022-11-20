@@ -20,7 +20,7 @@ CreateUser($conn, $lastName, $firstName, $mail, $phoneNum, $height, $weight, $ag
     $return : boolean := Indicate the status of the query
 */
 function CreateUser($conn, $lastName, $firstName, $mail, $password, $phoneNum, $height, $weight, $age, $admin){
-    $query="INSERT INTO `users` (`lastName`, `firstName`, `mail`, `password` `phoneNum`, `taille`, `weight`, `age`, `admin`) VALUES ('$lastName', '$firstName', '$mail', '$password', '$phoneNum', '$height', '$weight', '$age', '$admin')";
+    $query="INSERT INTO `users` (`lastName`, `firstName`, `mail`, `password`, `phoneNum`, `height`, `weight`, `age`, `admin`) VALUES ('$lastName', '$firstName', '$mail', '$password', '$phoneNum', '$height', '$weight', '$age', '$admin')";
     $return=mysqli_query($conn, $query);
     return $return ;
 }

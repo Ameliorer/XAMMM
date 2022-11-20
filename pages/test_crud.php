@@ -803,8 +803,13 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
 
             <label for="utilisateurAdmin">Droit admin de l'utilisateur : </label>
             <select name="utilisateurAdmin" id="utilisateurAdmin">
+<<<<<<< HEAD
                 <option value="0">faux</option>
                 <option value="1">vrai</option>
+=======
+                <option value=0>faux</option>
+                <option value=1>vrai</option>
+>>>>>>> cc31abca27dd9cbd9520b69c7a223777c32337fb
             </select>
 
             <label for="utilisateurAction">Action à faire : </label>
@@ -832,6 +837,10 @@ if(isset($_POST["idUser"]) && $utilisateurAction == "select"){
 </script>
 
 <?php 
+//empty POST
+unset($_POST);
+$_POST = array();
+
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
 //–––––––––––––––
 

@@ -3,8 +3,10 @@
 //–––––––––––––––
 
 //Include du head
+$title = "Actualités";
 include("head.php");
-
+echo "<script src='../scripts/axios.min.js'></script>\n";
+echo "<script src='../scripts/actualite.js' defer></script>\n";
 ?>
 
 <?php 
@@ -15,6 +17,7 @@ $html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
 echo($html_acceuil);
 ?>
 
+<main></main>
 
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
