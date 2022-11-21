@@ -68,8 +68,8 @@ function SelectCodes_type($conn, $productId){
 	return $return;
 }
 
-function SelectAllCodes($conn, $productId){
-    $query="SELECT * FROM `codes` WHERE `productId`='$productId'" ;
+function SelectAllCodes($conn){
+    $query="SELECT * FROM `codes`" ;
     $table = [];
 	if($response=mysqli_query($conn, $query)){
 		while($row=mysqli_fetch_assoc($response)){

@@ -81,7 +81,7 @@ function SelectUser($conn, $id){
 }
 
 function SelectAllUser($conn, $id){
-    $query="SELECT * FROM `users` WHERE `id`='$id' " ;
+    $query="SELECT * FROM `users`" ;
     $table = [];
     if($response=mysqli_query($conn, $query)){
         while($row=mysqli_fetch_assoc($response)){

@@ -70,8 +70,8 @@ function SelectDiscount($conn, $id){
     return $return;
 }
 
-function SelectAllDiscount($conn, $id){
-    $query = "SELECT * FROM `discounts` WHERE `id`='$id'";
+function SelectAllDiscount($conn){
+    $query = "SELECT * FROM `discounts`";
     $table = [];
     if ($response = mysqli_query($conn, $query)){
         while ($row = mysqli_fetch_assoc($response)){

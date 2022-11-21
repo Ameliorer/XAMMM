@@ -63,9 +63,9 @@ function SelectOpinion($conn, $iduser){
 	return $return;
 }
 
-function SelectAllOpinion($conn, $iduser){
+function SelectAllOpinion($conn){
     $table = [];
-	$query = "SELECT * FROM `opinion` WHERE `iduser`=$iduser";
+	$query = "SELECT * FROM `opinion`";
 	if($response = mysqli_query($conn, $query)){
         while($row = mysqli_fetch_assoc($response)){
             $table []= $row;

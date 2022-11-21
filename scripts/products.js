@@ -1,4 +1,4 @@
-//Fonction de creation bien utile
+//Useful fonction to create element
 function create(tagName, container, text = null, class_ = null, id = null) {
    let element = document.createElement(tagName);
    container.appendChild(element);
@@ -17,7 +17,7 @@ function create(tagName, container, text = null, class_ = null, id = null) {
 //--------------- INFO POUR LE CSS ---------------
 // Les spans sont fait pour apporter un leger style plus tard.
 //------------------------------------------------
-//Recuperation la balise ou seront les produits :
+//Retrieve of the balise for where we'll show the products
 
 let main = document.querySelector('#aff_products');
 console.log(main);
@@ -27,49 +27,37 @@ axios.get('../lib/products.php').then((response) => {
 
    //Creation of HTML balise to show a product to the client
    response.data.forEach((product) => {
-      let div = create('div', main);
+      let div = create('div', main, null, 'product');
       let productName = create('h3', div, product.name);
       let productPrice = create('span', div, product.price + ' euros');
       let ul = create('ul', div, null, 'product_info');
 
-      let spanDateStart = create('span', ul);
-      let productDateStart = create('li', ul, 'Commence le : ' + product.dateStart);
-
-      let spanDateEnd = create('span', ul);
-      let productDateEnd = create('li', ul, 'Finit le : ' + product.dateEnd);
-
-      let spanMinAge = create('span', ul);
-      let productMinAge = create('li', ul, 'Age minimum : ' + product.minAge + ' ans');
-
-      let spanMaxAge = create('span', ul);
-      let productMaxAge = create('li', ul, 'Age maximum : ' + product.maxAge + ' ans');
-
-      let spanMinWeight = create('span', ul);
-      let productMinWeight = create(
+      let spanDateStart = create('span', ul, 'Commence le : ');
+      let productDateStart = create(
          'li',
          ul,
-         'Poids minimum : ' + product.minWeight + ' kg',
+         spanDateStart.innerText + product.dateStart,
       );
 
-      let spanMaxWeight = create('span', ul);
-      let productMaxWeight = create(
-         'li',
-         ul,
-         'Poids maximum : ' + product.maxWeight + ' kg',
-      );
+      let spanDateEnd = create('span', ul, 'Finit le : ');
+      let productDateEnd = create('li', ul, product.dateEnd);
 
-      let spanMinHeight = create('span', ul);
-      let productMinHeight = create(
-         'li',
-         ul,
-         'Taille minimal : ' + product.minHeight + ' cm',
-      );
+      let spanMinAge = create('span', ul, 'Age minimum : ');
+      let productMinAge = create('li', ul, product.minAge + ' ans');
 
-      let spanMaxHeight = create('span', ul);
-      let productMaxHeight = create(
-         'li',
-         ul,
-         'Taille maximal : ' + product.maxHeight + ' cm',
-      );
+      let spanMaxAge = create('span', ul, 'Age maximum : ');
+      let productMaxAge = create('li', ul, product.maxAge + ' ans');
+
+      let spanMinWeight = create('span', ul, 'Poids minimum : ');
+      let productMinWeight = create('li', ul, product.minWeight + ' kg');
+
+      let spanMaxWeight = create('span', ul, 'Poids maximum : ');
+      let productMaxWeight = create('li', ul, product.maxWeight + ' kg');
+
+      let spanMinHeight = create('span', ul, 'Taille minimal : ');
+      let productMinHeight = create('li', ul, product.minHeight + ' cm');
+
+      let spanMaxHeight = create('span', ul, 'Taille maximal : ');
+      let productMaxHeight = create('li', ul, product.maxHeight + ' cm');
    });
 });

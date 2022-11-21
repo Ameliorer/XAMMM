@@ -79,7 +79,7 @@ function SelectProduit($conn, $name){
 
 function SelectAllProduit($conn){
     $table = [];
-    $query="SELECT * FROM `products` " ;
+    $query="SELECT * FROM `products`" ;
 	if($response=mysqli_query($conn, $query)){
         while($row=mysqli_fetch_assoc($response)){
             $table []= $row;
