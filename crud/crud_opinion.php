@@ -62,4 +62,18 @@ function SelectOpinion($conn, $iduser){
     }
 	return $return;
 }
+
+function SelectAllOpinion($conn, $iduser){
+    $table = [];
+	$query = "SELECT * FROM `opinion` WHERE `iduser`=$iduser";
+	if($response = mysqli_query($conn, $query)){
+        while($row = mysqli_fetch_assoc($response)){
+            $table []= $row;
+        }
+		$return = $table;
+	} else {
+        $return = false;
+    }
+	return $return;
+}
 ?>

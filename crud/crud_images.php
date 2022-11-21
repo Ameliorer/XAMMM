@@ -60,4 +60,19 @@ function SelectImage($conn, $name){
     }
 	return $return;
 }
+
+function SelectAllImages($conn){
+	$query = "SELECT * FROM `images`";
+    $table = [];
+	if($response = mysqli_query($conn, $query)){
+        while($row = mysqli_fetch_assoc($response)){
+            $table []= $row;
+        }
+		$return = $table;
+	} else {
+        $return = false;
+    }
+	return $return;
+}
+
 ?>

@@ -67,4 +67,19 @@ function SelectBlog($conn, $id){
     }
     return $return;
 }
+
+function SelectAllBlog($conn, $id){
+    $query="SELECT * FROM `blog` WHERE `id`='$id' " ;
+    $table = [];
+    if($response=mysqli_query($conn, $query)){
+        while($row=mysqli_fetch_assoc($response)){
+            $table[]=$row;
+        }
+        $return = $table;
+    } else {
+        $return=false;
+    }
+    return $return;
+}
+
 ?>

@@ -64,5 +64,18 @@ function SelectReservation($conn,$userId){
 	return $return;
 }
 
+function SelectAllReservation($conn,$userId){
+    $sql="SELECT * FROM `reservations` WHERE `userId`='$userId'" ;
+    $table = [];
+	if($response=mysqli_query($conn, $sql)){
+		while($row=mysqli_fetch_assoc($response)){
+            $table []= $row;
+        }
+        $return = $table;
+	} else {
+        $return=false;
+    }
+	return $return;
+}
 
 ?>

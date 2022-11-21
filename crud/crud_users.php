@@ -79,4 +79,18 @@ function SelectUser($conn, $id){
     }
     return $return;
 }
+
+function SelectAllUser($conn, $id){
+    $query="SELECT * FROM `users` WHERE `id`='$id' " ;
+    $table = [];
+    if($response=mysqli_query($conn, $query)){
+        while($row=mysqli_fetch_assoc($response)){
+            $table[]=$row;
+        }
+        $return = $table;
+    } else {
+        $return=false;
+    }
+    return $return;
+}
 ?>
