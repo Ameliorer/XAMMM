@@ -1,2 +1,2 @@
 .DS_Store
-db_connect.php
+db/db_connect.php
