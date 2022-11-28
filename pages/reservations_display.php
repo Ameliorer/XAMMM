@@ -20,7 +20,7 @@ echo($html_accueil);
     <main>
         <form action="" method="post" name="reservationForm" id="reservationForm" class="form">
             <label for="date">Date de la réservation : </label>
-            <input type="date" placeholder="date" name="date" id="date" value=<?php date("Y-m-d")?>/>
+            <input type="date" placeholder="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>"/>
 
             <label for="reservationSubmit">valider : </label>
             <input type="submit" name="reservationSubmit" id="reservationSubmit">
