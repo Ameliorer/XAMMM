@@ -66,6 +66,6 @@ echo($html_header);
 //–––––––––––––––
 
 //Include du footer
-include("pages/footer_index.php");
+include("pages/footer.php");
 
 ?>
