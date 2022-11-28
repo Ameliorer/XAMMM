@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: blue;
+    display: flex;
+}
+
+.headerMenu {
+    background-color: red;
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
