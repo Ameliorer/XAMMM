@@ -18,8 +18,7 @@ echo($html_acceuil);
 
 <h1> Le saut en Tandem</h1>
 
-<p>Le saut en Parachute Tandem est la façon la plus facile est sûre de découvrir la chute libre ; le rêve d’Icare ! 
-C’est une expérience incomparable avec tout ce que vous auriez pu  essayé avant ! Accroché à un moniteur hyper expérimenté vous avez juste à profiter de cette sensation autant intense qu’inoubliable !
+<p>Le saut en Parachute Tandem est la façon la plus facile est sûre de découvrir la chute libre ; le rêve d’Icare ! C’est une expérience incomparable avec tout ce que vous auriez pu  essayé avant ! Accroché à un moniteur hyper expérimenté vous avez juste à profiter de cette sensation autant intense qu’inoubliable !
 </p>
 
 

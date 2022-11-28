@@ -4,6 +4,8 @@
 
 //Include du head
 include("head.php");
+include("../db/db_connect.php");
+include("../crud/crud_products.php");
 
 ?>
 
@@ -14,6 +16,16 @@ include("head.php");
 $html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
 echo($html_acceuil);
 ?>
+
+<header>
+    <h1>Nos prestations / Offres</h1>
+    <p>Retrouver ci-dessous nos prestations et offres ! </p>
+</header>
+<main id='main_products'>
+    <div id='aff_products'></div>
+</main>
+<script src="../scripts/axios.min.js"></script>
+<script src="../scripts/products.js" defer></script>
 
 
 <?php 

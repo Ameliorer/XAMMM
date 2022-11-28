@@ -32,6 +32,7 @@ $html_header .= "<li><a href='pages/panier.php'>Panier</a></li>\n";
 $html_header .= "<li><a href='pages/confirmation_commande.php'>Confirmation de commande</a></li>\n";
 $html_header .= "<li><a href='pages/actualites.php'>Actualites</a></li>\n";
 $html_header .= "<li><a href='pages/legal_notice.php'>Mentions Légales</a></li>\n";
+$html_header .= "<li><a href='pages/place_img_in_db.php'>➜➜➜ Place Images [admin]</a></li>\n";
 $html_header .= "<li><a href='pages/CGV.php'>Conditions Générales de Vente</a></li>\n<br>";
 
 $html_header .= "<li><a href='pages/test_crud.php'>TEST</a></li>\n";
