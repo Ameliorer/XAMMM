@@ -56,12 +56,12 @@ function DeleteReservation($conn,$userId){
 */
 function SelectReservation($conn,$userId){
     $sql="SELECT * FROM `reservations` WHERE `userId`='$userId'" ;
-    if($response=mysqli_query($conn, $sql)){
-        $return=mysqli_fetch_assoc($response);
-    } else {
+	if($response=mysqli_query($conn, $sql)){
+		$return=mysqli_fetch_assoc($response);
+	} else {
         $return=false;
     }
-    return $return;
+	return $return;
 }
 
 function SelectAllReservation($conn){
