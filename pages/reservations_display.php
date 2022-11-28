@@ -26,6 +26,7 @@ echo($html_accueil);
             <input type="submit" name="reservationSubmit" id="reservationSubmit">
         </form>
     </main>
+    <div id="reserv"></div>
 
 <?php
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
