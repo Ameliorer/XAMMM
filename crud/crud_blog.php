@@ -45,7 +45,7 @@ DeleteBlog($conn, $id) -> $return
     $return : boolean := Indicate the status of the query
 */
 function DeleteBlog($conn, $id){
-    $query="DELETE FROM `blog` WHERE `id`='$id' " ;
+    $query="DELETE FROM `blog` WHERE `id` = '$id' " ;
     $return=mysqli_query($conn, $query) ;
     return $return;
 }

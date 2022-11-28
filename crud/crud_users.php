@@ -80,7 +80,7 @@ function SelectUser($conn, $id){
     return $return;
 }
 
-function SelectAllUser($conn, $id){
+function SelectAllUser($conn){
     $query="SELECT * FROM `users`" ;
     $table = [];
     if($response=mysqli_query($conn, $query)){

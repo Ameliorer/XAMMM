@@ -1,0 +1,68 @@
+/* ----- General style ----- */
+
+.div_actions {
+   background-color: #d3d3d3;
+   margin: 1.05em 0em;
+}
+
+h2 {
+   padding: 0.2em;
+}
+
+h2:hover {
+   cursor: pointer;
+}
+
+.div_actions h3 {
+   background-color: rgba(77, 208, 225, 0.4);
+   padding: 0.2em;
+   transition: 0.5s;
+}
+
+.div_actions h3:hover {
+   cursor: pointer;
+   transform: scale(1.01);
+   font-size: 1.3em;
+}
+
+.content {
+   margin: 0.5em 0.5em;
+   display: none;
+}
+.content.active {
+   display: block;
+}
+
+.add_action form,
+.update_action form,
+.delete_action form,
+.select_action form,
+.selectAll_action form {
+   padding: 0.5em 0.2em;
+   margin: 0.2em 0em;
+   display: none;
+}
+
+.form.active {
+   display: block;
+}
+
+.add_action {
+   background-color: rgba(203, 67, 53, 0.5);
+}
+
+.update_action {
+   background-color: rgba(118, 68, 138, 0.5);
+}
+
+.delete_action {
+   background-color: rgba(40, 116, 166, 0.5);
+}
+
+.select_action {
+   background-color: rgba(17, 122, 101, 0.5);
+}
+
+.selectAll_action {
+   background-color: rgba(183, 149, 11, 0.5);
+}

@@ -52,7 +52,7 @@ SelectImage($conn, $name) -> $return
     $return : array | boolean | null := Contains the response or indicate a connection error
 */
 function SelectImage($conn, $name){
-	$query = "SELECT * FROM `images` WHERE `name`=$name";
+	$query = "SELECT * FROM `images` WHERE `name`='$name'";
 	if($response = mysqli_query($conn, $query)){
 		$return = mysqli_fetch_assoc($response);
 	} else {
