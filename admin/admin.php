@@ -14,12 +14,14 @@ include("../crud/crud_opinion.php");
 include("../crud/crud_products.php");
 include("../crud/crud_reservations.php");
 include("../crud/crud_users.php");
+
+//Images 
+
 ?>
+
 
 <?php
 //----- BLOG -----
-var_dump($_POST);
-echo("<br><br>");
 if(isset($_POST["blogSubmit1"])){
     if(isset($_POST["blogTitle"]) && isset($_POST["blogContent"]) && isset($_POST["blogDate"])){
         $blogTitle = $_POST["blogTitle"];
@@ -142,32 +144,20 @@ if(isset($_POST["codesSubmit5"])){
 
 //----- IMAGES -----
 if(isset($_POST["imagesSubmit1"])){
-    if(isset($_POST["chooseImgs"]) && isset($_POST["imagesIdBlog"])){
+    if(isset($_POST["imagesIdBlog"])){
         $imagesIdBlog = $_POST["imagesIdBlog"];
-        //Let's retrieve the images of the database
-        $imgsInDB = SelectAllImages($conn);
-
-        //Treatment of the image :
-        $imgNamePost = $_POST['chooseImgs'];
-
-        $newImgName = createNewNameImg($imgNamePost);
-        //$newImgName = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789+!§?&é(-è_çà)=}]@|[{#£¤*µù%<>";
-
-        //If the name already exist in the DB then we change the name
-        if(img_is_existing($newImgName,$imgsInDB)){
-            $newImgName = createNewNameImg($newImgName);
-            echo("IMG ALREADY EXIST");
-        }
-        else if (CreateImage($conn, $newImgName, 1)){
-            echo("<br>IMAGE CREE");
-        }
-        else{
-            echo("<br>");
-            echo($newImgName);
-            echo("<br>");
-            echo(count($imgsInDB)+1);
-            echo("<br>");
+        include("../lib/upload.php");
+        if($imageName == ''){
             echo("<br>IMAGE NON CREE DANS LA BASE");
+        }
+        else{ 
+            if (CreateImage($conn, $imageName, $imagesIdBlog)){
+                echo("<br>IMAGE CREE");
+            }
+            else{
+            echo("<br>IMAGE NON CREE DANS LA BASE");
+        
+            }
         }
     }
 }
@@ -208,13 +198,7 @@ if(isset($_POST["imagesSubmit4"])){
     
 }
 if(isset($_POST["imagesSubmit5"])){
-    if($image = SelectAllImages($conn)){
-        echo("All image's name are :");
-        var_dump($image);
-    }
-    else{
-        echo("Selection FAILED");
-    }
+    
 }
 
 
@@ -883,15 +867,18 @@ if(isset($_POST["utilisateurSubmit5"])){
         <div id="content-images_actions" class="content">
             <h3>Ajouter une image</h3>
             <div class="add_action">
-                <form action="" method="post" name="imagesForm" class="form">
-                    <label for="chooseImgs">Selectionner une image :</label>
-                    <input name='chooseImgs' type='file' multiple>
-                    
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data" name="imagesForm" class="form">
+                    <label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_SIZE; ?>" />
+                    <input name="fichier" type="file" id="fichier_a_uploader" />
+                    <p>Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés .</p>
+
                     <label for="imagesIdBlog">Id du Blog de l'image :</label>
                     <input type="number" placeholder="id blog" name="imagesIdBlog"/>
 
                     <label for="imagesSubmit">Ajouter l'image :</label>
-                    <input type="submit" name="imagesSubmit1">
+                    <input type="submit" name="imagesSubmit1" />
+                    
                 </form>
             </div>
             <h3>Modifier une image</h3>
@@ -929,10 +916,10 @@ if(isset($_POST["utilisateurSubmit5"])){
             </div>
             <h3>Selectionner toutes les images</h3>
             <div class="selectAll_action">
-                <form action="" method="post" name="imagesForm" class="form">
-                    <label for="imagesSubmit">Afficher tous les noms des images :</label>
-                    <input type="submit" name="imagesSubmit5">
-                </form>
+                <div class="form">
+                    <span for="imagesSubmit">Afficher tous les noms des images :</span>
+                    <button id="imagesSubmit5">Afficher</button>
+                </div>
             </div> 
         </div>
     </div>
@@ -1234,15 +1221,20 @@ if(isset($_POST["utilisateurSubmit5"])){
         </div>
     </div>
 </main>
+<div class="aff_image"></div>
 
+<script src="../scripts/axios.min.js"></script>
 <script src="../scripts/admin.js" defer></script>
-<script>
+<!-- <script>
     let forms = document.querySelectorAll(".form");
 
-    for(let form of forms){
-        form.reset();
-    }
-</script>
+    for(let i = 0; i < forms.length; i++){
+        for(let j = 0; j < forms[i].length; j++){
+            console.log(forms[i].elements[j].value);
+        }
+
+    }   
+</script> -->
 
 <?php 
 

@@ -14,7 +14,7 @@ $html_head .= "<meta charset='utf-8' />\n";
 $html_head .= "<title>$title</title>\n";
 $html_head .= "<link rel='stylesheet' href='../styles/style.css' />\n";
 
-if(stripos($_SERVER["REQUEST_URI"],'admin.php')){
+if(stripos($_SERVER["REQUEST_URI"],'index_admin.php')){
     $html_head .= "<link rel='stylesheet' href='../styles/admin.css' />\n";
 }
 

@@ -104,3 +104,48 @@ for (div of divs_actions) {
       }
    });
 }
+
+//Show images
+let divImages = document.querySelector('.aff_image');
+let btnShowAllImages = document.querySelector('#imagesSubmit5');
+
+btnShowAllImages.onclick = function () {
+   if (btnShowAllImages.innerText == 'Afficher') {
+      divImages.classList.toggle('active');
+      btnShowAllImages.innerText = 'Cacher';
+      aff_imgs();
+   } else {
+      btnShowAllImages.innerText = 'Afficher';
+      divImages.innerHTML = '';
+      divImages.classList.toggle('active');
+   }
+};
+
+//Function to retrieve all the images from the database.
+//Images will be show in a table.
+function aff_imgs() {
+   //Retrieve the image
+   axios.get('../lib/read_imgs.php').then((response) => {
+      let DATA = response.data;
+
+      //We create the table
+      let tr = document.createElement('tr');
+      //For each image of the database...
+      for (image of DATA) {
+         //... we add a line to place a image in
+         let td = document.createElement('td');
+         td.className = 'image';
+         tr.appendChild(td);
+
+         let img = document.createElement('img');
+         img.src = '../images/' + image['name'];
+         td.appendChild(img);
+
+         let span = document.createElement('span');
+         span.innerText = 'Blog associé : ' + image['idblog'];
+         td.appendChild(span);
+      }
+
+      divImages.appendChild(tr);
+   });
+}

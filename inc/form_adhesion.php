@@ -16,10 +16,10 @@ echo $html_head;
 
     if(isset($_SESSION['id'])){
         if($_SESSION['admin'] == 0){
-            header('Location: ../user/index.php');
+            header('Location: ../user/index_user.php');
         }
         else{
-            header('Location: ../admin/index.php');
+            header('Location: ../admin/index_admin.php');
         }
     }
     else{
