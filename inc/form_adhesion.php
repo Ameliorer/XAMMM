@@ -13,7 +13,6 @@ echo $html_head;
     include('verif_val.php');
     include('../db/db_connect.php');
     include('../crud/crud_users.php');
-    include('redirection_acreditation.php');
 
     if(isset($_SESSION['id'])){
         if($_SESSION['admin'] == 0){
