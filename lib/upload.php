@@ -67,40 +67,49 @@ if(!empty($_POST))
             if(move_uploaded_file($_FILES['fichier']['tmp_name'], TARGET.$imageName))
             {
               $message = 'Upload réussi !';
+              echo($message);
             }
             else
             {
               // Otherwise, a system error is displayed.
               $message = 'Problème lors de l\'upload !';
+              echo($message);
             }
           }
           else
           {
             $message = 'Une erreur interne a empêché l\'uplaod de l\'image';
+            echo($message);
           }
         }
         else
         {
           // Otherwise error on the dimensions and size of the image
           $message = 'Erreur dans les dimensions de l\'image !';
+          echo($message);
         }
       }
       else
       {
         // Otherwise error on the type of the image
         $message = 'Le fichier à uploader n\'est pas une image !';
+        echo($message);
       }
     }
     else
     {
       // Otherwise an error is displayed for the extension
       $message = 'L\'extension du fichier est incorrecte !';
+      echo($message);
     }
   }
   else
   {
     // Otherwise on displays an error for the empty field
     $message = 'Veuillez remplir le formulaire svp !';
+    echo($message);
   }
 }
+
+
 ?>

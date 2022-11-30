@@ -15,22 +15,22 @@
 <body>
 <section>
 
-            <div class="container">
-                <div class="login">
-                    <h1>Login</h1>
-                    <form action="form_connection.php" method="post">
+    <div class="container">
+        <div class="login">
+            <h1>Login</h1>
+            <form action="form_connection.php" method="post">
 
-                    <label for="utilisateurMail">Mail de l'utilisateur : </label>
-                    <input type="mail" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
+            <label for="utilisateurMail">Mail de l'utilisateur : </label>
+            <input type="mail" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
 
-                    <label for="utilisateurPassword">mot de passe de l'utilisateur : </label>
-                    <input type="password" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword"/>
-                    
-                    <input type="submit" value="Login">
-                    </form>
-                </div>
-            </div>
-            <p> Si vous n'avez pas encore de compte inscrivez vous ici : <a href="../inc/form_adhesion.php">Inscription</a></p>
+            <label for="utilisateurPassword">mot de passe de l'utilisateur : </label>
+            <input type="password" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword" autocomplete="off"/>
+            
+            <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+    <p> Si vous n'avez pas encore de compte inscrivez vous ici : <a href="../inc/form_adhesion.php">Inscription</a></p>
 
 <?php
 // if a connexion id is set redirect to rediracion by aceditation
