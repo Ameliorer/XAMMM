@@ -1,13 +1,13 @@
 <?php
-
-// Default titlesession_start();
 session_start();
 
+// Default title
 if(!(isset($title))){
     $title = "Diagonale Chute Libre";
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
