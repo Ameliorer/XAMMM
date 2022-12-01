@@ -12,6 +12,6 @@ function toggleShowMenu(target){
 
 for (let headerMenu of headerMenus) {
     toggleShowMenu(headerMenu);
-    headerMenu.addEventListener('mouseover',toggleShowMenu(headerMenu));
-    headerMenu.addEventListener('mouseleave',toggleShowMenu(headerMenu));
+    headerMenu.addEventListener('mouseenter',e => toggleShowMenu(e.target));
+    headerMenu.addEventListener('mouseleave',e => toggleShowMenu(e.target));
 }
