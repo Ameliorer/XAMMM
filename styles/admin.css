@@ -1,0 +1,116 @@
+/* ----- General style ----- */
+
+.div_actions {
+   background-color: #d3d3d3;
+   margin: 1.05em 0em;
+}
+
+h2 {
+   padding: 0.2em;
+}
+
+h2:hover {
+   cursor: pointer;
+}
+
+.div_actions h3 {
+   background-color: rgba(77, 208, 225, 0.4);
+   padding: 0.2em;
+   transition: 0.5s;
+}
+
+.div_actions h3:hover {
+   cursor: pointer;
+   transform: scale(1.01);
+   font-size: 1.3em;
+}
+
+.content {
+   margin: 0.5em 0.5em;
+   display: none;
+}
+.content.active {
+   display: block;
+}
+
+.add_action .form,
+.update_action .form,
+.delete_action .form,
+.select_action .form,
+.selectAll_action .form {
+   padding: 0.5em 0.2em;
+   margin: 0.2em 0em;
+   display: none;
+}
+
+.form.active {
+   display: block;
+}
+
+.add_action {
+   background-color: rgba(203, 67, 53, 0.5);
+}
+
+.update_action {
+   background-color: rgba(118, 68, 138, 0.5);
+}
+
+.delete_action {
+   background-color: rgba(40, 116, 166, 0.5);
+}
+
+.select_action {
+   background-color: rgba(17, 122, 101, 0.5);
+}
+
+.selectAll_action {
+   background-color: rgba(183, 149, 11, 0.5);
+}
+
+/* Style d'image */
+
+.aff_image {
+   display: none;
+}
+
+.aff_image.active {
+   display: block;
+}
+
+.aff_image.active tr {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.image {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.image img {
+   width: 20%;
+   border-radius: 0.3em;
+   background: #e0e0e0;
+   box-shadow: 15px 15px 29px #989898, -15px -15px 29px #ffffff;
+   min-width: 300px;
+   min-height: 300px;
+   max-width: 300px;
+   max-height: 300px;
+   transition: all 1s;
+}
+
+.image img:hover {
+   transform: scale(1.3);
+}
+.image span {
+   color: white;
+   text-decoration: bold;
+   font-size: 1.4em;
+   padding: 0em 0.5em 0.5em 0.5em;
+   background: #000066;
+   border-radius: 0px 0px 10px 10px;
+   box-shadow: inset 13px 13px 26px #acacac, inset -13px -13px 26px #ffffff;
+}

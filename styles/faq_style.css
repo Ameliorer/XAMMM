@@ -1,0 +1,21 @@
+body{
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.question{
+    background-color: rgb(27, 140, 211);
+}
+
+.title{
+    background-color: rgb(16, 102, 155);
+
+}
+
+.response{
+    background-color: rgb(16, 54, 77);
+
+}

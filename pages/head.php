@@ -1,6 +1,8 @@
 <?php
 
-// Default title
+// Default titlesession_start();
+session_start();
+
 if(!(isset($title))){
     $title = "Diagonale Chute Libre";
 }
