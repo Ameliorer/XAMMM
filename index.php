@@ -3,63 +3,7 @@
 //–––––––––––––––
 
 //Include du head
-<<<<<<< HEAD
 include("pages/head.php");
-=======
-include("pages/head_index.php");
-
-?>
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-
-//Header de la page index page
-$html_header = "<header id='header_index'>\n";
-
-$html_header .= "<div id='logo???'>\n";
-$html_header .= "</div>\n";
-
-$html_header .= "<span> MENU SIMPLE POUR POUVOIR CO LES PAGES AU CLIQUE : A MODFIER</span>\n";
-$html_header .= "<div id='menu_index'>\n";
-$html_header .= "<ul id='menu'>\n";
-
-$html_header .= "<li><a href='pages/parachutisme_histoire.php'>L'histoire du parachutisme</a></li>\n";
-$html_header .= "<li><a href='pages/processus_de_saut.php'>Processus de saut</a></li>\n";
-$html_header .= "<li><a href='pages/faq_tandem.php'>FAQ Tandem</a></li>\n";
-$html_header .= "<li><a href='pages/reseaux.php'>Nos réseaux</a></li>\n";
-$html_header .= "<li><a href='pages/promotion.php'>Nos promotions actuels</a></li>\n";
-$html_header .= "<li><a href='pages/prestations.php'>Prestations / Offres</a></li>\n";
-$html_header .= "<li><a href='pages/avis_clients.php'>Avis clients</a></li>\n";
-$html_header .= "<li><a href='pages/panier.php'>Panier</a></li>\n";
-$html_header .= "<li><a href='pages/confirmation_commande.php'>Confirmation de commande</a></li>\n";
-$html_header .= "<li><a href='pages/actualites.php'>Actualites</a></li>\n";
-$html_header .= "<li><a href='pages/legal_notice.php'>Mentions Légales</a></li>\n";
-
-$html_header .= "<li><a href='pages/CGV.php'>Conditions Générales de Vente</a></li>\n<br>";
-<<<<<<< HEAD
-$html_header .= "<li><a href='inc/form_adhesion.php'>Adhesion</a></li>\n<br>";
-$html_header .= "<li><a href='inc/form_connection.php'>Connexion</a></li>\n<br>";
-$html_header .= "<li><a href='inc/deconnection.php'>Deconnexion</a></li>\n<br>";
-$html_header .= "<li><a href='admin/index.php'>Espace admin</a></li>\n<br>";
-$html_header .= "<li><a href='user/index.php'>Espace user</a></li>\n<br>";
-
-=======
-$html_header .= "<li><a href='inc/form_adhesion.php'>Adhesion</a></li>\n";
-$html_header .= "<li><a href='inc/form_connection.php'>Connexion</a></li>\n";
-$html_header .= "<li><a href='inc/deconnection.php'>Deconnexion</a></li>\n";
-$html_header .= "<li><a href='admin/index_admin.php'>Espace admin</a></li>\n";
-$html_header .= "<li><a href='user/index_user.php'>Espace user</a></li>\n";
->>>>>>> 6b0ed94ed3a2a9fdace654348ce0c87bfab05150
-
-
-$html_header .= "</ul>\n";
-$html_header .= "</div>\n";
-
-$html_header .= "</header>\n";
-
-echo($html_header);
->>>>>>> main
 
 ?>
 
