@@ -12,8 +12,8 @@
 
     $return : boolean := Indicate the status of the query
 */ 
-function CreateReservation($conn,$userId,$userHeight,$userAge,$productId,$date){
-    $sql = "INSERT INTO `reservations` (`userId`, `userHeight`, `userAge`, `productId`,`date`) VALUES ('$userId', '$userHeight', '$userAge', '$productId', '$date')";
+function CreateReservation($conn,$userId,$userWeight,$userHeight,$userAge,$productId,$date){
+    $sql = "INSERT INTO `reservations` (`userId`,`userWeight`,`userHeight`, `userAge`, `productId`,`date`) VALUES ('$userId', '$userWeight','$userHeight', '$userAge', '$productId', '$date')";
     $return = mysqli_query($conn, $sql);
 
     return $return;
@@ -30,8 +30,8 @@ function CreateReservation($conn,$userId,$userHeight,$userAge,$productId,$date){
 
     $return : boolean := Indicate the status of the query
 */
-function UpdateReservation($conn,$userId,$userHeight,$userAge,$productId,$date){
-    $sql = "UPDATE `reservations` SET `userHeight` ='$userHeight', `userAge` ='$userAge', `productId` = $productId, `date` ='$date' WHERE `userId` = '$userId'";
+function UpdateReservation($conn,$userId,$userWeight,$userHeight,$userAge,$productId,$date){
+    $sql = "UPDATE `reservations` SET `userWeight`='$userWeight', `userHeight` ='$userHeight', `userAge` ='$userAge', `productId` = $productId, `date` ='$date' WHERE `userId` = '$userId'";
     $return = mysqli_query($conn, $sql);
 
     return $return;
@@ -56,12 +56,12 @@ function DeleteReservation($conn,$userId){
 */
 function SelectReservation($conn,$userId){
     $sql="SELECT * FROM `reservations` WHERE `userId`='$userId'" ;
-    if($response=mysqli_query($conn, $sql)){
-        $return=mysqli_fetch_assoc($response);
-    } else {
+	if($response=mysqli_query($conn, $sql)){
+		$return=mysqli_fetch_assoc($response);
+	} else {
         $return=false;
     }
-    return $return;
+	return $return;
 }
 
 function SelectAllReservation($conn){

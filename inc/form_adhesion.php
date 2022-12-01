@@ -1,3 +1,4 @@
+
 <?php
 
 $html_head = "<!DOCTYPE html>\n";
@@ -13,14 +14,13 @@ echo $html_head;
     include('verif_val.php');
     include('../db/db_connect.php');
     include('../crud/crud_users.php');
-    include('redirection_acreditation.php');
 
     if(isset($_SESSION['id'])){
         if($_SESSION['admin'] == 0){
-            header('Location: ../user/index.php');//+++++++
+            header('Location: ../user/index_user.php');
         }
         else{
-            header('Location: ../admin/index.php');
+            header('Location: ../admin/index_admin.php');
         }
     }
     else{
