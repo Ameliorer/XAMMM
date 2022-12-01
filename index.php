@@ -34,6 +34,12 @@ $html_header .= "<li><a href='pages/actualites.php'>Actualites</a></li>\n";
 $html_header .= "<li><a href='pages/legal_notice.php'>Mentions Légales</a></li>\n";
 $html_header .= "<li><a href='pages/place_img_in_db.php'>➜➜➜ Place Images [admin]</a></li>\n";
 $html_header .= "<li><a href='pages/CGV.php'>Conditions Générales de Vente</a></li>\n<br>";
+$html_header .= "<li><a href='inc/form_adhesion.php'>Adhesion</a></li>\n<br>";
+$html_header .= "<li><a href='inc/form_connection.php'>Connexion</a></li>\n<br>";
+$html_header .= "<li><a href='inc/deconnection.php'>Deconnexion</a></li>\n<br>";
+$html_header .= "<li><a href='admin/index.php'>Espace admin</a></li>\n<br>";
+$html_header .= "<li><a href='user/index.php'>Espace user</a></li>\n<br>";
+
 
 $html_header .= "<li><a href='pages/test_crud.php'>TEST</a></li>\n";
 
