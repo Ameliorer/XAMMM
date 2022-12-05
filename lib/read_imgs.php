@@ -12,7 +12,7 @@ if($itsForBlog){
         echo json_encode($imagesBlog);
     }
     else{
-        echo("Selection of the images for the blog | $idblog | FAILED");
+        echo("Selection of the images for the blog | $idBlog | FAILED");
     }
 }
 else{

@@ -744,7 +744,7 @@ if (isset($_POST["blogSubmit4"])){
     }
 }
 if (isset($_POST["blogSubmit5"])){
-    if($blog = SelectAllBlog($conn, $blogId)){
+    if($blog = SelectAllBlog($conn)){
         $fieldsOfBlog = ["Numéro d'identification","Titre","Contenue","Date du post"];
         showTable($blog,true,$fieldsOfBlog);
     }
