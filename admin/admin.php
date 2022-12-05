@@ -15,7 +15,6 @@ include("../crud/crud_reservations.php");
 include("../crud/crud_users.php");
 
 //Fonctions of LIB
-include("../lib/functions_img.php");
 include("../lib/showElements_admin.php");
 
 ?>

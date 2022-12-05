@@ -1,3 +1,4 @@
+
 <?php
     //permet de récupérer et annalyser les paramètres de session.
     session_start();

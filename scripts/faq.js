@@ -36,7 +36,6 @@ function aff_question_response(DATA, id) {
 
    //Append the question in the FAQ
    FAQContent.appendChild(div);
-   console.log(div);
 }
 
 function recupTitle(DATA, id) {
