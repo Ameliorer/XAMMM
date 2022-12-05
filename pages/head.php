@@ -16,6 +16,16 @@ if(!(isset($title))){
     echo("<title>$title</title>");
     ?>
     <link rel='stylesheet' href='/~XAMMM/styles/style.css' />
+<?php 
+
+    if(stripos($_SERVER["REQUEST_URI"],'index_admin.php')){
+        echo("<link rel='stylesheet' href='/~XAMMM/styles/admin.css' />\n");
+    }
+    if(stripos($_SERVER["REQUEST_URI"],'index_user.php')){
+        echo("<link rel='stylesheet' href='/~XAMMM/styles/user.css' />\n");
+    }
+
+?>
     <script src='/~XAMMM/scripts/main.js' defer></script>
 </head>
 <body>
@@ -36,11 +46,16 @@ if(!(isset($title))){
                     <li><a href='/~XAMMM/pages/panier.php'>Panier</a></li>
                     <li><a href='/~XAMMM/pages/confirmation_commande.php'>Confirmation de commande</a></li>
                     <li><a href='/~XAMMM/pages/actualites.php'>Actualites</a></li>
-                    <li><a href='/~XAMMM/pages/legal_notice.php'>Mentions Légales</a></li>
-                    <li><a href='/~XAMMM/pages/place_img_in_db.php'>➜➜➜ Place Images [admin]</a></li>
-                    <li><a href='/~XAMMM/pages/CGV.php'>Conditions Générales de Vente</a></li>
+                    <li><a href='/~XAMMM/pages/legal_notice.php'>Mentions Légales</a></li><br>
 
-                    <li><a href='/~XAMMM/pages/test_crud.php'>TEST</a></li>
+                    <li><a href='/~XAMMM/pages/CGV.php'>Conditions Générales de Vente</a></li><br>
+
+                    <li><a href='/~XAMMM/inc/form_adhesion.php'>Adhesion</a></li>
+                    <li><a href='/~XAMMM/inc/form_connection.php'>Connexion</a></li>
+                    <li><a href='/~XAMMM/inc/deconnection.php'>Deconnexion</a></li>
+                    <li><a href='/~XAMMM/admin/index_admin.php'>Espace admin</a></li>
+                    <li><a href='/~XAMMM/user/index_user.php'>Espace user</a></li>
+
                 </ul>
             </ul>
         </ul>

@@ -1,0 +1,8 @@
+.modifInformations {
+   display: none;
+}
+
+.modifInformations.active {
+   display: flex;
+   flex-direction: column;
+}
