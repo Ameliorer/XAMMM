@@ -8,6 +8,8 @@ $html_head .= "<html>\n<head>\n";
 $html_head .= "<meta charset='utf-8' />\n";
 $html_head .= "<title>Titre a definir</title>\n";
 $html_head .= "<link rel='stylesheet' href='styles/style.css' />\n";
+$html_head .= "<link rel='stylesheet' type='text/css' href='slick/slick.css'/>\n";
+$html_head .= "<link rel='stylesheet' type='text/css' href='slick/slick-theme.css'/>\n";
 $html_head .= "<script src='scripts/main.js'></script>\n";
 $html_head .= "</head>\n";
 $html_head .= "<body>\n";
