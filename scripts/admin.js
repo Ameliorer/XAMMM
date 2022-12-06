@@ -20,92 +20,53 @@ let h3Product = document.querySelectorAll('#content-products_actions h3');
 let h3Reservation = document.querySelectorAll('#content-reservations_actions h3');
 let h3User = document.querySelectorAll('#content-user_actions h3');
 
+let tabForms = [
+   forms_blog,
+   forms_opinion,
+   forms_code,
+   forms_discount,
+   forms_image,
+   forms_product,
+   forms_reservation,
+   forms_user,
+];
+let tabH3 = [
+   h3Blog,
+   h3Opinion,
+   h3Code,
+   h3Discount,
+   h3Image,
+   h3Product,
+   h3Reservation,
+   h3User,
+];
+
 let listh2 = document.querySelectorAll('.div_actions h2');
-console.log(listh2);
 
 for (h2 of listh2) {
    h2.addEventListener('click', function (e) {
       for (let i = 0; i < listh2.length; i++) {
          if (e.target.innerText == listh2[i].innerText) {
             divs_actions[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Blog.length; i++) {
-         if (e.target.innerText == h3Blog[i].innerText) {
-            forms_blog[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Opinion.length; i++) {
-         if (e.target.innerText == h3Opinion[i].innerText) {
-            forms_opinion[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Code.length; i++) {
-         if (e.target.innerText == h3Code[i].innerText) {
-            forms_code[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Discount.length; i++) {
-         if (e.target.innerText == h3Discount[i].innerText) {
-            forms_discount[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Image.length; i++) {
-         if (e.target.innerText == h3Image[i].innerText) {
-            forms_image[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Product.length; i++) {
-         if (e.target.innerText == h3Product[i].innerText) {
-            forms_product[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3Reservation.length; i++) {
-         if (e.target.innerText == h3Reservation[i].innerText) {
-            forms_reservation[i].classList.toggle('active');
-         }
-      }
-   });
-}
-for (div of divs_actions) {
-   div.addEventListener('click', function (e) {
-      for (let i = 0; i < h3User.length; i++) {
-         if (e.target.innerText == h3User[i].innerText) {
-            forms_user[i].classList.toggle('active');
+            form_list = tabForms[i];
+            linkedH3_list = tabH3[i];
+            browseDiv(divs_actions[i], form_list, linkedH3_list);
          }
       }
    });
 }
 
-//Show images
+function browseDiv(div, form_list, linkedH3_list) {
+   div.addEventListener('click', function (e) {
+      for (let i = 0; i < linkedH3_list.length; i++) {
+         if (e.target.innerText === linkedH3_list[i].innerText) {
+            form_list[i].classList.toggle('active');
+         }
+      }
+   });
+}
+
+//---------- Show all images ----------
 let divImages = document.querySelector('.aff_image');
 let btnShowAllImages = document.querySelector('#imagesSubmit5');
 
@@ -125,7 +86,7 @@ btnShowAllImages.onclick = function () {
 //Images will be show in a table.
 function aff_imgs() {
    //Retrieve the image
-   axios.get('../lib/read_imgs.php').then((response) => {
+   axios.get('../lib/read_imgs.php?itsForBlog=0').then((response) => {
       let DATA = response.data;
 
       //We create the table
@@ -147,5 +108,78 @@ function aff_imgs() {
       }
 
       divImages.appendChild(tr);
+   });
+}
+
+//---------- Show images of a blog ----------
+let divImagesBlog = document.querySelector('.aff_imageBlog');
+let btnShowImagesBlog = document.querySelector('#imagesSubmit4');
+
+btnShowImagesBlog.onclick = function () {
+   if (btnShowImagesBlog.innerText == 'Afficher') {
+      divImagesBlog.classList.toggle('active');
+      btnShowImagesBlog.innerText = 'Cacher';
+      let idBlogInput = document.querySelector('#idBlog');
+      let idBlog = idBlogInput.value;
+      if (idBlog != '') {
+         aff_imgs_blog(idBlog);
+      } else {
+         alert("Aucun blog n'a été indiqué !");
+      }
+   } else {
+      btnShowImagesBlog.innerText = 'Afficher';
+      divImagesBlog.innerHTML = '';
+      divImagesBlog.classList.toggle('active');
+   }
+};
+
+//Function to retrieve all the images of a blog from the database
+function aff_imgs_blog(idBlog) {
+   //Retrieve the images link with the blog
+   axios.get('../lib/read_imgs.php?itsForBlog=1&idBlog=' + idBlog).then((response) => {
+      let DATA = response.data;
+
+      let images = DATA;
+      let cpt = 1;
+      tabImages = {};
+
+      //We create the table
+      let tr = document.createElement('tr');
+      //For each image of the database...
+      for (image of DATA) {
+         //... we add a line to place a image in
+         let td = document.createElement('td');
+         td.className = 'image';
+         tr.appendChild(td);
+
+         let img = document.createElement('img');
+         img.src = '../images/' + image['name'];
+         td.appendChild(img);
+
+         let span = document.createElement('span');
+         span.innerText = 'Blog associé : ' + image['idblog'];
+         td.appendChild(span);
+
+         let btnSupp = document.createElement('button');
+         btnSupp.innerText = "Supprimer l'image ? (IRREVERSIBLE) " + cpt;
+         btnSupp.addEventListener('click', function (e) {
+            for (let i = 1; i < cpt + 1; i++) {
+               if (btnSupp.innerText.includes(i.toString())) {
+                  let imageName = tabImages[i];
+                  axios
+                     .get('../lib/delete_imgs.php?imageName=' + imageName)
+                     .then(function (response) {
+                        alert('Image supprimée');
+                     });
+               }
+            }
+         });
+         td.appendChild(btnSupp);
+
+         tabImages[cpt] = image['name'];
+         cpt++;
+      }
+
+      divImagesBlog.appendChild(tr);
    });
 }

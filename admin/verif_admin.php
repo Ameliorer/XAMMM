@@ -1,3 +1,4 @@
+
 <?php
     //permet de récupérer et annalyser les paramètres de session.
     session_start();
@@ -16,4 +17,3 @@
     else{
         header('Location: ../inc/form_connection.php');
     }
-?>

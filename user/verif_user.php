@@ -16,4 +16,3 @@
     else{
         header('Location: ../inc/form_connection.php');
     }
-?>

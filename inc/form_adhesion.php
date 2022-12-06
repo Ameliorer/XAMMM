@@ -1,3 +1,4 @@
+
 <?php
 
 $html_head = "<!DOCTYPE html>\n";

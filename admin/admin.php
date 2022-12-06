@@ -9,554 +9,17 @@ include("../crud/crud_blog.php");
 include("../crud/crud_codes.php");
 include("../crud/crud_discounts.php");
 include("../crud/crud_images.php");
-include("../lib/functions_img.php");
 include("../crud/crud_opinion.php");
 include("../crud/crud_products.php");
 include("../crud/crud_reservations.php");
 include("../crud/crud_users.php");
 
-//Images 
+//Fonctions of LIB
+include("../lib/showElements_admin.php");
 
 ?>
 
 
-<?php
-//----- BLOG -----
-if(isset($_POST["blogSubmit1"])){
-    if(isset($_POST["blogTitle"]) && isset($_POST["blogContent"]) && isset($_POST["blogDate"])){
-        $blogTitle = $_POST["blogTitle"];
-        $blogContent = $_POST["blogContent"];
-        $blogDate = $_POST["blogDate"];
-        if(CreateBlog($conn, $blogTitle, $blogContent, $blogDate)){
-            echo("Blog is created and stocked in the DB");
-        }
-        else{
-            echo("Creation of the Blog FAILED");
-        }
-    }
-}
-if(isset($_POST["blogSubmit2"])){
-    if(isset($_POST["blogId"]) && isset($_POST["blogTitle"]) && isset($_POST["blogContent"]) && isset($_POST["blogDate"])){
-        $blogId = $_POST["blogId"];
-        $blogTitle = $_POST["blogTitle"];
-        $blogContent = $_POST["blogContent"];
-        $blogDate = $_POST["blogDate"];
-        if(UpdateBlog($conn,$blogId, $blogTitle, $blogContent, $blogDate)){
-            echo("Blog is update and stocked in the DB");
-        }
-        else{
-            echo("Update of the Blog FAILED");
-        }
-    }
-}
-if (isset($_POST["blogSubmit3"])){
-    if(isset($_POST["blogId"])){
-        $blogId = $_POST["blogId"];
-        if(DeleteBlog($conn, $blogId)){
-            echo("Blog is deleted from the DB");
-        }
-        else{
-            echo("Delete of the Blog FAILED");
-        }
-    }
-}
-if (isset($_POST["blogSubmit4"])){
-    if(isset($_POST["blogId"])){
-        $blogId = $_POST["blogId"];
-        if($blog = SelectBlog($conn, $blogId)){
-            echo("The blog is : ");
-            var_dump($blog);
-        }
-        else{
-            echo("Selection of the blog FAILED");
-        }
-    }
-}
-if (isset($_POST["blogSubmit5"])){
-    if($blog = SelectAllBlog($conn, $blogId)){
-        var_dump($blog);
-    }
-    else{
-        echo("Selection of all Blog FAILED");
-    }
-}
-
-
-
-//----- CODES -----
-if(isset($_POST["codesSubmit1"])){
-    if(isset($_POST["codesCodes"]) and isset($_POST["codesIdType"]) and isset($_POST["codesDateD"]) and isset($_POST["codesDateF"])){
-        $codesCodes = $_POST["codesCodes"];
-        $codesIdType = $_POST["codesIdType"];
-        $codesDateD = $_POST["codesDateD"];
-        $codesDateF = $_POST["codesDateF"];
-        if(CreateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF)){
-            echo "Code is created and stored in the DB";
-        }else{
-            echo "Creation of the code FAILED";
-        }
-    }
-}
-if(isset($_POST["codesSubmit2"])){
-    if(isset($_POST["codesCodes"]) and isset($_POST["codesIdType"]) and isset($_POST["codesDateD"]) and isset($_POST["codesDateF"])){
-        $codesCodes = $_POST["codesCodes"];
-        $codesIdType = $_POST["codesIdType"];
-        $codesDateD = $_POST["codesDateD"];
-        $codesDateF = $_POST["codesDateF"];
-        if(UpdateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF)){
-            echo "Code is UPDATE in the db";
-        }else{
-            echo "Code update FAILED";
-        }
-    }
-}
-if(isset($_POST["codesSubmit3"])){
-    if(isset($_POST["codesCodes"])){
-        $codesCodes = $_POST["codesCodes"];
-        if(DeleteCodes($conn, $codesCodes)){
-            echo("<p>delete codes success</p>");
-        }else{
-            echo("<p>delete codes failure</p>");
-        }
-    }
-}
-if(isset($_POST["codesSubmit4"])){
-    if(isset($_POST["codesIdType"])){
-        $codesIdType = $_POST["codesIdType"];
-        if($ret_codesType = SelectCodes_type($conn, $codesIdType)){
-            echo "Select code success :";
-            var_dump($ret_codesType);
-        }else{
-            echo "Select code FAILED";
-        }
-    }
-}
-if(isset($_POST["codesSubmit5"])){
-    if($ret_codesType = SelectAllCodes($conn)){
-        echo "Selection of all the code SUCCESS :";
-        var_dump($ret_codesType);
-    }else{
-        echo "Selection of all the codes FAILED";
-    }
-}
-
-
-
-//----- IMAGES -----
-if(isset($_POST["imagesSubmit1"])){
-    if(isset($_POST["imagesIdBlog"])){
-        $imagesIdBlog = $_POST["imagesIdBlog"];
-        include("../lib/upload.php");
-        if($imageName == ''){
-            echo("<br>IMAGE NON CREE DANS LA BASE");
-        }
-        else{ 
-            if (CreateImage($conn, $imageName, $imagesIdBlog)){
-                echo("<br>IMAGE CREE");
-            }
-            else{
-            echo("<br>IMAGE NON CREE DANS LA BASE");
-        
-            }
-        }
-    }
-}
-if(isset($_POST["imagesSubmit2"])){
-    if(isset($_POST["imagesNom"]) && isset($_POST["imagesIdBlog"])){
-        $imagesNom = $_POST["imagesNom"];
-        $imagesIdBlog = $_POST["imagesIdBlog"];
-        if(UpdateImage($conn,$imagesNom, $imagesIdBlog)){
-            echo("Image is update and stocked in the DB");
-        }
-        else{
-            echo("Update of the Image FAILED");
-        }
-    }
-}
-if(isset($_POST["imagesSubmit3"])){
-    if(isset($_POST["imagesNom"])){
-        $imagesNom = $_POST["imagesNom"];
-        if(DeleteImage($conn, $imagesNom)){
-            echo("Image is deleted from the DB");
-        }
-        else{
-            echo("Delete of the Image FAILED");
-        }
-    }
-}
-if(isset($_POST["imagesSubmit4"])){
-    if(isset($_POST["imagesNom"])){
-        $imagesNom = $_POST["imagesNom"];
-        if($image = SelectImage($conn, $imagesNom)){
-            echo("Image is SELECTED");
-            var_dump($image);
-        }
-        else{
-            echo("Selection of the Image FAILED");
-        }
-    }
-    
-}
-if(isset($_POST["imagesSubmit5"])){
-    
-}
-
-
-
-//----- OPINION -----
-if(isset($_POST["opinionSubmit1"])){
-    if(isset($_POST["iduser"]) && isset($_POST["text"]) && isset($_POST["grade"])){
-        $iduser = $_POST["iduser"];
-        $text = $_POST["text"];
-        $grade = $_POST["grade"];
-        if(CreateOpinion($conn, $iduser, $text, $grade)){
-            echo("Opinion is created and stocked in the DB");
-        }
-        else{
-            echo("Creation of the opinion FAILED");
-        }
-    }
-}
-if(isset($_POST["opinionSubmit2"])){
-    if(isset($_POST["id"]) && isset($_POST["iduser"]) && isset($_POST["text"]) && isset($_POST["grade"])){
-        $id = $_POST["id"];
-        $iduser = $_POST["iduser"];
-        $text = $_POST["text"];
-        $grade = $_POST["grade"];
-        if(UpdateOpinion($conn, $id, $iduser, $text, $grade)){
-            echo("Opinion is update and stocked in the DB");
-        }
-        else{
-            echo("Update of the opinion FAILED");
-        }
-    } 
-}
-if(isset($_POST["opinionSubmit3"])){
-    if(isset($_POST["iduser"])){
-        $iduser = $_POST["iduser"];
-        if(DeleteOpinion($conn, $iduser)){
-            echo("Opinion is deleted from the DB");
-        }
-        else{
-            echo("Delete of the opinion FAILED");
-        }
-    }  
-}
-if(isset($_POST["opinionSubmit4"])){
-    if(isset($_POST["iduser"])){
-        $iduser = $_POST["iduser"];
-        if($opinion = SelectOpinion($conn, $iduser)){
-            echo("The opinion is : $opinion");
-        }
-        else{
-            echo("Selection of the opinion FAILED");
-        }
-    }   
-}
-if(isset($_POST["opinionSubmit5"])){
-    if($opinion = SelectAllOpinion($conn)){
-        echo("All opinion are :");
-        var_dump($opinion);
-    }
-    else{
-        echo("Selection of the opinion FAILED");
-    }
-}
-
-
-
-//----- PRODUCTS -----
-if(isset($_POST["produitSubmit1"])){
-    if(isset($_POST["produitNom"]) && isset($_POST["produitPrix"]) && isset($_POST["produitDateD"]) && isset($_POST["produitDateF"]) && isset($_POST["produitAgeMin"]) && isset($_POST["produitAgeMax"]) && isset($_POST["produitPoidsMin"]) && isset($_POST["produitPoidsMax"]) && isset($_POST["produitTailleMin"]) && isset($_POST["produitTailleMax"])){
-        $produitNom = $_POST["produitNom"];
-        $produitPrix = $_POST["produitPrix"];
-        $produitDateD = $_POST["produitDateD"];
-        $produitDateF = $_POST["produitDateF"];
-        $produitAgeMin = $_POST["produitAgeMin"];
-        $produitAgeMax = $_POST["produitAgeMax"];
-        $produitPoidsMin = $_POST["produitPoidsMin"];
-        $produitPoidsMax = $_POST["produitPoidsMax"];
-        $produitTailleMin = $_POST["produitTailleMin"];
-        $produitTailleMax = $_POST["produitTailleMax"];
-        if(CreateProduit($conn,$produitNom,$produitPrix,$produitDateD,$produitDateF,$produitAgeMin,$produitAgeMax,$produitPoidsMin,$produitPoidsMax,$produitTailleMin,$produitTailleMax)){
-            echo("Product is created and stocked in the DB");
-        }
-        else{
-            echo("Creation of the product FAILED");
-        }
-    }
-}
-if(isset($_POST["produitSubmit2"])){
-    if(isset($_POST["produitNom"]) && isset($_POST["produitPrix"]) && isset($_POST["produitDateD"]) && isset($_POST["produitDateF"]) && isset($_POST["produitAgeMin"]) && isset($_POST["produitAgeMax"]) && isset($_POST["produitPoidsMin"]) && isset($_POST["produitPoidsMax"]) && isset($_POST["produitTailleMin"]) && isset($_POST["produitTailleMax"])){
-        $produitNom = $_POST["produitNom"];
-        $produitPrix = $_POST["produitPrix"];
-        $produitDateD = $_POST["produitDateD"];
-        $produitDateF = $_POST["produitDateF"];
-        $produitAgeMin = $_POST["produitAgeMin"];
-        $produitAgeMax = $_POST["produitAgeMax"];
-        $produitPoidsMin = $_POST["produitPoidsMin"];
-        $produitPoidsMax = $_POST["produitPoidsMax"];
-        $produitTailleMin = $_POST["produitTailleMin"];
-        $produitTailleMax = $_POST["produitTailleMax"];
-        if(UpdateProduit($conn,$produitNom,$produitPrix,$produitDateD,$produitDateF,$produitAgeMin,$produitAgeMax,$produitPoidsMin,$produitPoidsMax,$produitTailleMin,$produitTailleMax)){
-            echo("Product named : '$produitNom' is updated in the DB");
-        }
-        else{
-            echo("Update of the product FAILED : Is the product in the DB?");
-        }
-    }
-}
-if(isset($_POST["produitSubmit3"])){
-    if(isset($_POST["produitNom"])){
-        $produitName = $_POST["produitNom"];
-        if(DeleteProduit($conn,$produitNom)){
-            echo("Product named : '$produitNom' is deleted from the DB");
-        }
-        else{
-            echo("Delete of the product FAILED | Is the product named : '$produitNom' in the DB?");
-        }
-    }
-}
-if(isset($_POST["produitSubmit4"])){
-    if(isset($_POST["produitNom"])){
-        $produitNom = $_POST["produitNom"];
-        if($produit = SelectProduit($conn,$produitNom)){
-            echo("Product named : '$produitNom' is :");
-            var_dump($produit);
-        }
-        else{
-            echo("Selection FAILED| Is the product named : '$produitNom' in the DB?");
-        }
-    } 
-}
-if(isset($_POST["produitSubmit5"])){
-    if($produit = SelectAllProduit($conn)){
-        echo("All promotions are :");
-        var_dump($produit);
-    }
-    else{
-        echo("Selection FAILED");
-    }
-}
-
-
-
-//----- PROMOS -----
-if(isset($_POST["promosSubmit1"])){
-    if(isset($_POST["productId"]) && isset($_POST["promosNom"]) && isset($_POST["percentage"]) && isset($_POST["promosDateD"]) && isset($_POST["promosDateF"]) && isset($_POST["promosDescription"])){
-        $idProduct = $_POST["productId"];
-        $promosNom = $_POST["promosNom"];
-        $percentage = $_POST["percentage"];
-        $promosDateD = $_POST["promosDateD"];
-        $promosDateF = $_POST["promosDateF"];
-        $promosDescription = $_POST["promosDescription"];
-        if(CreateDiscount($conn, $idProduct, $promosNom, $percentage, $promosDateD, $promosDateF, $promosDescription)){
-            echo("Discount is created and stocked in the DB");
-        }
-        else{
-            echo("Creation of the Discount FAILED");
-        }
-    }
-}
-if(isset($_POST["promosSubmit2"])){
-    if(isset($_POST["Id"]) && isset($_POST["productId"]) && isset($_POST["promosNom"]) && isset($_POST["percentage"]) && isset($_POST["promosDateD"]) && isset($_POST["promosDateF"]) && isset($_POST["promosDescription"])){
-        $id = $_POST["Id"];
-        $idProduct = $_POST["productId"];
-        $promosNom = $_POST["promosNom"];
-        $percentage = $_POST["percentage"];
-        $promosDateD = $_POST["promosDateD"];
-        $promosDateF = $_POST["promosDateF"];
-        $promosDescription = $_POST["promosDescription"];
-        if(UpdateDiscount($conn,$id, $idProduct, $promosNom, $percentage, $promosDateD, $promosDateF, $promosDescription)){
-            echo("Discount is update and stocked in the DB");
-        }
-        else{
-            echo("Update of the Discount FAILED");
-        }
-    }
-}
-if(isset($_POST["promosSubmit3"])){
-    if(isset($_POST["Id"])){
-        $id = $_POST["Id"];
-        if(DeleteDiscount($conn, $id)){
-            echo("Discount is deleted from the DB");
-        }
-        else{
-            echo("Delete of the Discount FAILED");
-        }
-    }
-}
-if(isset($_POST["promosSubmit4"])){
-    if(isset($_POST["Id"])){
-        $id = $_POST["Id"];
-        if($discount = SelectDiscount($conn, $id)){
-            echo("The promotion is :");
-            var_dump($discount);
-        }
-        else{
-            echo("Selection FAILED");
-        }
-    }
-}
-if(isset($_POST["promosSubmit5"])){
-    if($discount = SelectAllDiscount($conn)){
-        echo("All discounts are :");
-        var_dump($discount);
-    }
-    else{
-        echo("Selection FAILED");
-    }
-}
-
-
-
-//----- RESERVATIONS -----
-if(isset($_POST["reservationSubmit1"])){
-    if(isset($_POST["reservationIdUser"]) && isset($_POST["reservationPoidsUser"]) && isset($_POST["reservationTailleUser"]) && isset($_POST["reservationAgeUser"]) && isset($_POST["reservationIdProduit"]) && isset($_POST["reservationDate"])){
-        $reservationIdUser = $_POST["reservationIdUser"];
-        $reservationPoidsUser = $_POST["reservationPoidsUser"];
-        $reservationTailleUser = $_POST["reservationTailleUser"];
-        $reservationAgeUser = $_POST["reservationAgeUser"];
-        $reservationIdProduit = $_POST["reservationIdProduit"];
-        $reservationDate = $_POST["reservationDate"];
-        if(CreateReservation($conn,$reservationIdUser,$reservationPoidsUser,$reservationTailleUser,$reservationAgeUser,$reservationIdProduit,$reservationDate)){
-            echo("Reservation is created and stocked in the DB");
-        }
-        else{
-            echo("Creation of the Reservation FAILED");
-        }
-    }
-}
-if(isset($_POST["reservationSubmit2"])){
-    if(isset($_POST["reservationIdUser"]) && isset($_POST["reservationPoidsUser"]) && isset($_POST["reservationTailleUser"]) && isset($_POST["reservationAgeUser"]) && isset($_POST["reservationIdProduit"]) && isset($_POST["reservationDate"])){
-        $reservationIdUser = $_POST["reservationIdUser"];
-        $reservationPoidsUser = $_POST["reservationPoidsUser"];
-        $reservationTailleUser = $_POST["reservationTailleUser"];
-        $reservationAgeUser = $_POST["reservationAgeUser"];
-        $reservationIdProduit = $_POST["reservationIdProduit"];
-        $reservationDate = $_POST["reservationDate"];
-        if(UpdateReservation($conn,$reservationIdUser,$reservationPoidsUser,$reservationTailleUser,$reservationAgeUser,$reservationIdProduit,$reservationDate)){
-            echo("Reservation named : '$reservationIdUser' is updated in the DB");
-        }
-        else{
-            echo("Update of the Reservation FAILED");
-        }
-    
-    }
-}
-if(isset($_POST["reservationSubmit3"])){
-    if(isset($_POST["reservationIdUser"])){
-        $reservationIdUser = $_POST["reservationIdUser"];
-        if(DeleteReservation($conn,$reservationIdUser)){
-            echo("Reservation named : '$reservationIdUser' is deleted from the DB");
-        }
-        else{
-            echo("Delete of the Reservation FAILED");
-        }
-    
-    }
-}
-if(isset($_POST["reservationSubmit4"])){
-    if(isset($_POST["reservationIdUser"])){
-        $reservationIdUser = $_POST["reservationIdUser"];
-        if($reservation = SelectReservation($conn,$reservationIdUser)){
-            echo("Reservation named : '$reservationIdUser' is SELECTED");
-            var_dump($reservation);
-        }
-        else{
-            echo("Selection FAILED");
-        }
-    }
-}
-if(isset($_POST["reservationSubmit5"])){
-    if($reservation = SelectAllReservation($conn)){
-        echo("All reservations are :");
-        var_dump($reservation);
-    }
-    else{
-        echo("Selection FAILED");
-    }
-}
-
-
-
-//----- USERS -----
-if(isset($_POST["utilisateurSubmit1"])){
-    if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isset($_POST["utilisateurMail"]) && isset($_POST["utilisateurPassword"]) && isset($_POST["utilisateurNumTel"]) && isset($_POST["utilisateurTaille"]) && isset($_POST["utilisateurPoids"]) && isset($_POST["utilisateurAge"]) && isset($_POST["utilisateurAdmin"])){
-        $utilisateurNom = $_POST["utilisateurNom"];
-        $utilisateurPrenom = $_POST["utilisateurPrenom"];
-        $utilisateurMail = $_POST["utilisateurMail"];
-        $utilisateurPassword = $_POST["utilisateurPassword"];
-        $utilisateurNumTel = $_POST["utilisateurNumTel"];
-        $utilisateurTaille = $_POST["utilisateurTaille"];
-        $utilisateurPoids = $_POST["utilisateurPoids"];
-        $utilisateurAge = $_POST["utilisateurAge"];
-        $utilisateurAdmin = $_POST["utilisateurAdmin"];
-
-        if(CreateUser($conn,$utilisateurNom,$utilisateurPrenom,$utilisateurMail,$utilisateurPassword,$utilisateurNumTel,$utilisateurTaille,$utilisateurPoids,$utilisateurAge,$utilisateurAdmin)){
-            echo("User is created and stocked in the DB");
-        }
-        else{
-            echo("Creation of the User FAILED");
-        }
-    }
-}
-if(isset($_POST["utilisateurSubmit2"])){
-    if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isset($_POST["utilisateurMail"]) && isset($_POST["utilisateurPassword"]) && isset($_POST["utilisateurNumTel"]) && isset($_POST["utilisateurTaille"]) && isset($_POST["utilisateurPoids"]) && isset($_POST["utilisateurAge"]) && isset($_POST["utilisateurAdmin"])){
-        $idUser = $_POST["idUser"];
-        $utilisateurNom = $_POST["utilisateurNom"];
-        $utilisateurPrenom = $_POST["utilisateurPrenom"];
-        $utilisateurMail = $_POST["utilisateurMail"];
-        $utilisateurPassword = $_POST["utilisateurPassword"];
-        $utilisateurNumTel = $_POST["utilisateurNumTel"];
-        $utilisateurTaille = $_POST["utilisateurTaille"];
-        $utilisateurPoids = $_POST["utilisateurPoids"];
-        $utilisateurAge = $_POST["utilisateurAge"];
-        $utilisateurAdmin = $_POST["utilisateurAdmin"];
-        if(UpdateUser($conn,$idUser,$utilisateurNom,$utilisateurPrenom,$utilisateurMail,$utilisateurPassword,$utilisateurNumTel,$utilisateurTaille,$utilisateurPoids,$utilisateurAge,$utilisateurAdmin)){
-            echo("User is updated in the DB");
-        }
-        else{
-            echo("Update of the User FAILED ");
-        }
-    }
-}
-if(isset($_POST["utilisateurSubmit3"])){
-    if(isset($_POST["idUser"])){
-        $idUser = $_POST["idUser"];
-        if(DeleteUser($conn,$idUser)){
-            echo("User is deleted from the DB");
-        }
-        else{
-            echo("Delete of the User FAILED");
-        }
-    }
-}
-if(isset($_POST["utilisateurSubmit4"])){
-    if(isset($_POST["idUser"])){
-        $idUser = $_POST["idUser"];
-        if($user = SelectUser($conn,$idUser)){
-            echo("User named $user[lastname] is SELECTED");
-            var_dump($user);
-        }
-        else{
-            echo("Selection of user FAILED ");
-        }
-    }
-}
-if(isset($_POST["utilisateurSubmit5"])){
-    if($user = SelectAllUser($conn)){
-        echo("All users");
-        var_dump($user);
-    }
-    else{
-        echo("Selection of user FAILED ");
-    }
-}
-
-
-
-?>
 
 <header>
     <h1>Bienvenue sur la page admin</h1>
@@ -641,7 +104,7 @@ if(isset($_POST["utilisateurSubmit5"])){
     </div>
     <div id="opinion_actions" class="div_actions">
         <h2>Les opinions:</h2>
-        <div id="content-blog_actions" class="content">
+        <div id="content-opinion_actions" class="content">
             <h3>Ajouter une opinion</h3>
             <div class="add_action">
                 <form action="" method="post" name="opinionForm" class="form">
@@ -894,25 +357,15 @@ if(isset($_POST["utilisateurSubmit5"])){
                     <input type="submit" name="imagesSubmit2">
                 </form>
             </div>
-            <h3>Supprimer une image</h3>
-            <div class="delete_action">
-                <form action="" method="post" name="imagesForm" class="form">
-                    <label for="imagesNom">Nom de l'image : </label>
-                    <input type="text" placeholder="nom" name="imagesNom"/>
-
-                    <label for="imagesSubmit">Supprimer l'image :</label>
-                    <input type="submit" name="imagesSubmit3">
-                </form>
-            </div>
             <h3>Selectionner une image en particulier</h3>
             <div class="select_action">
-                <form action="" method="post" name="imagesForm" class="form">
-                    <label for="imagesNom">Nom de l'image : </label>
-                    <input type="text" placeholder="nom" name="imagesNom"/>
+                <div class="form">
+                    <label for="imagesNom">Numéro d'identification du blog </label>
+                    <input type="text" placeholder="id blog" name="idBlog" id="idBlog"/>
 
                     <label for="imagesSubmit">Afficher le nom de l'image :</label>
-                    <input type="submit" name="imagesSubmit4">
-                </form>
+                    <button id="imagesSubmit4">Afficher</button>
+                </div>
             </div>
             <h3>Selectionner toutes les images</h3>
             <div class="selectAll_action">
@@ -1133,13 +586,13 @@ if(isset($_POST["utilisateurSubmit5"])){
                     <input type="tel" placeholder="numero telephone" name="utilisateurNumTel"/>
 
                     <label for="utilisateurTaille">Taille de l'utilisateur :</label>
-                    <input type="number" placeholder="taille" name="utilisateurTaille"/>
+                    <input type="int" placeholder="taille" name="utilisateurTaille"/>
 
                     <label for="utilisateurPoids">Poids de l'utilisateur :</label>
-                    <input type="number" placeholder="poids" name="utilisateurPoids"/>
+                    <input type="int" placeholder="poids" name="utilisateurPoids"/>
 
                     <label for="utilisateurAge">Age de l'utilisateur :</label>
-                    <input type="number" placeholder="age" name="utilisateurAge"/>
+                    <input type="int" placeholder="age" name="utilisateurAge"/>
 
                     <label for="utilisateurAdmin">Droit administrateur de l'utilisateur :</label>
                     <select name="utilisateurAdmin">
@@ -1173,13 +626,13 @@ if(isset($_POST["utilisateurSubmit5"])){
                     <input type="tel" placeholder="numero telephone" name="utilisateurNumTel"/>
 
                     <label for="utilisateurTaille">Nouvelle taille de l'utilisateur :</label>
-                    <input type="number" placeholder="taille" name="utilisateurTaille"/>
+                    <input type="int" placeholder="taille" name="utilisateurTaille"/>
 
                     <label for="utilisateurPoids">Nouveau poids de l'utilisateur :</label>
-                    <input type="number" placeholder="poids" name="utilisateurPoids"/>
+                    <input type="int" placeholder="poids" name="utilisateurPoids"/>
 
                     <label for="utilisateurAge">Nouvel age de l'utilisateur :</label>
-                    <input type="number" placeholder="age" name="utilisateurAge"/>
+                    <input type="int" placeholder="age" name="utilisateurAge"/>
 
                     <label for="utilisateurAdmin">Est-t-il toujours administrateur (ou non) ?</label>
                     <select name="utilisateurAdmin">
@@ -1222,6 +675,7 @@ if(isset($_POST["utilisateurSubmit5"])){
     </div>
 </main>
 <div class="aff_image"></div>
+<div class="aff_imageBlog"></div>
 
 <script src="../scripts/axios.min.js"></script>
 <script src="../scripts/admin.js" defer></script>
@@ -1235,6 +689,520 @@ if(isset($_POST["utilisateurSubmit5"])){
 
     }   
 </script> -->
+
+<?php
+//----- BLOG -----
+if(isset($_POST["blogSubmit1"])){
+    if(isset($_POST["blogTitle"]) && isset($_POST["blogContent"]) && isset($_POST["blogDate"])){
+        $blogTitle = $_POST["blogTitle"];
+        $blogContent = $_POST["blogContent"];
+        $blogDate = $_POST["blogDate"];
+        if(CreateBlog($conn, $blogTitle, $blogContent, $blogDate)){
+            echo("Blog is created and stocked in the DB");
+        }
+        else{
+            echo("Creation of the Blog FAILED");
+        }
+    }
+}
+if(isset($_POST["blogSubmit2"])){
+    if(isset($_POST["blogId"]) && isset($_POST["blogTitle"]) && isset($_POST["blogContent"]) && isset($_POST["blogDate"])){
+        $blogId = $_POST["blogId"];
+        $blogTitle = $_POST["blogTitle"];
+        $blogContent = $_POST["blogContent"];
+        $blogDate = $_POST["blogDate"];
+        if(UpdateBlog($conn,$blogId, $blogTitle, $blogContent, $blogDate)){
+            echo("Blog is update and stocked in the DB");
+        }
+        else{
+            echo("Update of the Blog FAILED");
+        }
+    }
+}
+if (isset($_POST["blogSubmit3"])){
+    if(isset($_POST["blogId"])){
+        $blogId = $_POST["blogId"];
+        if(DeleteBlog($conn, $blogId)){
+            echo("Blog is deleted from the DB");
+        }
+        else{
+            echo("Delete of the Blog FAILED");
+        }
+    }
+}
+if (isset($_POST["blogSubmit4"])){
+    if(isset($_POST["blogId"])){
+        $blogId = $_POST["blogId"];
+        if($blog = SelectBlog($conn, $blogId)){
+            $fieldsOfBlog = ["Numéro d'identification","Titre","Contenue","Date du post"];
+            showTable($blog,false,$fieldsOfBlog);
+        }
+        else{
+            echo("Selection of the blog FAILED");
+        }
+    }
+}
+if (isset($_POST["blogSubmit5"])){
+    if($blog = SelectAllBlog($conn)){
+        $fieldsOfBlog = ["Numéro d'identification","Titre","Contenue","Date du post"];
+        showTable($blog,true,$fieldsOfBlog);
+    }
+    else{
+        echo("Selection of all Blog FAILED");
+    }
+}
+
+
+
+//----- CODES -----
+if(isset($_POST["codesSubmit1"])){
+    if(isset($_POST["codesCodes"]) and isset($_POST["codesIdType"]) and isset($_POST["codesDateD"]) and isset($_POST["codesDateF"])){
+        $codesCodes = $_POST["codesCodes"];
+        $codesIdType = $_POST["codesIdType"];
+        $codesDateD = $_POST["codesDateD"];
+        $codesDateF = $_POST["codesDateF"];
+        if(CreateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF)){
+            echo "Code is created and stored in the DB";
+        }else{
+            echo "Creation of the code FAILED";
+        }
+    }
+}
+if(isset($_POST["codesSubmit2"])){
+    if(isset($_POST["codesCodes"]) and isset($_POST["codesIdType"]) and isset($_POST["codesDateD"]) and isset($_POST["codesDateF"])){
+        $codesCodes = $_POST["codesCodes"];
+        $codesIdType = $_POST["codesIdType"];
+        $codesDateD = $_POST["codesDateD"];
+        $codesDateF = $_POST["codesDateF"];
+        if(UpdateCodes($conn, $codesCodes, $codesIdType, $codesDateD, $codesDateF)){
+            echo "Code is UPDATE in the db";
+        }else{
+            echo "Code update FAILED";
+        }
+    }
+}
+if(isset($_POST["codesSubmit3"])){
+    if(isset($_POST["codesCodes"])){
+        $codesCodes = $_POST["codesCodes"];
+        if(DeleteCodes($conn, $codesCodes)){
+            echo("<p>delete codes success</p>");
+        }else{
+            echo("<p>delete codes failure</p>");
+        }
+    }
+}
+if(isset($_POST["codesSubmit4"])){
+    if(isset($_POST["codesIdType"])){
+        $codesIdType = $_POST["codesIdType"];
+        if($ret_codesType = SelectCodes_type($conn, $codesIdType)){
+            $fieldsOfCode = ["Code promo","Numéro du produit lié","Date de début","Date de fin"];
+            showTable($ret_codesType,false,$fieldsOfCode);
+        }else{
+            echo "Select code FAILED";
+        }
+    }
+}
+if(isset($_POST["codesSubmit5"])){
+    if($ret_codesType = SelectAllCodes($conn)){
+        $fieldsOfCode = ["Code promo","Numéro du produit lié","Date de début","Date de fin"];
+        showTable($ret_codesType,true,$fieldsOfCode);
+    }else{
+        echo "Selection of all the codes FAILED";
+    }
+}
+
+
+
+//----- IMAGES -----
+if(isset($_POST["imagesSubmit1"])){
+    if(isset($_POST["imagesIdBlog"])){
+        $imagesIdBlog = $_POST["imagesIdBlog"];
+        include("../lib/upload.php");
+        if($imageName == ''){
+            echo("<br>IMAGE NON CREE DANS LA BASE");
+        }
+        else{ 
+            if (CreateImage($conn, $imageName, $imagesIdBlog)){
+                echo("<br>IMAGE CREE");
+            }
+            else{
+            echo("<br>IMAGE NON CREE DANS LA BASE");
+        
+            }
+        }
+    }
+}
+if(isset($_POST["imagesSubmit2"])){
+    if(isset($_POST["imagesNom"]) && isset($_POST["imagesIdBlog"])){
+        $imagesNom = $_POST["imagesNom"];
+        $imagesIdBlog = $_POST["imagesIdBlog"];
+        if(UpdateImage($conn,$imagesNom, $imagesIdBlog)){
+            echo("Image is update and stocked in the DB");
+        }
+        else{
+            echo("Update of the Image FAILED");
+        }
+    }
+}
+
+
+
+
+//----- OPINION -----
+if(isset($_POST["opinionSubmit1"])){
+    if(isset($_POST["iduser"]) && isset($_POST["text"]) && isset($_POST["grade"])){
+        $iduser = $_POST["iduser"];
+        $text = $_POST["text"];
+        $grade = $_POST["grade"];
+        if(CreateOpinion($conn, $iduser, $text, $grade)){
+            echo("Opinion is created and stocked in the DB");
+        }
+        else{
+            echo("Creation of the opinion FAILED");
+        }
+    }
+}
+if(isset($_POST["opinionSubmit2"])){
+    if(isset($_POST["id"]) && isset($_POST["iduser"]) && isset($_POST["text"]) && isset($_POST["grade"])){
+        $id = $_POST["id"];
+        $iduser = $_POST["iduser"];
+        $text = $_POST["text"];
+        $grade = $_POST["grade"];
+        if(UpdateOpinion($conn, $id, $iduser, $text, $grade)){
+            echo("Opinion is update and stocked in the DB");
+        }
+        else{
+            echo("Update of the opinion FAILED");
+        }
+    } 
+}
+if(isset($_POST["opinionSubmit3"])){
+    if(isset($_POST["iduser"])){
+        $iduser = $_POST["iduser"];
+        if(DeleteOpinion($conn, $iduser)){
+            echo("Opinion is deleted from the DB");
+        }
+        else{
+            echo("Delete of the opinion FAILED");
+        }
+    }  
+}
+if(isset($_POST["opinionSubmit4"])){
+    if(isset($_POST["iduser"])){
+        $iduser = $_POST["iduser"];
+        if($opinion = SelectOpinion($conn, $iduser)){
+            $fieldsOfOpinion = ["Numéro d'identification","Numéro d'identification d'utilisateur","Opinion","Nombre d'étoiles"];
+            showTable($opinion,false,$fieldsOfOpinion);
+        }
+        else{
+            echo("Selection of the opinion FAILED");
+        }
+    }   
+}
+if(isset($_POST["opinionSubmit5"])){
+    if($opinion = SelectAllOpinion($conn)){
+        $fieldsOfOpinion = ["Numéro d'identification","Numéro d'identification d'utilisateur","Opinion","Nombre d'étoiles"];
+        showTable($opinion,true,$fieldsOfOpinion);
+    }
+    else{
+        echo("Selection of the opinion FAILED");
+    }
+}
+
+
+
+//----- PRODUCTS -----
+if(isset($_POST["produitSubmit1"])){
+    if(isset($_POST["produitNom"]) && isset($_POST["produitPrix"]) && isset($_POST["produitDateD"]) && isset($_POST["produitDateF"]) && isset($_POST["produitAgeMin"]) && isset($_POST["produitAgeMax"]) && isset($_POST["produitPoidsMin"]) && isset($_POST["produitPoidsMax"]) && isset($_POST["produitTailleMin"]) && isset($_POST["produitTailleMax"])){
+        $produitNom = $_POST["produitNom"];
+        $produitPrix = $_POST["produitPrix"];
+        $produitDateD = $_POST["produitDateD"];
+        $produitDateF = $_POST["produitDateF"];
+        $produitAgeMin = $_POST["produitAgeMin"];
+        $produitAgeMax = $_POST["produitAgeMax"];
+        $produitPoidsMin = $_POST["produitPoidsMin"];
+        $produitPoidsMax = $_POST["produitPoidsMax"];
+        $produitTailleMin = $_POST["produitTailleMin"];
+        $produitTailleMax = $_POST["produitTailleMax"];
+        if(CreateProduit($conn,$produitNom,$produitPrix,$produitDateD,$produitDateF,$produitAgeMin,$produitAgeMax,$produitPoidsMin,$produitPoidsMax,$produitTailleMin,$produitTailleMax)){
+            echo("Product is created and stocked in the DB");
+        }
+        else{
+            echo("Creation of the product FAILED");
+        }
+    }
+}
+if(isset($_POST["produitSubmit2"])){
+    if(isset($_POST["produitNom"]) && isset($_POST["produitPrix"]) && isset($_POST["produitDateD"]) && isset($_POST["produitDateF"]) && isset($_POST["produitAgeMin"]) && isset($_POST["produitAgeMax"]) && isset($_POST["produitPoidsMin"]) && isset($_POST["produitPoidsMax"]) && isset($_POST["produitTailleMin"]) && isset($_POST["produitTailleMax"])){
+        $produitNom = $_POST["produitNom"];
+        $produitPrix = $_POST["produitPrix"];
+        $produitDateD = $_POST["produitDateD"];
+        $produitDateF = $_POST["produitDateF"];
+        $produitAgeMin = $_POST["produitAgeMin"];
+        $produitAgeMax = $_POST["produitAgeMax"];
+        $produitPoidsMin = $_POST["produitPoidsMin"];
+        $produitPoidsMax = $_POST["produitPoidsMax"];
+        $produitTailleMin = $_POST["produitTailleMin"];
+        $produitTailleMax = $_POST["produitTailleMax"];
+        if(UpdateProduit($conn,$produitNom,$produitPrix,$produitDateD,$produitDateF,$produitAgeMin,$produitAgeMax,$produitPoidsMin,$produitPoidsMax,$produitTailleMin,$produitTailleMax)){
+            echo("Product named : '$produitNom' is updated in the DB");
+        }
+        else{
+            echo("Update of the product FAILED : Is the product in the DB?");
+        }
+    }
+}
+if(isset($_POST["produitSubmit3"])){
+    if(isset($_POST["produitNom"])){
+        $produitName = $_POST["produitNom"];
+        if(DeleteProduit($conn,$produitNom)){
+            echo("Product named : '$produitNom' is deleted from the DB");
+        }
+        else{
+            echo("Delete of the product FAILED | Is the product named : '$produitNom' in the DB?");
+        }
+    }
+}
+if(isset($_POST["produitSubmit4"])){
+    if(isset($_POST["produitNom"])){
+        $produitNom = $_POST["produitNom"];
+        if($produit = SelectProduit($conn,$produitNom)){
+            $fieldsOfProduct = ["Numéro du produit", "Nom","Prix","Date de début","Date de fin","Age minimum","Age maximum","Poids minimum","Poids maximum","Taille minimum","Taille maximum"];
+            showTable($produit,false,$fieldsOfProduct);
+        }
+        else{
+            echo("Selection FAILED| Is the product named : '$produitNom' in the DB?");
+        }
+    } 
+}
+if(isset($_POST["produitSubmit5"])){
+    if($produit = SelectAllProduit($conn)){
+        $fieldsOfProduct = ["Numéro du produit", "Nom","Prix","Date de début","Date de fin","Age minimum","Age maximum","Poids minimum","Poids maximum","Taille minimum","Taille maximum"];
+        showTable($produit,true,$fieldsOfProduct);
+    }
+    else{
+        echo("Selection FAILED");
+    }
+}
+
+
+
+//----- PROMOS -----
+if(isset($_POST["promosSubmit1"])){
+    if(isset($_POST["productId"]) && isset($_POST["promosNom"]) && isset($_POST["percentage"]) && isset($_POST["promosDateD"]) && isset($_POST["promosDateF"]) && isset($_POST["promosDescription"])){
+        $idProduct = $_POST["productId"];
+        $promosNom = $_POST["promosNom"];
+        $percentage = $_POST["percentage"];
+        $promosDateD = $_POST["promosDateD"];
+        $promosDateF = $_POST["promosDateF"];
+        $promosDescription = $_POST["promosDescription"];
+        if(CreateDiscount($conn, $idProduct, $promosNom, $percentage, $promosDateD, $promosDateF, $promosDescription)){
+            echo("Discount is created and stocked in the DB");
+        }
+        else{
+            echo("Creation of the Discount FAILED");
+        }
+    }
+}
+if(isset($_POST["promosSubmit2"])){
+    if(isset($_POST["Id"]) && isset($_POST["productId"]) && isset($_POST["promosNom"]) && isset($_POST["percentage"]) && isset($_POST["promosDateD"]) && isset($_POST["promosDateF"]) && isset($_POST["promosDescription"])){
+        $id = $_POST["Id"];
+        $idProduct = $_POST["productId"];
+        $promosNom = $_POST["promosNom"];
+        $percentage = $_POST["percentage"];
+        $promosDateD = $_POST["promosDateD"];
+        $promosDateF = $_POST["promosDateF"];
+        $promosDescription = $_POST["promosDescription"];
+        if(UpdateDiscount($conn,$id, $idProduct, $promosNom, $percentage, $promosDateD, $promosDateF, $promosDescription)){
+            echo("Discount is update and stocked in the DB");
+        }
+        else{
+            echo("Update of the Discount FAILED");
+        }
+    }
+}
+if(isset($_POST["promosSubmit3"])){
+    if(isset($_POST["Id"])){
+        $id = $_POST["Id"];
+        if(DeleteDiscount($conn, $id)){
+            echo("Discount is deleted from the DB");
+        }
+        else{
+            echo("Delete of the Discount FAILED");
+        }
+    }
+}
+if(isset($_POST["promosSubmit4"])){
+    if(isset($_POST["Id"])){
+        $id = $_POST["Id"];
+        if($discount = SelectDiscount($conn, $id)){
+            $fieldsOfDiscount = ["Numéro de la promo","Numéro du produit lié","Nom de la promo","Pourcentage","Date de début","Date de fin","Description"];
+            showTable($discount,false,$fieldsOfDiscount);
+        }
+        else{
+            echo("Selection FAILED");
+        }
+    }
+}
+if(isset($_POST["promosSubmit5"])){
+    if($discount = SelectAllDiscount($conn)){
+        $fieldsOfDiscount = ["Numéro de la promo","Numéro du produit lié","Nom de la promo","Pourcentage","Date de début","Date de fin","Description"];
+        showTable($discount,true,$fieldsOfDiscount);
+    }
+    else{
+        echo("Selection FAILED");
+    }
+}
+
+
+
+//----- RESERVATIONS -----
+if(isset($_POST["reservationSubmit1"])){
+    if(isset($_POST["reservationIdUser"]) && isset($_POST["reservationPoidsUser"]) && isset($_POST["reservationTailleUser"]) && isset($_POST["reservationAgeUser"]) && isset($_POST["reservationIdProduit"]) && isset($_POST["reservationDate"])){
+        $reservationIdUser = $_POST["reservationIdUser"];
+        $reservationPoidsUser = $_POST["reservationPoidsUser"];
+        $reservationTailleUser = $_POST["reservationTailleUser"];
+        $reservationAgeUser = $_POST["reservationAgeUser"];
+        $reservationIdProduit = $_POST["reservationIdProduit"];
+        $reservationDate = $_POST["reservationDate"];
+        if(CreateReservation($conn,$reservationIdUser,$reservationPoidsUser,$reservationTailleUser,$reservationAgeUser,$reservationIdProduit,$reservationDate)){
+            echo("Reservation is created and stocked in the DB");
+        }
+        else{
+            echo("Creation of the Reservation FAILED");
+        }
+    }
+}
+if(isset($_POST["reservationSubmit2"])){
+    if(isset($_POST["reservationIdUser"]) && isset($_POST["reservationPoidsUser"]) && isset($_POST["reservationTailleUser"]) && isset($_POST["reservationAgeUser"]) && isset($_POST["reservationIdProduit"]) && isset($_POST["reservationDate"])){
+        $reservationIdUser = $_POST["reservationIdUser"];
+        $reservationPoidsUser = $_POST["reservationPoidsUser"];
+        $reservationTailleUser = $_POST["reservationTailleUser"];
+        $reservationAgeUser = $_POST["reservationAgeUser"];
+        $reservationIdProduit = $_POST["reservationIdProduit"];
+        $reservationDate = $_POST["reservationDate"];
+        if(UpdateReservation($conn,$reservationIdUser,$reservationPoidsUser,$reservationTailleUser,$reservationAgeUser,$reservationIdProduit,$reservationDate)){
+            echo("Reservation named : '$reservationIdUser' is updated in the DB");
+        }
+        else{
+            echo("Update of the Reservation FAILED");
+        }
+    
+    }
+}
+if(isset($_POST["reservationSubmit3"])){
+    if(isset($_POST["reservationIdUser"])){
+        $reservationIdUser = $_POST["reservationIdUser"];
+        if(DeleteReservation($conn,$reservationIdUser)){
+            echo("Reservation named : '$reservationIdUser' is deleted from the DB");
+        }
+        else{
+            echo("Delete of the Reservation FAILED");
+        }
+    
+    }
+}
+if(isset($_POST["reservationSubmit4"])){
+    if(isset($_POST["reservationIdUser"])){
+        $reservationIdUser = $_POST["reservationIdUser"];
+        if($reservation = SelectReservation($conn,$reservationIdUser)){
+            $fieldsOfReservation = ["Numéro de la réservation","Ididentifiant utilisateur lié","Poids de l'utilisateur","Taille de l'utilisateur","Age de l'utilisateur'","Produit lié","Date de réservation"];
+            showTable($reservation,false,$fieldsOfReservation);
+        }
+        else{
+            echo("Selection FAILED");
+        }
+    }
+}
+if(isset($_POST["reservationSubmit5"])){
+    if($reservation = SelectAllReservation($conn)){
+        $fieldsOfReservation = ["Numéro de la réservation","Ididentifiant utilisateur lié","Poids de l'utilisateur","Taille de l'utilisateur","Age de l'utilisateur'","Produit lié","Date de réservation"];
+        showTable($reservation,true,$fieldsOfReservation);
+    }
+    else{
+        echo("Selection FAILED");
+    }
+}
+
+
+
+//----- USERS -----
+if(isset($_POST["utilisateurSubmit1"])){
+    if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isset($_POST["utilisateurMail"]) && isset($_POST["utilisateurPassword"]) && isset($_POST["utilisateurNumTel"]) && isset($_POST["utilisateurTaille"]) && isset($_POST["utilisateurPoids"]) && isset($_POST["utilisateurAge"]) && isset($_POST["utilisateurAdmin"])){
+        $utilisateurNom = $_POST["utilisateurNom"];
+        $utilisateurPrenom = $_POST["utilisateurPrenom"];
+        $utilisateurMail = $_POST["utilisateurMail"];
+        $utilisateurPassword = $_POST["utilisateurPassword"];
+        $utilisateurNumTel = $_POST["utilisateurNumTel"];
+        $utilisateurTaille = $_POST["utilisateurTaille"];
+        $utilisateurPoids = $_POST["utilisateurPoids"];
+        $utilisateurAge = $_POST["utilisateurAge"];
+        $utilisateurAdmin = $_POST["utilisateurAdmin"];
+
+        if(CreateUser($conn,$utilisateurNom,$utilisateurPrenom,$utilisateurMail,$utilisateurPassword,$utilisateurNumTel,$utilisateurTaille,$utilisateurPoids,$utilisateurAge,$utilisateurAdmin)){
+            echo("User is created and stocked in the DB");
+        }
+        else{
+            echo("Creation of the User FAILED");
+        }
+    }
+}
+if(isset($_POST["utilisateurSubmit2"])){
+    if(isset($_POST["utilisateurNom"]) && isset($_POST["utilisateurPrenom"]) && isset($_POST["utilisateurMail"]) && isset($_POST["utilisateurPassword"]) && isset($_POST["utilisateurNumTel"]) && isset($_POST["utilisateurTaille"]) && isset($_POST["utilisateurPoids"]) && isset($_POST["utilisateurAge"]) && isset($_POST["utilisateurAdmin"])){
+        $idUser = $_POST["idUser"];
+        $utilisateurNom = $_POST["utilisateurNom"];
+        $utilisateurPrenom = $_POST["utilisateurPrenom"];
+        $utilisateurMail = $_POST["utilisateurMail"];
+        $utilisateurPassword = $_POST["utilisateurPassword"];
+        $utilisateurNumTel = $_POST["utilisateurNumTel"];
+        $utilisateurTaille = $_POST["utilisateurTaille"];
+        $utilisateurPoids = $_POST["utilisateurPoids"];
+        $utilisateurAge = $_POST["utilisateurAge"];
+        $utilisateurAdmin = $_POST["utilisateurAdmin"];
+        if(UpdateUser($conn,$idUser,$utilisateurNom,$utilisateurPrenom,$utilisateurMail,$utilisateurPassword,$utilisateurNumTel,$utilisateurTaille,$utilisateurPoids,$utilisateurAge,$utilisateurAdmin)){
+            echo("User is updated in the DB");
+        }
+        else{
+            echo("Update of the User FAILED ");
+        }
+    }
+}
+if(isset($_POST["utilisateurSubmit3"])){
+    if(isset($_POST["idUser"])){
+        $idUser = $_POST["idUser"];
+        if(DeleteUser($conn,$idUser)){
+            echo("User is deleted from the DB");
+        }
+        else{
+            echo("Delete of the User FAILED");
+        }
+    }
+}
+if(isset($_POST["utilisateurSubmit4"])){
+    if(isset($_POST["idUser"])){
+        $idUser = $_POST["idUser"];
+        if($user = SelectUser($conn,$idUser)){
+            $fieldsOfUser = ["Identifiant de l'utilisateur","Nom","Prénom","Mail","Mot de passe","Numéro de téléphone","Taille","Poids","Age","Est-il administrateur ?"];
+        showTable($user,false,$fieldsOfUser);
+        }
+        else{
+            echo("Selection of user FAILED ");
+        }
+    }
+}
+if(isset($_POST["utilisateurSubmit5"])){
+    if($user = SelectAllUser($conn)){
+        $fieldsOfUser = ["Identifiant de l'utilisateur","Nom","Prénom","Mail","Mot de passe","Numéro de téléphone","Taille","Poids","Age","Est-il administrateur ?"];
+        showTable($user,true,$fieldsOfUser);
+    }
+    else{
+        echo("Selection of user FAILED ");
+    }
+}
+
+
+
+?>
 
 <?php 
 
