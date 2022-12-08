@@ -30,6 +30,9 @@ axios.get('../lib/products.php').then((response) => {
       let div = create('div', main, null, 'product');
       let productName = create('h3', div, product.name);
       let productPrice = create('span', div, product.price + ' euros');
+      let achatSpan = create('span', div);
+      let achatLink = create('a', achatSpan, "ajouter au panier");
+      achatLink.setAttribute("href", "form_achat.php?name="+product.name);
       let ul = create('ul', div, null, 'product_info');
 
       let spanDateStart = create('span', ul, 'Commence le : ');
