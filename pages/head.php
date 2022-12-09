@@ -44,7 +44,7 @@ if(!(isset($title))){
 
             <ul class='headerMenu'>
                 <span class='headerMenuTitle'>Réserver</span>
-                <ul class='headerMenuList'>
+                <ul class='headerMenuList hidden'>
                     <li><a href='/~XAMMM/pages/parachutisme_histoire.php'>L'histoire du parachutisme</a></li>
                     <li><a href='/~XAMMM/pages/processus_de_saut.php'>Processus de saut</a></li>
                     <li><a href='/~XAMMM/pages/faq_tandem.php'>FAQ Tandem</a></li>
@@ -59,14 +59,14 @@ if(!(isset($title))){
             </ul>
             <ul class='headerMenu'>
                 <span class='headerMenuTitle'>CGV</span>
-                <ul class='headerMenuList'>
+                <ul class='headerMenuList hidden'>
                     <li><a href='/~XAMMM/pages/legal_notice.php'>Mentions Légales</a></li>
                     <li><a href='/~XAMMM/pages/CGV.php'>Conditions Générales de Vente</a></li>
                 </ul>
             </ul>
             <ul class='headerMenu'>
                 <span class='headerMenuTitle'>Utilisateur</span>
-                <ul class='headerMenuList'>
+                <ul class='headerMenuList hidden'>
                     <li><a href='/~XAMMM/inc/form_adhesion.php'>Adhesion</a></li>
                     <li><a href='/~XAMMM/inc/form_connection.php'>Connexion</a></li>
                     <li><a href='/~XAMMM/inc/deconnection.php'>Deconnexion</a></li>
