@@ -10,11 +10,10 @@ include("head.php");
 <?php 
 //Deuxieme balise PHP : La page
 //–––––––––––––––
-
+echo("<main>");
 $html_acceuil = "<div><a href='/~XAMMM/index.php'>ACCEUIL</a></div>";
 echo($html_acceuil);
 ?>
-
 <div id=#title>
 <h1> Le saut en Tandem</h1>
 
@@ -209,6 +208,7 @@ echo($html_acceuil);
 <p>Le moniteur filmera toute la préparation du saut, la montée en avion et le paysage, la mise en place à la porte, toute la chute libre ou vous serez  filmé en gros plan. Après l’ouverture le moniteur vous interviewera sous voile en direct live ! Puis vos dédicaces éventuelles et vos impressions une fois posé ! Le tout est filmé en HD et vous sera remis sur une clef USB !</p>
 </div>
 </div>
+</main>
 
 
 
