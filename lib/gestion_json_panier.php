@@ -1,3 +1,5 @@
 <?php
-echo json_encode($_POST);
+include("../crud/crud_panier.php");
+
+$data = json_encode($_POST);
 ?>
