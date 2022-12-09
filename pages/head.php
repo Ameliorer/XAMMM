@@ -24,14 +24,11 @@ if(!(isset($title))){
     if(stripos($_SERVER["REQUEST_URI"],'index_user.php')){
         echo("<link rel='stylesheet' href='/~XAMMM/styles/user.css' />\n");
     }
-
-    
     if(stripos($_SERVER["REQUEST_URI"],'faq_tandem.php')){
         echo("<link rel='stylesheet' href= '/~XAMMM/styles/faq_style.css' />\n");
     }
-
     if(stripos($_SERVER["REQUEST_URI"],'processus_de_saut.php')){
-        echo("<link rel='stylesheet' href='/~XAMMM/styles//processus_saut.css' />\n");
+        echo("<link rel='stylesheet' href='/~XAMMM/styles/processus_saut.css' />\n");
     }
 
 ?>

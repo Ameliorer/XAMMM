@@ -42,7 +42,7 @@ else if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword']
     
     //stock the infos 
     $login = $_POST['utilisateurMail'];
-    $password = $_POST['utilisateurPassword'];
+    $password = md5($_POST['utilisateurPassword']);
 
     //look for the user in the db
     $sql = "SELECT * FROM  `users` WHERE `mail`='$login' AND `password`='$password'";
