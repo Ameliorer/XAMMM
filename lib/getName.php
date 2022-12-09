@@ -1,7 +1,7 @@
 <?php
 
-include("/~XAMMM/db/db_connect.php");
-include("/~XAMMM/crud/crud_users.php");
+include("../db/db_connect.php");
+include("../crud/crud_users.php");
 
 $retQuerry = array();
 
@@ -22,4 +22,4 @@ if(isset($iduser)){
 
 echo json_encode($retQuerry);
 
-include("/~XAMMM/db/db_disconnect.php");
+include("../db/db_disconnect.php");

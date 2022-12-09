@@ -16,17 +16,17 @@ function create(tagName, container, text=null, class_=null, id=null) {
     return element
 }
 
-axios.get("lib/opinion.php?opinionAction=select_5star").then(Response => {
+axios.get("/~XAMMM/lib/opinion.php?opinionAction=select_5star").then(Response => {
     Response.data.forEach(post => {
         let div = create("div", avis, null, "carousel-item");
         let grade = create("span", div, null, "grade");
 
-axios.get("lib/getName.php?iduser="+post.iduser).then(Response => {
-    Response.data.forEach(post1 => {
-        let user = create("span", div, null, "user");
-        let user1 = create("h4", user, "- "+ post1.firstname + ", " + post1.age + " ans");
-    });
-});
+        axios.get("/~XAMMM/lib/getName.php?iduser="+post.iduser).then(Response => {
+            Response.data.forEach(post1 => {
+                let user = create("span", div, null, "user");
+                let user1 = create("h4", user, "- "+ post1.firstname + ", " + post1.age + " ans");
+            });
+        });
         let content = create("span", div, null, "textAvis");
         let textAvis = create("p", content, post.text.slice(0,200));
         if (post.text.length > 200){

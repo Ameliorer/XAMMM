@@ -1,20 +1,19 @@
 let form = document.querySelector("form");
 
 form.addEventListener("submit", function(e){
-    let newData = {
-        poidsUser: form.reservationPoidsUser,
-        tailleUser: form.reservationTailleUser,
-        ageUser: form.reservationAgeUser,
-        dateReservation: form.reservationDate
-    };
-    let finalData = {
-        ...PHPdata,
-        ...newData
-    };
-    axios.post("../lib/gestion_json-panier.php", finalData)
+    e.preventDefault();
+    let finalData = new FormData();
+    finalData.append('poidsUser', form.reservationPoidsUser.value);
+    finalData.append('tailleUser', form.reservationTailleUser.value);
+    finalData.append('ageUser', form.reservationAgeUser.value);
+    finalData.append('dateReservation', form.reservationDate.value);
+    finalData.append('idUser', PHPdata.idUser);
+    finalData.append('nameProduct', PHPdata.nameProduct);
+    finalData.append('today', PHPdata.today);
+    axios.post("../lib/gestion_json_panier.php", finalData)
     .then(Response => {
         console.log(Response);
     });
-    e.preventDefault();
+    window.location.replace('/~XAMMM/pages/prestations.php');
 });
 
