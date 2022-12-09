@@ -5,9 +5,9 @@
 //Include du head
 $title = 'form_achat';
 include("head.php");
-include("../db/db_connect.php")
-include("../crud/crud_users.php")
-include("../crud/crud_products.php")
+include("../db/db_connect.php");
+include("../crud/crud_users.php");
+include("../crud/crud_products.php");
 
 if(isset($_SESSION['id'])){
     $idUser = $_SESSION['id'];
@@ -16,9 +16,10 @@ if(isset($_SESSION['id'])){
     $produit = SelectProduit($conn, $nameProduct);
     $today = date('Y-m-d');
 }else{
-    header("Location: ../inc/form_connection.php");
+    echo("<script type='text/javascript'> window.location.replace('/~XAMMM/inc/form_connection.php') </script>");
 }
 ?>
+<script src='../scripts/axios.min.js'></script>
 
 <div>
     <h3><?php echo $nameProduct; ?></h3>
@@ -34,22 +35,23 @@ if(isset($_SESSION['id'])){
         <input type="number" value="<?php echo $user["age"]; ?>" name="reservationAgeUser" id="reservationAgeUser"/>
 
         <label for="reservationDate">veuillez donner une date : </label>
-        <input type="date" value="0000-00-00" name="reservationDate" id="reservationDate"/>
+        <input type="date" value="<?php echo $today; ?>" name="reservationDate" id="reservationDate"/>
 
         <label for="reservationSubmit">valider : </label>
         <input type="submit" name="reservationSubmit" id="reservationSubmit">
     </form>
 </div>
 
-<script src="../scripts/form_achat.js" defer>
-    var PHPdata = <?php $data = array("idUser" => $idUser, "nameProduct" => $nameProduct, "today" => $today); echo json_encode($data); ?>;
+<script type='text/javascript'>
+    var PHPdata = <?php echo(json_encode(array("idUser" => $idUser, "nameProduct" => $nameProduct, "today" => $today))); ?>;
 </script>
+<script type="text/javascript" src="../scripts/form_achat.js" defer></script>
 
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
 //–––––––––––––––
 
-include("../db/db_disconnect.php")
+include("../db/db_disconnect.php");
 
 //Include du footer
 include("footer.php");
