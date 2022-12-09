@@ -1,0 +1,165 @@
+footer {
+    font-family:Arial;
+}
+body{
+    background-color: rgb(221,230,243);
+}
+
+*{box-sizing: border-box;}
+.carou{
+    margin: 25px 0px;
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    color: #82b5e8;
+    background-color: #82b5e8;
+}
+.carousel-item {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: absolute;
+    width: 75%;
+    height: 96%;
+    top: 0;
+    left: 100%;
+    color: #82b5e8;
+    padding: 0px 25px;
+    margin-top: 10px;
+}
+.active {
+    left: 12%;
+    transition: all 1.5s ease-out;
+    color: black;
+    border:1px solid ;
+    border-radius: 25px;
+}
+
+.unactive {
+    left: -100%;
+    transition: all 1.5s ease-out;
+    color: black;
+    border:1px solid ;
+    border-radius: 25px;
+}
+.textAvis{
+    text-align: center;
+    font-size: large;
+}
+.user{
+    text-align: end;
+}
+.user>h4{
+    padding-right: 20px;
+}
+.grade{
+    font-size: x-large;
+}
+
+.social_media{
+    display: flex;
+    justify-content: center;
+
+}
+
+.social_media > a > img{
+    height: 60px;
+    width: auto;
+    padding: 10px;
+}
+
+.catch{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25%;
+    background-color: #82b5e8;
+}
+
+.catch > h2 {
+    text-align: center;
+}
+
+.catch > h4 {
+    text-align: center;
+}
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+.contact{
+    padding: 25px 0px;
+    background-color: #82b5e8;
+}
+
+.contact>h2{
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+#message{
+    height: 105px;
+}
+
+.contactForm{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 10%;
+}
+
+input::placeholder, textarea::placeholder{
+    color: #000000;
+    opacity: 1;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #2376c7;
+    padding: 0;
+    background-color: #82b5e8;
+}
+
+.form-control:active, .form-control:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #0a3a69; }
+
+.btn, .form-control {
+    height: 35px; }
+
+.btn {
+    border: none;
+    border-radius: 0; }
+
+.btn.btn-primary {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px; }
+
+.btn:hover {
+    color: #adadad; }
+
+.btn:active, .btn:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000; }
