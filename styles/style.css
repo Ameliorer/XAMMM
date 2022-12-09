@@ -37,6 +37,10 @@ a {
     width:10%;
 }
 
+.headerMenuTitle {
+    font-size: 20px;
+}
+
 .headerMenuList{
     background-color: red;
     display: block;

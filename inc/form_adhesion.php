@@ -26,7 +26,7 @@ echo $html_head;
     else{
         if ($verif){ //if everything is okay in the form
             
-            if(CreateUser($conn, $_POST['utilisateurNom'], $_POST['utilisateurPrenom'], $_POST['utilisateurMail'], $_POST['utilisateurPassword'], $_POST['utilisateurNumTel'], $_POST['utilisateurTaille'], $_POST['utilisateurPoids'],$_POST['utilisateurAge'], 0)){
+            if(CreateUser($conn, $_POST['utilisateurNom'], $_POST['utilisateurPrenom'], $_POST['utilisateurMail'],md5( $_POST['utilisateurPassword']), $_POST['utilisateurNumTel'], $_POST['utilisateurTaille'], $_POST['utilisateurPoids'],$_POST['utilisateurAge'], 0)){
                 echo("User is created and stocked in the DB");
             }
             else{
