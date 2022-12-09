@@ -25,6 +25,15 @@ if(!(isset($title))){
         echo("<link rel='stylesheet' href='/~XAMMM/styles/user.css' />\n");
     }
 
+    
+    if(stripos($_SERVER["REQUEST_URI"],'faq_tandem.php')){
+        echo("<link rel='stylesheet' href= '/~XAMMM/styles/faq_style.css' />\n");
+    }
+
+    if(stripos($_SERVER["REQUEST_URI"],'processus_de_saut.php')){
+        echo("<link rel='stylesheet' href='/~XAMMM/styles//processus_saut.css' />\n");
+    }
+
 ?>
     <script src='/~XAMMM/scripts/main.js' defer></script>
 </head>
@@ -34,28 +43,35 @@ if(!(isset($title))){
             <span id='logo'></span>
 
             <ul class='headerMenu'>
-                <span class='headerMenuTitle'>MENU</span>
+                <span class='headerMenuTitle'>Réserver</span>
                 <ul class='headerMenuList'>
                     <li><a href='/~XAMMM/pages/parachutisme_histoire.php'>L'histoire du parachutisme</a></li>
                     <li><a href='/~XAMMM/pages/processus_de_saut.php'>Processus de saut</a></li>
                     <li><a href='/~XAMMM/pages/faq_tandem.php'>FAQ Tandem</a></li>
                     <li><a href='/~XAMMM/pages/reseaux.php'>Nos réseaux</a></li>
-                    <li><a href='/~XAMMM/pages/promotion.php'>Nos promotions actuels</a></li>
-                    <li><a href='/~XAMMM/pages/prestations.php'>Prestations / Offres</a></li>
-                    <li><a href='/~XAMMM/pages/avis_clients.php'>Avis clients</a></li>
+                    <li><a href='/~XAMMM/pages/promotion.php'>Nos promotions actuelles</a></li>
+                    <li><a href='/~XAMMM/pages/prestations.php'>Nos offres</a></li>
+                    <li><a href='/~XAMMM/pages/avis_clients.php'>Avis des clients</a></li>
                     <li><a href='/~XAMMM/pages/panier.php'>Panier</a></li>
                     <li><a href='/~XAMMM/pages/confirmation_commande.php'>Confirmation de commande</a></li>
                     <li><a href='/~XAMMM/pages/actualites.php'>Actualites</a></li>
-                    <li><a href='/~XAMMM/pages/legal_notice.php'>Mentions Légales</a></li><br>
-
-                    <li><a href='/~XAMMM/pages/CGV.php'>Conditions Générales de Vente</a></li><br>
-
+                </ul>
+            </ul>
+            <ul class='headerMenu'>
+                <span class='headerMenuTitle'>CGV</span>
+                <ul class='headerMenuList'>
+                    <li><a href='/~XAMMM/pages/legal_notice.php'>Mentions Légales</a></li>
+                    <li><a href='/~XAMMM/pages/CGV.php'>Conditions Générales de Vente</a></li>
+                </ul>
+            </ul>
+            <ul class='headerMenu'>
+                <span class='headerMenuTitle'>Utilisateur</span>
+                <ul class='headerMenuList'>
                     <li><a href='/~XAMMM/inc/form_adhesion.php'>Adhesion</a></li>
                     <li><a href='/~XAMMM/inc/form_connection.php'>Connexion</a></li>
                     <li><a href='/~XAMMM/inc/deconnection.php'>Deconnexion</a></li>
                     <li><a href='/~XAMMM/admin/index_admin.php'>Espace admin</a></li>
                     <li><a href='/~XAMMM/user/index_user.php'>Espace user</a></li>
-
                 </ul>
             </ul>
         </ul>

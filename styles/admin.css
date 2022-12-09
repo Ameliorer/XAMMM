@@ -1,22 +1,100 @@
+* {
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+}
+
+/* ----- Header style ----- */
+
+header {
+   position: relative;
+}
+h1 {
+   background-color: #418ae9;
+   font-size: 2.5em;
+   text-align: center;
+   font-weight: 900;
+   margin: 0em 20% 0.2em 20%;
+   padding: 0em 0.2em 0.2em 0.2em;
+   border-radius: 0px 0px 20px 20px;
+}
+
+h1::before {
+   content: '';
+   position: absolute;
+   top: -7px;
+   left: 21.5%;
+   height: 16%;
+   margin-top: 15px;
+   width: 5px;
+   border-radius: 15px;
+   background-color: #418ae9;
+}
+/* POURQUOI */
+h1::after {
+   content: '';
+   position: absolute;
+   top: -7px;
+   right: 21.5%;
+   height: 16%;
+   margin-top: 15px;
+   width: 5px;
+   border-radius: 15px;
+   background-color: #418ae9;
+}
+
+#imgAdmin {
+   z-index: -100;
+   width: 175px;
+   height: 100px;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
 /* ----- General style ----- */
 
 .div_actions {
-   background-color: #d3d3d3;
    margin: 1.05em 0em;
+   position: relative;
 }
 
 h2 {
-   padding: 0.2em;
+   margin-left: 2%;
+   margin-right: 2%;
+   margin-bottom: -10px;
+   padding: 0.3em 0.3em 0.7em 0.3em;
+   border-radius: 5px;
+   background: linear-gradient(
+      90deg,
+      rgb(51, 116, 201) 10%,
+      rgba(34, 126, 203, 1) 24%,
+      rgba(50, 140, 209, 1) 37%,
+      rgba(130, 189, 238, 1) 54%,
+      rgb(199, 229, 251) 86%
+   );
+   box-shadow: 5px 5px 1px #ffffff, -5px -5px 1px #ffffff;
 }
 
 h2:hover {
    cursor: pointer;
 }
 
+.arrow {
+   width: 18px;
+   height: 18px;
+   transform: translateY(2px);
+   transition: all 1s;
+}
+.div_actions:hover .arrow {
+   transform: rotate(0.25turn);
+}
+
 .div_actions h3 {
-   background-color: rgba(77, 208, 225, 0.4);
-   padding: 0.2em;
+   padding: 0.5em;
+   margin-left: 0.5em;
    transition: 0.5s;
+   color: white;
 }
 
 .div_actions h3:hover {
@@ -26,12 +104,33 @@ h2:hover {
 }
 
 .content {
-   margin: 0.5em 0.5em;
+   top: -500px;
+   margin-left: 4%;
+   margin-right: 2%;
    display: none;
+   transition: all 3s;
+   border-radius: 5px;
+   background: linear-gradient(
+      90deg,
+      rgb(51, 116, 201) 10%,
+      rgba(34, 126, 203, 1) 24%,
+      rgba(50, 140, 209, 1) 37%,
+      rgba(130, 189, 238, 1) 54%,
+      rgb(199, 229, 251) 86%
+   );
+   box-shadow: 5px 5px 1px #ffffff, -5px -5px 1px #ffffff;
 }
 .content.active {
    display: block;
+   transition: all 3s;
+   z-index: -1;
 }
+
+.content.active .arrow {
+   transform: rotate(0.25turn);
+}
+
+/* ----- Form style ----- */
 
 .add_action .form,
 .update_action .form,
@@ -39,32 +138,41 @@ h2:hover {
 .select_action .form,
 .selectAll_action .form {
    padding: 0.5em 0.2em;
-   margin: 0.2em 0em;
+   margin: 0.8em 0em;
    display: none;
+   background: linear-gradient(
+      90deg,
+      rgb(51, 116, 201) 10%,
+      rgba(34, 126, 203, 1) 24%,
+      rgba(50, 140, 209, 1) 37%,
+      rgba(130, 189, 238, 1) 54%,
+      rgb(199, 229, 251) 86%
+   );
 }
 
 .form.active {
-   display: block;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
 }
 
-.add_action {
-   background-color: rgba(203, 67, 53, 0.5);
+.form label {
+   color: whitesmoke;
+   font-size: 1.5em;
+   font-weight: 600;
+   margin: 0.3em;
 }
 
-.update_action {
-   background-color: rgba(118, 68, 138, 0.5);
-}
-
-.delete_action {
-   background-color: rgba(40, 116, 166, 0.5);
-}
-
-.select_action {
-   background-color: rgba(17, 122, 101, 0.5);
-}
-
-.selectAll_action {
-   background-color: rgba(183, 149, 11, 0.5);
+.form input,
+textarea,
+button {
+   text-align: center;
+   font-size: 0.9em;
+   padding: 0.5em;
+   border-radius: 10px;
+   background: #ffffff;
+   box-shadow: inset 5px -5px 10px #ffffff, inset -5px 5px 10px #ffffff;
 }
 
 /* Style d'image */
@@ -130,4 +238,57 @@ h2:hover {
    transform: scale(1.1);
    background-color: rgba(244, 67, 54, 0.6);
    transition: all 1s;
+}
+
+/* ----- Table style ----- */
+
+table {
+   border-spacing: 0;
+   margin: 3%;
+}
+
+#line1DataTable {
+   background-color: rgb(51, 116, 201);
+   margin: 0;
+   padding: 0;
+}
+
+#line1DataTable td {
+   font-size: 1.4em;
+   border: 1px solid black;
+   border-radius: 3px;
+   padding: 0.5em;
+   text-align: center;
+   min-width: 10%;
+   max-width: 20%;
+}
+
+.lineOfTable {
+   background-color: rgba(208, 211, 212, 0.4);
+   text-align: center;
+}
+
+.lineOfTable td {
+   font-size: 1.1em;
+   white-space: wrap;
+   padding: 0.5em;
+}
+
+/* ----- Ul style ----- */
+
+.menu_page,
+ul {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.menu_page p {
+   font-size: 1.3em;
+   margin: 0.7em;
+}
+
+.menu_page li {
+   font-size: 1.1em;
+   margin: 0.4em;
 }

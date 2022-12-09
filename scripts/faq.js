@@ -9,7 +9,21 @@ axios.get('../lib/read_data.php').then((response) => {
    for (let i = 1; i < lengthDATA + 1; i++) {
       aff_question_response(DATA, i);
    }
+
+   //Add listener to show the answer of the question when the mouse is on the question
+   let questions = document.querySelectorAll(".question"); //All the questions
+   console.log(questions); // check in the console
+   //iterate for each questions
+   for (let question of questions){
+      question.addEventListener('click', e=>{
+         question.classList.toggle("question")
+         question.classList.toggle("questionOpen");
+      } );
+   }
 });
+
+
+
 
 function aff_question_response(DATA, id) {
    /* Create a html div with the question of the faq and the response linked
@@ -36,6 +50,7 @@ function aff_question_response(DATA, id) {
 
    //Append the question in the FAQ
    FAQContent.appendChild(div);
+   /*console.log(div);*/
 }
 
 function recupTitle(DATA, id) {
@@ -61,3 +76,8 @@ function recupResponse(DATA, id) {
 
    return response;
 }
+
+
+
+
+
