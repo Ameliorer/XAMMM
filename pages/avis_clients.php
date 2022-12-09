@@ -18,25 +18,31 @@ echo($html_acceuil);
 ?>
 
 <main> 
+<div id="boutons">
 <button type="button" id="button5stars">
-    5 étoiles
+   <span> 5 étoiles </span>
 </button>
 
 <button type="button" id="button4stars">
-    4 étoiles
+<span> 4 étoiles</span>
 </button>
 
 <button type="button" id="button3stars">
-    3 étoiles
+<span> 3 étoiles</span>
 </button>
 
 <button type="button" id="button2stars">
-    2 étoiles
+<span> 2 étoiles</span>
 </button>
 
 <button type="button" id="button1stars">
-    1 étoiles
+<span>  1 étoiles</span>
 </button>
+
+<button type="button" id="all">
+<span>  Tous avis </span>
+</button>
+</div>
 
 <div id="avis">
 </div>
@@ -48,6 +54,6 @@ echo($html_acceuil);
 //–––––––––––––––
 
 //Include du footer
-include("footer.php");
+include("footerr.html");
 
 ?>

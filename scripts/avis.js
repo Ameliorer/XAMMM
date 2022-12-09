@@ -22,10 +22,7 @@ axios.get("../lib/opinion.php?opinionAction=select_all").then(Response => {
     console.log(Response); // just for testing
     // create a div for each with all infos in it 
     Response.data.forEach(post => {
-        let div = create("div", avis);
-        let user = create("h2", div, "Utilisateur : " + post.iduser)
-        let grade = create("span", div,"Note : " + post.grade);
-        let content = create("p", div,"Avis : " + post.text);
+        createAOpinion(post);
     });
 });
 
@@ -35,14 +32,11 @@ button5star.addEventListener('click', e => {
     avis.innerText=""
     let titre = create("h1", avis, "Les avis 5 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
-    axios.get("../lib/opinion.php?opinionAction=select_5star").then(Response => {
+    axios.get("../lib/opinion.php?opinionAction=5").then(Response => {
         console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
-            let div = create("div", avis);
-            let user = create("h2", div, "Utilisateur : " + post.iduser)
-            let grade = create("span", div,"Note : " + post.grade);
-            let content = create("p", div,"Avis : " + post.text);
+            createAOpinion(post);
         });
 });
 });
@@ -52,14 +46,11 @@ button4star.addEventListener('click', e => {
     avis.innerText=""
     let titre = create("h1", avis, "Les avis 4 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
-    axios.get("../lib/opinion.php?opinionAction=select_4star").then(Response => {
+    axios.get("../lib/opinion.php?opinionAction=4").then(Response => {
         console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
-            let div = create("div", avis);
-            let user = create("h2", div, "Utilisateur : " + post.iduser)
-            let grade = create("span", div,"Note : " + post.grade);
-            let content = create("p", div,"Avis : " + post.text);
+            createAOpinion(post);
         });
 });
 });
@@ -69,14 +60,25 @@ button3star.addEventListener('click', e => {
     avis.innerText=""
     let titre = create("h1", avis, "Les avis 3 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
-    axios.get("../lib/opinion.php?opinionAction=select_3star").then(Response => {
+    axios.get("../lib/opinion.php?opinionAction=3").then(Response => {
         console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
-            let div = create("div", avis);
-            let user = create("h2", div, "Utilisateur : " + post.iduser)
-            let grade = create("span", div,"Note : " + post.grade);
-            let content = create("p", div,"Avis : " + post.text);
+            createAOpinion(post);
+        });
+});
+});
+
+let buttonAllstar = document.getElementById("all")
+buttonAllstar.addEventListener('click', e => { 
+    avis.innerText=""
+    let titre = create("h1", avis, "Tous les avis");
+    // Get the content of the bd opinion and put them in the page opinion.php
+    axios.get("../lib/opinion.php?opinionAction=select_all").then(Response => {
+        console.log(Response); // just for testing
+        // create a div for each with all infos in it 
+        Response.data.forEach(post => {
+            createAOpinion(post);
         });
 });
 });
@@ -86,14 +88,11 @@ button2star.addEventListener('click', e => {
     avis.innerText=""
     let titre = create("h1", avis, "Les avis 2 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
-    axios.get("../lib/opinion.php?opinionAction=select_2star").then(Response => {
+    axios.get("../lib/opinion.php?opinionAction=2").then(Response => {
         console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
-            let div = create("div", avis);
-            let user = create("h2", div, "Utilisateur : " + post.iduser)
-            let grade = create("span", div,"Note : " + post.grade);
-            let content = create("p", div,"Avis : " + post.text);
+            createAOpinion(post);
         });
 });
 });
@@ -103,14 +102,35 @@ button1star.addEventListener('click', e => {
     avis.innerText=""
     let titre = create("h1", avis, "Les avis 1 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
-    axios.get("../lib/opinion.php?opinionAction=select_1star").then(Response => {
+    axios.get("../lib/opinion.php?opinionAction=1").then(Response => {
         console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
-            let div = create("div", avis);
-            let user = create("h2", div, "Utilisateur : " + post.iduser)
-            let grade = create("span", div,"Note : " + post.grade);
-            let content = create("p", div,"Avis : " + post.text);
+            createAOpinion(post);
         });
 });
 });
+
+function createAOpinion(post){
+    let div = create("div", avis);
+    let user = create("h2", div, "Utilisateur : " + post.iduser)
+    let gradetxt ="";
+
+    if (post.grade == 5 ) {
+         gradetxt = "⭐⭐⭐⭐⭐";
+    }
+    else if (post.grade == 4 ) {
+         gradetxt = "⭐⭐⭐⭐";
+    }
+    else if (post.grade == 3 ) {
+         gradetxt = "⭐⭐⭐";
+    }
+    else if (post.grade == 2 ) {
+         gradetxt = "⭐⭐";
+    }
+    else { gradetxt = "⭐";}
+
+    let grade = create("span", div,"Note : " + gradetxt);
+
+    let content = create("p", div,"Avis : " + post.text);
+}

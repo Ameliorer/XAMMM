@@ -5,7 +5,7 @@ include("../crud/crud_opinion.php");
 $retQuerry = array();
 
 if(isset($_GET["opinionAction"])){
-    $opinionAction = $_GET["opinionAction"];
+   $opinionAction = $_GET["opinionAction"];
 }
 
 if(isset($opinionAction)){
@@ -18,9 +18,9 @@ if(isset($opinionAction)){
         } else {
             $return=false;
         }
-    };
-    if($opinionAction == "select_5star"){
-        $query="SELECT * FROM `opinion` where `grade`=5 " ;
+    } else {
+        $opinionAction = (int) $opinionAction;
+        $query="SELECT * FROM `opinion` where `grade`=$opinionAction " ;
         if($response=mysqli_query($conn, $query)){
             while ($row = mysqli_fetch_assoc($response)) {
                 array_push($retQuerry, $row);
@@ -29,46 +29,7 @@ if(isset($opinionAction)){
             $return=false;
         }
     };
-    if($opinionAction == "select_4star"){
-        $query="SELECT * FROM `opinion` where `grade`=4 " ;
-        if($response=mysqli_query($conn, $query)){
-            while ($row = mysqli_fetch_assoc($response)) {
-                array_push($retQuerry, $row);
-            }
-        } else {
-            $return=false;
-        }
-    };
-    if($opinionAction == "select_3star"){
-        $query="SELECT * FROM `opinion` where `grade`=3 " ;
-        if($response=mysqli_query($conn, $query)){
-            while ($row = mysqli_fetch_assoc($response)) {
-                array_push($retQuerry, $row);
-            }
-        } else {
-            $return=false;
-        }
-    };
-    if($opinionAction == "select_2star"){
-        $query="SELECT * FROM `opinion` where `grade`=2 " ;
-        if($response=mysqli_query($conn, $query)){
-            while ($row = mysqli_fetch_assoc($response)) {
-                array_push($retQuerry, $row);
-            }
-        } else {
-            $return=false;
-        }
-    };
-    if($opinionAction == "select_1star"){
-        $query="SELECT * FROM `opinion` where `grade`=1 " ;
-        if($response=mysqli_query($conn, $query)){
-            while ($row = mysqli_fetch_assoc($response)) {
-                array_push($retQuerry, $row);
-            }
-        } else {
-            $return=false;
-        }
-    };
+
 };
 
 

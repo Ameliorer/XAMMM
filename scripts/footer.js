@@ -16,7 +16,7 @@ function create(tagName, container, text=null, class_=null, id=null) {
     return element
 }
 
-axios.get("/~XAMMM/lib/opinion.php?opinionAction=select_5star").then(Response => {
+axios.get("/~XAMMM/lib/opinion.php?opinionAction=5").then(Response => {
     Response.data.forEach(post => {
         let div = create("div", avis, null, "carousel-item");
         let grade = create("span", div, null, "grade");
