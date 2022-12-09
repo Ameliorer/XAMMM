@@ -4,7 +4,7 @@ function showTable($table,$isMatrix,$nameDBField) {
     $showTableHTML = "<table class='dataTable'>";
     $showTableHTML .= "<tr id='line1DataTable'>";
     foreach($nameDBField as $field){
-        $showTableHTML .= "<td>$field | </td>";
+        $showTableHTML .= "<td>$field</td>";
     }
     $showTableHTML .= "</tr>";
     if($isMatrix){

@@ -23,20 +23,23 @@ include("../lib/showElements_admin.php");
 
 <header>
     <h1>Bienvenue sur la page admin</h1>
-    <p>Soyez libre de réaliser les actions suivantes : </p>
-    <ul>
-        <li>Ajouter</li>
-        <li>Modifier</li>
-        <li>Supprimer</li>
-        <li>Tout sélectionner</li>
-        <li>Selectionner selon un critère</li>
-    </ul>
-    <p>N'importe quel élèment des catégories suivantes :</p>
+    <img src='../images/58ae6fac8c68e99e929771f8f2cb6c42.jpeg' id="imgAdmin" alt="imgAdmin">
+    <div class="menu_page">
+        <p>Soyez libre de réaliser les actions suivantes : </p>
+        <ul>
+            <li>Ajouter</li>
+            <li>Modifier</li>
+            <li>Supprimer</li>
+            <li>Tout sélectionner</li>
+            <li>Selectionner selon un critère</li>
+        </ul>
+        <p><u>N'importe quel élèment des catégories suivantes :</u></p>
+    </div>
 </header>
 
 <main>
     <div id="blog_actions" class="div_actions">
-        <h2>Les posts :</h2>
+        <h2>Les posts <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-blog_actions" class="content">
             <h3>Ajouter un post</h3>
             <div class="add_action">
@@ -45,7 +48,7 @@ include("../lib/showElements_admin.php");
                     <input type="text" placeholder="titre" name="blogTitle"/>
 
                     <label for="blogContent">Contenu du Post :</label>
-                    <textarea name="blogContent" rows="1" cols="30" >Descriver le blog dans ce bloc</textarea>
+                    <textarea name="blogContent" rows="10" cols="120" >Descriver le blog dans ce bloc</textarea>
 
                     <label for="blogDate">Date du post :</label>
                     <input type="date" placeholder="date" name="blogDate"/>
@@ -64,7 +67,7 @@ include("../lib/showElements_admin.php");
                     <input type="text" placeholder="Titre" name="blogTitle"/>
 
                     <label for="blogContent">Nouveau contenu du post : </label>
-                    <textarea name="blogContent" rows="1" cols="32">Decriver les changements du post</textarea>
+                    <textarea name="blogContent" rows="10" cols="120">Decriver les changements du post</textarea>
 
                     <label for="blogDate">Nouvelle date du Post : </label>
                     <input type="date" placeholder="date" name="blogDate"/>
@@ -103,7 +106,7 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="opinion_actions" class="div_actions">
-        <h2>Les opinions:</h2>
+        <h2>Les opinions <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-opinion_actions" class="content">
             <h3>Ajouter une opinion</h3>
             <div class="add_action">
@@ -171,7 +174,7 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="code_actions" class="div_actions">
-        <h2>Les codes promos:</h2>
+        <h2>Les codes promos <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-codes_actions" class="content">
             <h3>Ajouter un code promo</h3>
             <div class="add_action">
@@ -241,19 +244,19 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="discount_actions" class="div_actions">
-        <h2>Les promotions :</h2>
+        <h2>Les promotions <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-discounts_actions" class="content">
             <h3>Ajouter une promotion lié à un produit</h3>
             <div class="add_action">
                 <form action="" method="post" name="promosForm" class="form">
                     <label for="productId">Id du produit lié :</label>
-                    <input type="int" placeholder="" name="productId"/>
+                    <input type="int" placeholder="Id" name="productId"/>
 
                     <label for="promosNom">Nom de la promotion :</label>
                     <input type="text" placeholder="nom" name="promosNom"/>
 
                     <label for="percentage">Pourcentage :</label>
-                    <input type="int" placeholder="" name="percentage"/>
+                    <input type="int" placeholder="%" name="percentage"/>
 
                     <label for="promosDateD">Date de début de la promotion :</label>
                     <input type="date" placeholder="date debut" name="promosDateD"/>
@@ -262,7 +265,7 @@ include("../lib/showElements_admin.php");
                     <input type="date" placeholder="date fin" name="promosDateF"/>
 
                     <label for="promosDescription">Description de la promotion :</label>
-                    <textarea name="promosDescription" rows="10" cols="30">Description</textarea>
+                    <textarea name="promosDescription" rows="10" cols="120">Description</textarea>
 
                     <label for="promosSubmit">Ajouter la promotion</label>
                     <input type="submit" name="promosSubmit1">
@@ -290,7 +293,7 @@ include("../lib/showElements_admin.php");
                     <input type="date" placeholder="date fin" name="promosDateF"/>
 
                     <label for="promosDescription">Nouvelle description de la promotion :</label>
-                    <textarea name="promosDescription" rows="10" cols="30">Description</textarea>
+                    <textarea name="promosDescription" rows="10" cols="120">Description</textarea>
 
                     <label for="promosSubmit">Modifier la promotion</label>
                     <input type="submit" name="promosSubmit2">
@@ -326,7 +329,7 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="image_actions" class="div_actions">
-        <h2>Les images :</h2>
+        <h2>Les images <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-images_actions" class="content">
             <h3>Ajouter une image</h3>
             <div class="add_action">
@@ -377,7 +380,7 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="product_actions" class="div_actions">
-        <h2>Les produits : </h2>
+        <h2>Les produits <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-products_actions" class="content">
             <h3>Ajouter un produit</h3>
             <div class="add_action">
@@ -483,7 +486,7 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="reservation_actions" class="div_actions">
-        <h2>Les reservations :</h2>
+        <h2>Les reservations <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-reservations_actions" class="content">
             <h3>Ajouter une reservation</h3>
             <div class="add_action">
@@ -565,7 +568,7 @@ include("../lib/showElements_admin.php");
         </div>
     </div>
     <div id="user_actions" class="div_actions">
-        <h2>Les utilisateurs :</h2>
+        <h2>Les utilisateurs <img src="/~XAMMM/images/8aa56e7c51aee2e5ec008205de8f63de.png" class="arrow" ></h2>
         <div id="content-user_actions" class="content">
             <h3>Ajouter un utilisateur :</h3>
             <div class="add_action">
