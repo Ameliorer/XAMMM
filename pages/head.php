@@ -25,6 +25,15 @@ if(!(isset($title))){
         echo("<link rel='stylesheet' href='/~XAMMM/styles/user.css' />\n");
     }
 
+    
+    if(stripos($_SERVER["REQUEST_URI"],'faq_tandem.php')){
+        $html_head .= "<link rel='stylesheet' href= '/~XAMMM/styles/faq_style.css' />\n";
+    }
+
+    if(stripos($_SERVER["REQUEST_URI"],'processus_de_saut.php')){
+        $html_head .= "<link rel='stylesheet' href='/~XAMMM/styles//processus_saut.css' />\n";
+    }
+
 ?>
     <script src='/~XAMMM/scripts/main.js' defer></script>
 </head>

@@ -12,7 +12,7 @@ include("head.php");
 //–––––––––––––––
 
 
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
+$html_acceuil = "<div><a href='/~XAMMM/index.php'>ACCEUIL</a></div>";
 echo($html_acceuil);
 ?>
 
@@ -25,8 +25,9 @@ echo($html_acceuil);
     <div id="FAQContent"></div>
 </main>
 
-<script src="../scripts/axios.min.js" ></script> 
-<script src="../scripts/faq.js" defer></script>
+<script src="/~XAMMM/scripts/axios.min.js" ></script> 
+<script src="/~XAMMM/scripts/faq.js"></script>
+<script src="/~XAMMM/scripts/faq_anim.js" defer></script>
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
 //–––––––––––––––
