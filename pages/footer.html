@@ -1,26 +1,71 @@
 <footer>
-    <div id="avis">
 
+    <a href="/~XAMMM/pages/avis_clients.php" class="carou">
+        <div class="carousel">
+        </div>
+    </a>
+
+    <div class="contact">
+    <h2>Nous contacter</h2>
+        <form class="contactForm" method="post" id="contactForm" name="contactForm">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nom et Prénom">
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet du mail">
+                </div>
+                <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="5" placeholder="Ecrivez votre message"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Envoyez" class="btn btn-primary rounded-0 py-2 px-4">
+                    <span class="submitting"></span>
+                </div>
+            </div>
+        </form>
     </div>
-    <script src="scripts/footer.js"></script>
+
+    <div class="catch">
+        <div class="social_media">
+            <a href="https://www.facebook.com/yallahskydive">
+                <img src="images/logo-facebook.png">
+            </a>
+
+            <a href="https://www.instagram.com/parachutisme_71/">
+                <img src="images/logo-instagram.png">
+            </a>
+
+            <a href="https://www.yumping.fr/parachutisme/diagonale-chute-libre--e19681999">
+                <img src="images/logo-yumping.png">
+            </a>
+        </div>
+        <h2>4000 m, 200 km/h, 50 sec</h2>
+        <div class="links">
+            <a href="/~XAMMM/pages/legal_notice.php">
+                mentions légales
+            </a>
+            <a href="/~XAMMM/pages/CGV">
+                conditions générales de vente
+            </a>
+        </div>
+        <h4> tous droits réservés © XAMMM | 2022</h4>
+    </div>
 
 
+
+    <script src='/~XAMMM/scripts/axios.min.js'></script>
+    <script src="/~XAMMM/scripts/footer.js"></script>
+    <link rel="stylesheet" href="/~XAMMM/styles/footer.css">
 </footer>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.your-class').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-    });
-    });
-</script>
 
 </body>
 </html>
