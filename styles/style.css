@@ -6,6 +6,11 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(221, 230, 243);
+}
+
+main{
+    padding: .5vw;
 }
 
 header a {
@@ -77,3 +82,5 @@ header a {
 .hidden {
     display: none;
 }
+
+
