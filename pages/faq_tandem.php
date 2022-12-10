@@ -33,6 +33,6 @@ echo($html_acceuil);
 //–––––––––––––––
 
 //Include du footer
-include("footer.php");
+include("footer.html");
 
 ?>

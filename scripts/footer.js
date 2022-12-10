@@ -1,5 +1,5 @@
 let main = document.querySelector("main");
-let avis = document.querySelector(".carousel");
+let avisfooter = document.querySelector(".carousel");
 
 function create(tagName, container, text=null, class_=null, id=null) {
     let element = document.createElement(tagName);
@@ -18,7 +18,7 @@ function create(tagName, container, text=null, class_=null, id=null) {
 
 axios.get("/~XAMMM/lib/opinion.php?opinionAction=5").then(Response => {
     Response.data.forEach(post => {
-        let div = create("div", avis, null, "carousel-item");
+        let div = create("div", avisfooter, null, "carousel-item");
         let grade = create("span", div, null, "grade");
 
         axios.get("/~XAMMM/lib/getName.php?iduser="+post.iduser).then(Response => {

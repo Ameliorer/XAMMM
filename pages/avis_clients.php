@@ -54,6 +54,6 @@ echo($html_acceuil);
 //–––––––––––––––
 
 //Include du footer
-include("footerr.html");
+include("footer.html");
 
 ?>

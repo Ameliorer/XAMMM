@@ -1,11 +1,8 @@
 footer {
     font-family:Arial;
-}
-body{
     background-color: rgb(221,230,243);
-}
+    box-sizing: border-box;}
 
-*{box-sizing: border-box;}
 .carou{
     margin: 25px 0px;
 }
@@ -23,7 +20,7 @@ body{
     flex-direction: column;
     position: absolute;
     width: 75%;
-    height: 96%;
+    height: 95%;
     top: 0;
     left: 100%;
     color: #82b5e8;
