@@ -1,4 +1,3 @@
-let main = document.querySelector("main");
 let avisfooter = document.querySelector(".carousel");
 
 function create(tagName, container, text=null, class_=null, id=null) {
