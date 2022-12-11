@@ -10,7 +10,8 @@ form.addEventListener("submit", function(e){
     finalData.append('idUser', PHPdata.idUser);
     finalData.append('nameProduct', PHPdata.nameProduct);
     finalData.append('today', PHPdata.today);
-    axios.post("../lib/gestion_json_panier.php", finalData)
+    finalData.append('action', "addToCart");
+    axios.post("../lib/gestion_panier.php", finalData)
     .then(Response => {
         console.log(Response);
     });
