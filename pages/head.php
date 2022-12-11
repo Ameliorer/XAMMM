@@ -29,8 +29,13 @@ if(stripos($_SERVER["REQUEST_URI"],'faq_tandem.php')){
     echo("<link rel='stylesheet' href= '/~XAMMM/styles/faq_style.css' />\n");
 }
 if(stripos($_SERVER["REQUEST_URI"],'processus_de_saut.php')){
-    echo("<link rel='stylesheet' href='/~XAMMM/styles/processus_saut.css' />\n");
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/style_division.css' />\n");
 }
+
+if(stripos($_SERVER["REQUEST_URI"],'parachutisme_histoire.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/style_division.css' />\n");
+}
+
 if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/opinion.css' />\n");
 }
@@ -39,6 +44,14 @@ if(stripos($_SERVER["REQUEST_URI"],'actualites.php')){
 }
 if(stripos($_SERVER["REQUEST_URI"],'index.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/index.css' />\n");
+}
+
+if(stripos($_SERVER["REQUEST_URI"],'CGV.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/officiel.css' />\n");
+}
+
+if(stripos($_SERVER["REQUEST_URI"],'legal_notice.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/officiel.css' />\n");
 }
 
 
