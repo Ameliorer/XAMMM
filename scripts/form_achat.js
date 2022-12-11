@@ -11,7 +11,8 @@ form.addEventListener("submit", function(e){
     finalData.append('nameProduct', PHPdata.nameProduct);
     finalData.append('today', PHPdata.today);
     finalData.append('action', "addToCart");
-    axios.post("../lib/gestion_panier.php", finalData);
-    window.location.replace('/~XAMMM/pages/prestations.php');
+    axios.post("../lib/gestion_panier.php", finalData).then( Response =>
+        {window.location.replace('/~XAMMM/pages/prestations.php');}
+    );
 });
 

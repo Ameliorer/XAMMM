@@ -77,6 +77,16 @@ function SelectProduit($conn, $name){
 	return $return;
 }
 
+function SelectProduit_id($conn, $id){
+    $query="SELECT `name`, `price` FROM `products` WHERE `id`='$id'" ;
+	if($response=mysqli_query($conn, $query)){
+		$return=mysqli_fetch_assoc($response);
+	} else {
+        $return=false;
+    }
+	return $return;
+}
+
 function SelectAllProduit($conn){
     $table = [];
     $query="SELECT * FROM `products`" ;

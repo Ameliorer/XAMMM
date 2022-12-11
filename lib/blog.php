@@ -24,7 +24,7 @@ $retQuerry = array();
 
 if(isset($blogAction)){
     if($blogAction == "select_all"){
-        $query="SELECT * FROM `blog`" ;
+        $query="SELECT * FROM `blog` ORDER BY `datePost` DESC;" ;
         if($response=mysqli_query($conn, $query)){
             while ($row = mysqli_fetch_assoc($response)) {
                 array_push($retQuerry, $row);
@@ -32,10 +32,18 @@ if(isset($blogAction)){
         } else {
             $return=false;
         }
-    };
-};
-
-
+    }
+    if(is_numeric($blogAction)){
+        $query="SELECT * FROM `blog` ORDER BY `datePost` DESC LIMIT $blogAction;";
+        if($response=mysqli_query($conn, $query)){
+            while ($row = mysqli_fetch_assoc($response)) {
+                array_push($retQuerry, $row);
+            }
+        } else {
+            $return=false;
+        }
+    }
+}
 
 
 echo json_encode($retQuerry);
