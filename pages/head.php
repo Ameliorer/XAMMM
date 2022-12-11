@@ -54,7 +54,6 @@ if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
                     <li><a href='/~XAMMM/pages/promotion.php'>Nos promotions actuelles</a></li>
                     <li><a href='/~XAMMM/pages/prestations.php'>Nos offres</a></li>
                     <li><a href='/~XAMMM/pages/avis_clients.php'>Avis des clients</a></li>
-                    <li><a href='/~XAMMM/pages/panier.php'>Panier</a></li>
                     <li><a href='/~XAMMM/pages/confirmation_commande.php'>Confirmation de commande</a></li>
                     <li><a href='/~XAMMM/pages/actualites.php'>Actualites</a></li>
                 </ul>
