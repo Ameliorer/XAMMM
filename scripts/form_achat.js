@@ -15,6 +15,6 @@ form.addEventListener("submit", function(e){
     .then(Response => {
         console.log(Response);
     });
-    window.location.replace('/~XAMMM/pages/prestations.php');
+    //window.location.replace('/~XAMMM/pages/prestations.php');
 });
 
