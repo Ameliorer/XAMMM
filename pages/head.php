@@ -98,11 +98,22 @@ if(stripos($_SERVER["REQUEST_URI"],'form_connection.php')){
             <ul class='headerMenu logoTitleMenu'>
                 <span class='headerMenuTitle' id='userLogoWrapper'><a href='/~XAMMM/inc/redirection_acreditation.php'><img id='userLogo' src='/~XAMMM/images/default-avatar.jpg'></img></a></span>
                 <ul class='headerMenuList hidden'>
-                    <li><a href='/~XAMMM/inc/form_adhesion.php'>Adhesion</a></li>
-                    <li><a href='/~XAMMM/inc/form_connection.php'>Connexion</a></li>
-                    <li><a href='/~XAMMM/inc/deconnection.php'>Deconnexion</a></li>
-                    <li><a href='/~XAMMM/admin/index_admin.php'>Espace admin</a></li>
-                    <li><a href='/~XAMMM/user/index_user.php'>Espace user</a></li>
+                    <?php
+                        if($_SESSION){
+                            if($_SESSION['admin'] == 0){
+                                $html = "<li><a href='/~XAMMM/user/index_user.php'>Espace user</a></li>";
+                            }
+                            else {
+                                $html = "<li><a href='/~XAMMM/admin/index_admin.php'>Espace admin</a></li>";
+                            }
+                            $html .= "<li><a href='/~XAMMM/inc/deconnection.php'>Deconnexion</a></li>";
+                        }
+                        else{
+                            $html = "<li><a href='/~XAMMM/inc/form_adhesion.php'>Adhesion</a></li>";
+                            $html .= "<li><a href='/~XAMMM/inc/form_connection.php'>Connexion</a></li>";
+                        }
+                        echo($html);
+                    ?>
                 </ul>
             </ul>
         </ul>

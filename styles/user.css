@@ -1,8 +1,133 @@
+body {
+   background-color: rgb(221, 230, 243);
+}
+
+/*----- Header style -----*/
+
+header h1 {
+   text-align: center;
+}
+
+header ul {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+header p {
+   font-size: 1.4em;
+   text-decoration: center;
+   text-align: center;
+}
+header ul li a {
+   text-decoration: none;
+}
+
+#menu_page {
+   font-size: 1.2em;
+   margin: 0;
+   padding: 0;
+}
+
+main {
+   margin: 1em;
+}
+
+/*----- Users_infos style -----*/
+
+.infosList {
+   display: flex;
+   flex-direction: column;
+   margin-left: 1.1em;
+   list-style: none;
+}
+
+.infosList li {
+   font-size: 1.2em;
+   padding: 0.5em 0em;
+}
+
+.infosList li span {
+   font-weight: 800;
+}
+
+/*----- Modifs infos_user style -----*/
+
+#checkPassword form {
+   margin: 0em 3em;
+   font-size: 1.2em;
+}
+
+#checkPassword .modifInformations {
+   margin: 0% 25%;
+   font-size: 1.2em;
+}
+
 .modifInformations {
    display: none;
 }
 
+.modifInformations input {
+   text-align: center;
+   padding: 0.3em 0.8em;
+   font-size: 0.9em;
+   border-radius: 10px;
+   background: #ffffff;
+   box-shadow: inset 5px -5px 5px #ffffff, inset -5px 5px 5px #ffffff;
+}
+
+.modifInformations label {
+   padding: 0.3em 0.8em;
+   font-size: 0.9em;
+}
 .modifInformations.active {
    display: flex;
    flex-direction: column;
+   max-width: 50%;
+   text-align: center;
+}
+
+/*----- Table reservations style -----*/
+table {
+   border-spacing: 0;
+   margin: 3%;
+   border-radius: 0px 0px 10px 10px;
+}
+
+table .infoLine {
+   background-color: rgb(51, 116, 201);
+   margin: 0;
+   padding: 0;
+}
+
+.infoLine td {
+   font-size: 1.4em;
+   border: 1px solid black;
+   border-radius: 3px;
+   padding: 0.5em;
+   text-align: center;
+   min-width: 10%;
+   max-width: 20%;
+}
+
+.infoReservation {
+   background-color: rgba(208, 211, 212, 0.4);
+   border-radius: 0px 0px 10px 10px;
+   text-align: center;
+}
+
+.infoReservation td {
+   font-size: 1.1em;
+   white-space: wrap;
+   padding: 0.5em;
+}
+
+.reservationsList p {
+   font-size: 1.2em;
+   margin: 3%;
+}
+
+.reservationsList button {
+   margin-left: 3%;
+   font-size: 1em;
 }

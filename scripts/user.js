@@ -72,68 +72,81 @@ function showReservationsUser(DATA) {
 
    for (reservation of DATA) {
       let info = document.createElement('p');
-      info.innerHTML =
-         'Votre réservation pour le  <b>' +
-         reservation['date'] +
-         '</b>  associée au produit <b>' +
-         products[reservation['productId'] - 1]['name'] +
-         '</b> :';
-      ul.appendChild(info);
+      console.log(products);
+      console.log(reservation['productId'] - 1);
+      let id = reservation['productId'];
+      for (let i = 0; i < products.length; i++) {
+         if (products[i]['id'] == id) {
+            info.innerHTML =
+               'Votre réservation pour le  <b>' +
+               reservation['date'] +
+               '</b>  associée au produit <b>' +
+               products[i]['name'] +
+               '</b> :';
+            ul.appendChild(info);
+            let tableReservation = document.createElement('table');
+            tableReservation.className = 'reservation';
 
-      let tableReservation = document.createElement('table');
-      tableReservation.className = 'reservation';
+            //We create the first line to know what's what in the table
+            let infoLine = document.createElement('tr');
+            infoLine.className = 'infoLine';
 
-      //We create the first line to know what's what in the table
-      let infoLine = document.createElement('tr');
+            let price = document.createElement('td');
+            price.innerText = 'Prix';
+            infoLine.appendChild(price);
 
-      let price = document.createElement('td');
-      price.innerText = 'Prix | ';
-      infoLine.appendChild(price);
+            let age = document.createElement('td');
+            age.innerText = ' Age renseigné';
+            infoLine.appendChild(age);
 
-      let age = document.createElement('td');
-      age.innerText = ' Age renseigné | ';
-      infoLine.appendChild(age);
+            let height = document.createElement('td');
+            height.innerText = ' Taille renseignée';
+            infoLine.appendChild(height);
 
-      let height = document.createElement('td');
-      height.innerText = ' Taille renseignée | ';
-      infoLine.appendChild(height);
+            let weight = document.createElement('td');
+            weight.innerText = ' Poids renseigné';
+            infoLine.appendChild(weight);
 
-      let weight = document.createElement('td');
-      weight.innerText = ' Poids renseigné |';
-      infoLine.appendChild(weight);
+            tableReservation.appendChild(infoLine);
 
-      tableReservation.appendChild(infoLine);
+            //We create the line who contain the information of the reservations
+            let infoReservation = document.createElement('tr');
+            infoReservation.className = 'infoReservation';
 
-      //We create the line who contain the information of the reservations
-      let infoReservation = document.createElement('tr');
+            let infoPrice = document.createElement('td');
+            infoPrice.innerText = products[i]['price'] + ' €';
+            infoReservation.appendChild(infoPrice);
 
-      let infoPrice = document.createElement('td');
-      infoPrice.innerText = products[reservation['productId'] - 1]['price'] + ' €';
-      infoReservation.appendChild(infoPrice);
+            let infoAge = document.createElement('td');
+            infoAge.innerText = reservation['userAge'] + ' an';
+            infoReservation.appendChild(infoAge);
 
-      let infoAge = document.createElement('td');
-      infoAge.innerText = reservation['userAge'] + ' an';
-      infoReservation.appendChild(infoAge);
+            let infoHeight = document.createElement('td');
+            infoHeight.innerText = reservation['userHeight'] + ' cm';
+            infoReservation.appendChild(infoHeight);
 
-      let infoHeight = document.createElement('td');
-      infoHeight.innerText = reservation['userHeight'] + ' cm';
-      infoReservation.appendChild(infoHeight);
+            let infoWeight = document.createElement('td');
+            infoWeight.innerText = reservation['userWeight'] + ' kg';
+            infoReservation.appendChild(infoWeight);
 
-      let infoWeight = document.createElement('td');
-      infoWeight.innerText = reservation['userWeight'] + ' kg';
-      infoReservation.appendChild(infoWeight);
+            tableReservation.appendChild(infoReservation);
+            ul.appendChild(tableReservation);
 
-      tableReservation.appendChild(infoReservation);
-      ul.appendChild(tableReservation);
-
-      //Associate a button to delete the reservation
-      let button = document.createElement('button');
-      button.id = reservation['userId'];
-      button.innerText = 'Supprimer la réservation (IRREVERSIBLE)';
-      button.addEventListener('click', (e) => {
-         axios.get('../lib/delete_reservation.php?id=' + e.target.id);
-      });
-      ul.appendChild(button);
+            //Associate a button to delete the reservation
+            let button = document.createElement('button');
+            button.id = reservation['id'];
+            button.innerText = 'Supprimer la réservation (IRREVERSIBLE)';
+            button.addEventListener('click', (e) => {
+               console.log('click');
+               axios
+                  .get('../lib/delete_reservation.php?id=' + e.target.id)
+                  .then((reservation) => {
+                     console.log(reservation.data);
+                  });
+            });
+            ul.appendChild(button);
+         }
+      }
    }
 
    divReservations.appendChild(ul);
