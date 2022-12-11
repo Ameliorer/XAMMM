@@ -34,6 +34,9 @@ if(stripos($_SERVER["REQUEST_URI"],'processus_de_saut.php')){
 if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/opinion.css' />\n");
 }
+if(stripos($_SERVER["REQUEST_URI"],'actualites.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/actualites.css' />\n");
+}
 
 
 ?>

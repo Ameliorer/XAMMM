@@ -5,17 +5,12 @@
 //Include du head
 $title = "Actualités";
 include("head.php");
-echo "<script src='../scripts/axios.min.js'></script>\n";
-echo "<script src='../scripts/actualite.js' defer></script>\n";
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
+<script src='../scripts/axios.min.js'></script>
+<script src='../scripts/actualites.js' defer></script>
 
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
+<div><a href='../index.php'>ACCUEIL</a></div>
 
 <main></main>
 
