@@ -9,6 +9,6 @@
     }
     else if ($_SESSION['admin'] == 0){
         // ... redirection to index
-        header('Location: ../user/index_user.php'); //+++++++
+        header('Location: ../user/index_user.php'); 
     }
 ?>

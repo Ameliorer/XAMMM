@@ -54,6 +54,9 @@ if(stripos($_SERVER["REQUEST_URI"],'legal_notice.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/officiel.css' />\n");
 }
 
+if(stripos($_SERVER["REQUEST_URI"],'prestations.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/style_produit.css' />\n");
+}
 
 ?>
     <script src='/~XAMMM/scripts/main.js' defer></script>

@@ -1,40 +1,37 @@
-body{
-    background-color: rgb(221, 230, 243);
-    font-family:sans-serif;
-    padding: .5vh;
+main{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-main{
+#main_products{
     display: flex;
     flex-direction: column;
-    align-content: stretch;
+    justify-items: center;
     align-items: center;
+   
 }
-
-h1{
-    color :rgb(11, 40, 83);
-    
-}
-#avis {
-    width: 100%;
-}
-
-#avis div{
-    background-color: rgb(178, 200, 232);
+.product{
     border:1px solid rgb(72, 106, 156);
     margin: 4vh;
     padding: 1vh;
-    border-radius: 5px;
-
+    border-radius: 7px;
     display: flex;
-    justify-content:space-around;
     flex-direction: column;
+    background-color: rgba(146, 179, 228, 0.438);
 
-    animation: fadein 1s;
+    
 }
 
-button{
-    border: none;
+
+h3{
+    align-self: center;
+    font-size: 2em;
+    
+
+    color: rgb(24, 39, 69);
+}
+
+.add_to_the_cart{
+    order: none;
     display: inline;
     text-align: center;
     cursor: pointer;
@@ -44,40 +41,43 @@ button{
     color: #eeeeee;
     font-weight: 600;
     font-size: 1em;
-    background-color: #2b46a6;
+    background-color: #5868a3;
     padding: 1.5vh 2vw;
     margin: 0 auto;
     border-radius: 5px;
 }
 
-button span {
+.add_to_the_cart a  {
     position: relative;
     z-index: 1;
+    color: #eeeeee;
+    text-decoration: none;
 }
 
-button:after {
+.add_to_the_cart:after {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
     height: 500%;
     width: 250%;
-    background: #6586ce;
+    background: #2d4c90;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
     transform: translateX(-100%) translateY(-25%) rotate(45deg);
   }
-button:hover:after {
+  .add_to_the_cart:hover:after {
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
   }
 
-@keyframes fadein {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+.price{
+    align-self: center;
+    font-size: 1.7em;
+    color: rgb(22, 72, 171);
+    font-weight: bold;
+}
+.product_info{
+    align-self: flex-start;
 }
