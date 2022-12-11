@@ -44,39 +44,53 @@ function Fmodif(formData, idC, idUser){
     axios.post("../lib/gestion_panier.php", post);
 }
 
+function confirmer(idU){
+    let post = new FormData();
+    post.append("idUser", idU);
+    post.append("action", "confirmer");
+    axios.post("../lib/gestion_panier.php", post).then(Response => {
+        window.location.replace('/~XAMMM/user/index_user.php')
+    });
+}
+
 let main = document.querySelector('#aff_panier');
 
 axios.get('../lib/panier.php?id='+ PHPdata.idUser).then(Response => {
-    console.log(Response);
-    Response.data.forEach(cartReserv => {
-        let div = create("div", main, null, "cartReserv");
-        let NomProduct = create("h2", div, cartReserv[1].name);
-        let PriceProduct = create("h4", div, "Prix : "+ cartReserv[1].price +"\€");
-        let datereserv = create("p", div, "Date : "+ cartReserv[0].dateReservation);
-        let divButton = create("div", div, null, "divButton");
-        let remove = create("button", divButton, "retirer", "button");
-        remove.addEventListener("click", function(){ Fdelete(cartReserv); div.style.display = "none";}, false); 
-        let modifier = create("button", divButton, "modifier", "button");
-        let form = create("form", div, null, "formModif");
-        form.style.display = "none";
-        modifier.addEventListener("click", function(){ 
-            if(form.style.display == "block"){
-                form.style.display = "none"
-                modifier.innerHTML = "modifier"
-            }else{
-                form.style.display = "block"
-                modifier.innerHTML = "annuler"
-            };}, false)
-        let ageInput = createInput(form, "number", cartReserv[2].age, "ageInput", "Veuillez confirmer votre age : ");
-        let tailleInput = createInput(form, "number", cartReserv[2].height, "heightInput", "Veuillez confirmer votre taille : ");
-        let poidsInput = createInput(form, "number", cartReserv[2].weight, "weightInput", "Veuillez confirmer votre poids : ");
-        let dateInput = createInput(form, "date", cartReserv[0].dateReservation, "dateInput", "Veuillez confirmer la date : ");
-        let submitInput = createInput(form, "submit", "confirmer");
-        form.addEventListener("submit", function(e){ 
-            e.preventDefault(); 
-            Fmodif(form, cartReserv[0].id, cartReserv[0].idUser); 
+    if(Response.data == "No products in Cart[]"){
+        let err = create("p", main, "Votre panier est vide");
+    }else{
+        let Bconf = create("button", main, "Confirmer le panier", null, "ConfirmationPanier");
+        Response.data.forEach(cartReserv => {
+            let div = create("div", main, null, "cartReserv");
+            let NomProduct = create("h2", div, cartReserv[1].name);
+            let PriceProduct = create("h4", div, "Prix : "+ cartReserv[1].price +"\€");
+            let datereserv = create("p", div, "Date : "+ cartReserv[0].dateReservation);
+            let divButton = create("div", div, null, "divButton");
+            let remove = create("button", divButton, "retirer", "button");
+            remove.addEventListener("click", function(){ Fdelete(cartReserv); div.style.display = "none";}, false); 
+            let modifier = create("button", divButton, "modifier", "button");
+            let form = create("form", div, null, "formModif");
             form.style.display = "none";
-            datereserv.innerHTML = "Date : "+ form.dateInput.value;
+            modifier.addEventListener("click", function(){ 
+                if(form.style.display == "block"){
+                    form.style.display = "none"
+                    modifier.innerHTML = "modifier"
+                }else{
+                    form.style.display = "block"
+                    modifier.innerHTML = "annuler"
+                };}, false)
+            let ageInput = createInput(form, "number", cartReserv[2].age, "ageInput", "Veuillez confirmer votre age : ");
+            let tailleInput = createInput(form, "number", cartReserv[2].height, "heightInput", "Veuillez confirmer votre taille : ");
+            let poidsInput = createInput(form, "number", cartReserv[2].weight, "weightInput", "Veuillez confirmer votre poids : ");
+            let dateInput = createInput(form, "date", cartReserv[0].dateReservation, "dateInput", "Veuillez confirmer la date : ");
+            let submitInput = createInput(form, "submit", "confirmer");
+            form.addEventListener("submit", function(e){ 
+                e.preventDefault(); 
+                Fmodif(form, cartReserv[0].id, cartReserv[0].idUser); 
+                form.style.display = "none";
+                datereserv.innerHTML = "Date : "+ form.dateInput.value;
+            });
         });
-    });
+        Bconf.addEventListener("click", function(){ confirmer(PHPdata.idUser); })
+    };
 });

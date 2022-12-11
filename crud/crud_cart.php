@@ -77,6 +77,7 @@ Selectcart_user($conn, $idUser) -> $return
 function Selectcart_user($conn, $idUser){
     $query="SELECT * FROM `cart` WHERE `idUser`='$idUser'" ;
 	if($response=mysqli_query($conn, $query)){
+        $table = array();
 		while($row=mysqli_fetch_assoc($response)){
             $table []= $row;
         }

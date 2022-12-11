@@ -1,0 +1,128 @@
+
+main{
+    background-color: rgb(221, 230, 243);
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: center;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    line-height: 1.5;
+
+}
+
+main a{
+    text-decoration: none;
+}
+/* Titre */
+
+
+
+
+
+/*intro images*/
+
+#imagesIntro{
+    display : flex;
+    flex-direction: row;
+
+    width: 100vw;
+    justify-content: space-around;
+}
+
+#imagesIntro img{
+    width: 11vw;
+    filter: grayscale(100%);
+    width:100%;
+    transition: all 0.2s;
+    object-fit: cover;
+    background-color: brown;
+}
+
+#imagesIntro a{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: center;
+   
+}
+
+#imagesIntro img:hover{
+    filter: grayscale(0);
+}
+
+#imagesIntro a p{
+    opacity:0;
+    background-color: rgb(98, 124, 174);
+    color : white;
+    border-radius: 6px;
+    padding: 5px;
+    
+    
+}
+
+#imagesIntro a:hover p{
+    opacity: 1;
+    
+}
+
+/* Style of each step */
+h2{
+    font-size: 2em;
+    letter-spacing: 3px;
+    text-shadow: 2px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+
+.etape_processus{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: center;
+}
+
+.etape_contenu{
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    align-items: center;
+}
+
+.etape_contenu p{
+    text-align: justify;
+    padding: 2vw;
+}
+
+.etape_contenu img{
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+    margin:2vw;
+    width: 50vw;
+    border-radius: 9px;
+}
+
+
+/* hide things that will appears later */
+
+[class*="reveal-"] { /* select all the object that have a class starting with reveal-*/
+    opacity:0; 
+    transform: translateY(30px);
+}
+
+/* class when appears */
+.reveal-visible{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 1s; 
+}
+
+/* Appears with delay*/
+.reveal-2{
+    transition-delay: 2ms;
+}
+
+.reveal-3{
+    transition-delay: 3ms;
+}
+
+.reveal-6{
+    transition-delay: 6ms;
+}
