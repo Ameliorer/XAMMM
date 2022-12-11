@@ -18,6 +18,14 @@ header a {
     color: black;
 }
 
+#userLogoWrapper {
+    align-items: center;
+}
+
+#userLogo {
+    width: 10vw;
+}
+
 #header {
     z-index: 100;
     width: 100vw;
@@ -41,14 +49,21 @@ header a {
     font-family: "Trebuchet MS", Verdana, sans-serif;
 }
 
+.logoTitleMenu {
+    height: 10vw;
+}
+
+.textTitleMenu {
+    height: 15%;
+}
+
 .headerMenu {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 1px;
-    height: 15%;
-    width:10%;
+    padding: 0;
+    width: 10%;
 }
 
 .headerMenuTitle {
