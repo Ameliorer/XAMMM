@@ -28,39 +28,38 @@ axios.get('../lib/products.php').then((response) => {
    //Creation of HTML balise to show a product to the client
    response.data.forEach((product) => {
       let div = create('div', main, null, 'product');
+
       let productName = create('h3', div, product.name);
-      let productPrice = create('span', div, product.price + ' euros');
-      let achatSpan = create('span', div);
-      let achatLink = create('a', achatSpan, "ajouter au panier");
-      achatLink.setAttribute("href", "form_achat.php?name="+product.name);
+      let productPrice = create('span', div, product.price + ' euros', "price");
+      ;
+
+      let titreul = create('span', div, "Conditions : ");
+      ;
       let ul = create('ul', div, null, 'product_info');
 
-      let spanDateStart = create('span', ul, 'Commence le : ');
+      let spanDateStart = create('span', ul);
       let productDateStart = create(
          'li',
          ul,
-         spanDateStart.innerText + product.dateStart,
+         'Commence le : ' + product.dateStart,
       );
 
-      let spanDateEnd = create('span', ul, 'Finit le : ');
-      let productDateEnd = create('li', ul, product.dateEnd);
+      let productDateEnd = create('li', ul, 'Finit le : ' + product.dateEnd);
 
-      let spanMinAge = create('span', ul, 'Age minimum : ');
-      let productMinAge = create('li', ul, product.minAge + ' ans');
+      let productMinAge = create('li', ul, 'Age minimum : ' + product.minAge + ' ans');
 
-      let spanMaxAge = create('span', ul, 'Age maximum : ');
-      let productMaxAge = create('li', ul, product.maxAge + ' ans');
+      let productMaxAge = create('li', ul, 'Age maximum : ' + product.maxAge + ' ans');
 
-      let spanMinWeight = create('span', ul, 'Poids minimum : ');
-      let productMinWeight = create('li', ul, product.minWeight + ' kg');
+      let productMinWeight = create('li', ul, 'Poids minimum : ' + product.minWeight + ' kg');
 
-      let spanMaxWeight = create('span', ul, 'Poids maximum : ');
-      let productMaxWeight = create('li', ul, product.maxWeight + ' kg');
+      let productMaxWeight = create('li', ul, 'Poids maximum : ' + product.maxWeight + ' kg');
 
-      let spanMinHeight = create('span', ul, 'Taille minimal : ');
-      let productMinHeight = create('li', ul, product.minHeight + ' cm');
+      let productMinHeight = create('li', ul, 'Taille minimal : ' + product.minHeight + ' cm');
 
-      let spanMaxHeight = create('span', ul, 'Taille maximal : ');
-      let productMaxHeight = create('li', ul, product.maxHeight + ' cm');
+      let productMaxHeight = create('li', ul, 'Taille maximal : '+ product.maxHeight + ' cm');
+
+      let achatSpan = create('span', div, null, "add_to_the_cart");
+      let achatLink = create('a', achatSpan, "ajouter au panier");
+      achatLink.setAttribute("href", "form_achat.php?name="+product.name)
    });
 });
