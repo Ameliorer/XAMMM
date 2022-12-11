@@ -19,7 +19,7 @@ echo($html_acceuil);
 
 <p>Le saut en Parachute Tandem est la façon la plus facile est sûre de découvrir la chute libre ; le rêve d’Icare ! C’est une expérience incomparable avec tout ce que vous auriez pu  essayé avant ! Accroché à un moniteur hyper expérimenté vous avez juste à profiter de cette sensation autant intense qu’inoubliable !
 </p>
-<div>
+</div>
     
 <div id="imagesIntro">
 <a href="#preparation">
@@ -84,9 +84,9 @@ echo($html_acceuil);
 
 
 <a id="preparation"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>La préparation du saut </h2>
-<div class="etape_contenu">
+<div class="division_contenu">
 <img class="picture"
      src="/~XAMMM/images/preparation.jpg"
      alt="preparation ">
@@ -96,10 +96,10 @@ echo($html_acceuil);
 
 
 <a id="monteeavion"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>La montée en avion</h2>
 
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/monteeavion.jpg"
@@ -111,10 +111,10 @@ echo($html_acceuil);
 
 
 <a id="miseaporte"></a>
-<div class="etape_processus ">
+<div class="division ">
 <h2>La mise en place à la porte</h2>
 
-<div class="etape_contenu ">
+<div class="division_contenu ">
 
 <img class="picture"
      src="/~XAMMM/images/miseaporte.jpg"
@@ -126,10 +126,10 @@ echo($html_acceuil);
 
 
 <a id="premieresec"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>Les premières secondes : l’accélération</h2>
 
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/premieresec.jpg"
@@ -140,9 +140,9 @@ echo($html_acceuil);
 
 
 <a id="chutelibre"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>La chute libre</h2>
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture "
      src="/~XAMMM/images/chutelibre.jpg"
@@ -154,10 +154,10 @@ echo($html_acceuil);
 
 
 <a id="ouverture"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>L’ouverture du parachute</h2>
 
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/ouverture.jpg"
@@ -168,10 +168,10 @@ echo($html_acceuil);
 
 
 <a id="vol"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>Le vol sous le parachute</h2>
 
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/vol.jpg"
@@ -183,10 +183,10 @@ echo($html_acceuil);
 
 
 <a id="atterrissage"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>L'atterrissage</h2>
 
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/atterrissage.jpg"
@@ -197,9 +197,9 @@ echo($html_acceuil);
 
 
 <a id="video"></a>
-<div class="etape_processus">
+<div class="division">
 <h2>La vidéo embarquée</h2>
-<div class="etape_contenu">
+<div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/video.jpg"

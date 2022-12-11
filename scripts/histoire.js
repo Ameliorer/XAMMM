@@ -24,6 +24,7 @@ for (let division of divisions){
  
 }
 
+
 const ratio= .3; //ratio of the visible part of the element 
 const options = {
   root: null, //detect if the element is visible on the screen

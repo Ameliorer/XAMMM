@@ -29,10 +29,29 @@ if(stripos($_SERVER["REQUEST_URI"],'faq_tandem.php')){
     echo("<link rel='stylesheet' href= '/~XAMMM/styles/faq_style.css' />\n");
 }
 if(stripos($_SERVER["REQUEST_URI"],'processus_de_saut.php')){
-    echo("<link rel='stylesheet' href='/~XAMMM/styles/processus_saut.css' />\n");
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/style_division.css' />\n");
 }
+
+if(stripos($_SERVER["REQUEST_URI"],'parachutisme_histoire.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/style_division.css' />\n");
+}
+
 if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/opinion.css' />\n");
+}
+if(stripos($_SERVER["REQUEST_URI"],'actualites.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/actualites.css' />\n");
+}
+if(stripos($_SERVER["REQUEST_URI"],'index.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/index.css' />\n");
+}
+
+if(stripos($_SERVER["REQUEST_URI"],'CGV.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/officiel.css' />\n");
+}
+
+if(stripos($_SERVER["REQUEST_URI"],'legal_notice.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/officiel.css' />\n");
 }
 
 
@@ -42,9 +61,9 @@ if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
 <body>
     <header id='header'>
         <ul id='headerMenusWrapper'>
-            <span id='logo'></span>
+            <span id='logoWrapper'><img id='logo' src='/~XAMMM/images/logo.png'></span>
 
-            <ul class='headerMenu'>
+            <ul class='headerMenu textTitleMenu'>
                 <span class='headerMenuTitle'>Réserver</span>
                 <ul class='headerMenuList hidden'>
                     <li><a href='/~XAMMM/pages/parachutisme_histoire.php'>L'histoire du parachutisme</a></li>
@@ -58,15 +77,15 @@ if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
                     <li><a href='/~XAMMM/pages/actualites.php'>Actualites</a></li>
                 </ul>
             </ul>
-            <ul class='headerMenu'>
+            <ul class='headerMenu textTitleMenu'>
                 <span class='headerMenuTitle'>CGV</span>
                 <ul class='headerMenuList hidden'>
                     <li><a href='/~XAMMM/pages/legal_notice.php'>Mentions Légales</a></li>
                     <li><a href='/~XAMMM/pages/CGV.php'>Conditions Générales de Vente</a></li>
                 </ul>
             </ul>
-            <ul class='headerMenu'>
-                <span class='headerMenuTitle'>Utilisateur</span>
+            <ul class='headerMenu logoTitleMenu'>
+                <span class='headerMenuTitle' id='userLogoWrapper'><a href='/~XAMMM/inc/redirection_acreditation.php'><img id='userLogo' src='/~XAMMM/images/default-avatar.jpg'></img></a></span>
                 <ul class='headerMenuList hidden'>
                     <li><a href='/~XAMMM/inc/form_adhesion.php'>Adhesion</a></li>
                     <li><a href='/~XAMMM/inc/form_connection.php'>Connexion</a></li>
