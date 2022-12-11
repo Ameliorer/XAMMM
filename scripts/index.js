@@ -1,4 +1,4 @@
-let main = document.querySelector("main");
+let blogWrapperWrapper = document.querySelector("#blogWrapperWrapper");
 
 /* Create an element based on the DOM
 createDO(tagName, container, text, class_, id) -> element
@@ -25,9 +25,10 @@ function createDO(tagName, container, text=null, class_=null, id=null) {
     return element
 }
 
-axios.get("../lib/blog.php?blogAction=select_all").then(Response => {
+axios.get("/~XAMMM/lib/blog.php?blogAction=3").then(Response => {
+    console.log(Response.data);
     Response.data.forEach(post => {
-        let div = createDO("div", main, null, "blogWrapper");
+        let div = createDO("div", blogWrapperWrapper, null, "blogWrapper");
         let title = createDO("h3", div, post.title, "blogTitle");
         let date = createDO("p", div, post.datePost, "blogDate")
         let content = createDO("p", div, post.content, "blogContent");

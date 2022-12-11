@@ -37,6 +37,9 @@ if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
 if(stripos($_SERVER["REQUEST_URI"],'actualites.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/actualites.css' />\n");
 }
+if(stripos($_SERVER["REQUEST_URI"],'index.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/index.css' />\n");
+}
 
 
 ?>
