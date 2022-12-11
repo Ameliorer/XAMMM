@@ -1,16 +1,9 @@
 
 <?php
-
-$html_head = "<!DOCTYPE html>\n";
-$html_head .= "<html>\n<head>\n";
-$html_head .= "<meta charset='utf-8' />\n";
-$html_head .= "<title>test crud</title>\n";
-$html_head .= "</head>\n";
-$html_head .= "<body>\n";
-
-echo $html_head;
+  
     // Page to create a new account user
-    session_start(); //Start or retrieve the session already started
+    include("../pages/head.php");
+
     include('verif_val.php');
     include('../db/db_connect.php');
     include('../crud/crud_users.php');
@@ -37,39 +30,68 @@ echo $html_head;
     }
  
 ?>
+<main>
 <section>
   <h1> Inscription</h1>
-            <form action="" method="POST" name="utilisateurForm" id="utilisateurForm" class="form">
+            <form action="" method="POST" name="utilisateurForm" id="utilisateurForm" >
 
+                <div class="form__group field">
+                    <input type="text" class="form__field" placeholder="nom" name="utilisateurNom" id="utilisateurNom"/>
+                    <label class="form__label" for="utilisateurNom">Nom : </label>
 
-                <label for="utilisateurNom">Nom : </label>
-                <input type="text" placeholder="nom" name="utilisateurNom" id="utilisateurNom"/>
+                </div>
+                <div class="form__group field">
+                    <input type="text" class="form__field" placeholder="prenom" name="utilisateurPrenom" id="utilisateurPrenom"/>
+                    <label class="form__label" for="utilisateurPrenom">Prenom : </label>
 
-                <label for="utilisateurPrenom">Prenom : </label>
-                <input type="text" placeholder="prenom" name="utilisateurPrenom" id="utilisateurPrenom"/>
+                </div>
+                
+                <div class="form__group field">
+                    <input type="mail" class="form__field" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
+                    <label class="form__label" for="utilisateurMail">Mail : </label>
 
-                <label for="utilisateurMail">Mail : </label>
-                <input type="mail" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
+                </div>
 
-                <label for="utilisateurPassword">mot de passe : </label>
-                <input type="password" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword"/>
+                <div class="form__group field">
+                    <input type="password" class="form__field" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword"/>
+                    <label class="form__label" for="utilisateurPassword">mot de passe : </label>
 
-                <label for="utilisateurNumTel">numero de telephone : </label>
-                <input type="tel" placeholder="numero telephone" name="utilisateurNumTel" id="utilisateurNumTel"/>
+                </div>
 
-                <label for="utilisateurTaille">Taille : </label>
-                <input type="number" placeholder="taille" name="utilisateurTaille" id="utilisateurTaille"/>
+                <div class="form__group field">
+                    <input type="tel" class="form__field" placeholder="numero telephone" name="utilisateurNumTel" id="utilisateurNumTel"/>
+                    <label class="form__label" for="utilisateurNumTel">Telephone : </label>
+                </div>
 
-                <label for="utilisateurPoids">Poids : </label>
-                <input type="number" placeholder="poids" name="utilisateurPoids" id="utilisateurPoids"/>
+                <div class="form__group field">
+                    <input type="number" class="form__field" placeholder="taille" name="utilisateurTaille" id="utilisateurTaille"/>
+                    <label class="form__label" for="utilisateurTaille">Taille : </label>
+                </div>
 
-                <label for="utilisateurAge">Age : </label>
-                <input type="number" placeholder="age" name="utilisateurAge" id="utilisateurAge"/>
+                <div class="form__group field">
+                    <input type="number" class="form__field" placeholder="poids" name="utilisateurPoids" id="utilisateurPoids"/>
+                    <label class="form__label" for="utilisateurPoids">Poids : </label>
 
-                <label for="utilisateurSubmit">valider : </label>
-                <input type="submit" name="utilisateurSubmit" id="utilisateurSubmit">
+                </div>
+
+                <div class="form__group field">
+                    <input type="number" class="form__field" placeholder="age" name="utilisateurAge" id="utilisateurAge"/>
+                    <label class="form__label" for="utilisateurAge">Age : </label>
+
+                </div>
+                    <input type="submit" class="envoyer" name="utilisateurSubmit" id="utilisateurSubmit">
+                   
+
             </form>
 
             <P> Veuillez choisir un mot de passe de plus de 9 caractères pour éviter les erreurs. </p>
 </section>
+</main>
+<?php 
+//Troisieme balise PHP pour include le(s) fichier(s) du footer
+//–––––––––––––––
 
+//Include du footer
+include("../pages/footer.html");
+
+?>

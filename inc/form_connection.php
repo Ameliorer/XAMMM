@@ -2,31 +2,32 @@
 <?php
     // Connection form for admin and user
     //Ask to connect by asking mail and password
-    session_start(); //Start or retrieve the session already started
     include('../db/db_connect.php');
     include('../crud/crud_users.php');
+
+    include("../pages/head.php");
 ?>
 
-<!doctype html>
-<html lang="fr">
-<head>
-	<meta charset="utf-8">
-</head>
-<body>
+<main>
 <section>
 
     <div class="container">
         <div class="login">
             <h1>Login</h1>
             <form action="form_connection.php" method="post">
+                <div class="form__group field">
+                    <input type="mail" class="form__field" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
+                    <label class="form__label" for="utilisateurMail">Mail de l'utilisateur : </label>
 
-            <label for="utilisateurMail">Mail de l'utilisateur : </label>
-            <input type="mail" placeholder="mail" name="utilisateurMail" id="utilisateurMail"/>
+                </div>
 
-            <label for="utilisateurPassword">mot de passe de l'utilisateur : </label>
-            <input type="password" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword" autocomplete="off"/>
-            
-            <input type="submit" value="Login">
+                
+                <div class="form__group field">
+                    <input type="password" class="form__field" placeholder="mot de passe" name="utilisateurPassword" id="utilisateurPassword" autocomplete="off"/>
+                    <label class="form__label" for="utilisateurPassword">mot de passe de l'utilisateur : </label>
+
+                </div>
+                <input type="submit" class="envoyer" value="Login">
             </form>
         </div>
     </div>
@@ -76,5 +77,12 @@ else if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword']
 }
 
 ?>
-</section>
-</body>
+ </main>
+ <?php 
+//Troisieme balise PHP pour include le(s) fichier(s) du footer
+//–––––––––––––––
+
+//Include du footer
+include("../pages/footer.html");
+
+?>

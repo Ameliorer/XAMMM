@@ -58,6 +58,14 @@ if(stripos($_SERVER["REQUEST_URI"],'prestations.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/style_produit.css' />\n");
 }
 
+if(stripos($_SERVER["REQUEST_URI"],'form_adhesion.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/pages_co.css' />\n");
+}
+
+if(stripos($_SERVER["REQUEST_URI"],'form_connection.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/pages_co.css' />\n");
+}
+
 ?>
     <script src='/~XAMMM/scripts/main.js' defer></script>
 </head>
