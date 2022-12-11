@@ -3,6 +3,7 @@ include("../db/db_connect.php");
 include("../crud/crud_cart.php");
 include("../crud/crud_users.php");
 include("../crud/crud_products.php");
+include("../crud/crud_reservations.php");
 
 if($_POST['action'] == "addToCart"){
     $product = SelectProduit($conn, $_POST['nameProduct']);
@@ -20,5 +21,14 @@ if($_POST['action'] == "modifier"){
     $user = SelectUser($conn, $_POST['idUser']);
     $upC = Updatecart($conn, $_POST['idC'], $_POST['date'], $today);
     $upU = UpdateUser($conn, $_POST['idUser'], $user['lastName'], $user['firstname'], $user['mail'], $user['password'], $user['phoneNum'], $_POST['height'], $_POST['weight'], $_POST['age'], $user['admin']);
+}
+
+if($_POST['action'] == "confirmer"){
+    $user = SelectUser($conn, $_POST['idUser']);
+    $fullCart = Selectcart_user($conn, $_POST["idUser"]);
+    foreach($fullCart as $cart){
+        CreateReservation($conn, $_POST["idUser"], $user["weight"], $user["height"], $user["age"], $cart["idProduct"], $cart["dateReservation"]);
+        Deletecart($conn, $cart['id']);
+    }
 }
 ?>
