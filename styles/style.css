@@ -1,101 +1,100 @@
 html {
-    margin: 0;
-    padding: 0;
+   margin: 0;
+   padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(221, 230, 243);
+   margin: 0;
+   padding: 0;
+   background-color: rgb(221, 230, 243);
 }
 
-main{
-    padding: .5vw;
+main {
+   padding: 0.5vw;
 }
 
 header a {
-    text-decoration: none;
-    color: black;
+   text-decoration: none;
+   color: black;
 }
 
 #userLogoWrapper {
-    align-items: center;
-}
-
-#userLogo {
-    width: 10vw;
+   align-items: center;
 }
 
 #header {
-    z-index: 100;
-    width: 100vw;
-    height: 20vh;
-    margin: 0;
-    background-color: rgb(43, 73, 206);
-    display: flex;
-    position: relative;
+   z-index: 100;
+   width: 100vw;
+   height: 20vh;
+   margin: 0;
+   background-color: rgb(43, 73, 206);
+   display: flex;
+   position: relative;
 }
 
 #headerMenusWrapper {
-    position: absolute;
-    width: 100%;
-    height: inherit;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+   position: absolute;
+   width: 100%;
+   height: inherit;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   padding: 0;
+   margin: 0;
+   font-family: 'Trebuchet MS', Verdana, sans-serif;
+}
+
+.imgHeader {
+   width: 5vw;
+   height: 5vw;
 }
 
 .logoTitleMenu {
-    height: 10vw;
+   height: 10vw;
 }
 
 .textTitleMenu {
-    height: 15%;
+   height: 15%;
 }
 
 .headerMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 10%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   width: 10%;
 }
 
 .headerMenuTitle {
-    font-size: 20px;
+   font-size: 20px;
 }
 
-.headerMenuList{
-    line-height: 1.5;
-    background-color: rgb(98, 124, 174);
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 10%;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
-    align-items: center;
-    width: fit-content;
+.headerMenuList {
+   line-height: 1.5;
+   background-color: rgb(98, 124, 174);
+   display: flex;
+   flex-direction: column;
+   list-style: none;
+   margin: 0;
+   padding: 10%;
+   font-size: 16px;
+   display: flex;
+   flex-direction: column;
+   align-content: stretch;
+   align-items: center;
+   width: fit-content;
 }
 
 .headerMenuList li {
-    width: fit-content;
+   width: fit-content;
 }
 
 .headerMenuList li a {
-    width: fit-content;
+   width: fit-content;
 }
 
 .hidden {
-    display: none;
+   display: none;
 }
-
-
