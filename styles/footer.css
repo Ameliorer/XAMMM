@@ -160,3 +160,8 @@ input::placeholder, textarea::placeholder{
     font-weight: bold;
     font-size: 12px;
     color: #000; }
+
+.link{
+    text-decoration: none;
+    color: black;
+}
