@@ -1,7 +1,5 @@
-* {
-   margin: 0;
-   padding: 0;
-   list-style-type: none;
+body {
+   background-color: #ffffff;
 }
 
 /* ----- Header style ----- */
@@ -45,8 +43,8 @@ h1::after {
 
 #imgAdmin {
    z-index: -100;
-   width: 175px;
-   height: 100px;
+   width: 200px;
+   height: 125px;
    position: absolute;
    top: 0;
    right: 0;

@@ -72,7 +72,7 @@ if(stripos($_SERVER["REQUEST_URI"],'form_connection.php')){
 <body>
     <header id='header'>
         <ul id='headerMenusWrapper'>
-            <span id='logoWrapper'><img id='logo' src='/~XAMMM/images/logo.png'></span>
+            <span id='logoWrapper'><a href='/~XAMMM/index.php'><img id='logo' src='/~XAMMM/images/logo.png'></a></span>
 
             <ul class='headerMenu textTitleMenu'>
                 <span class='headerMenuTitle'>Réserver</span>
@@ -80,7 +80,6 @@ if(stripos($_SERVER["REQUEST_URI"],'form_connection.php')){
                     <li><a href='/~XAMMM/pages/parachutisme_histoire.php'>L'histoire du parachutisme</a></li>
                     <li><a href='/~XAMMM/pages/processus_de_saut.php'>Processus de saut</a></li>
                     <li><a href='/~XAMMM/pages/faq_tandem.php'>FAQ Tandem</a></li>
-                    <li><a href='/~XAMMM/pages/reseaux.php'>Nos réseaux</a></li>
                     <li><a href='/~XAMMM/pages/promotion.php'>Nos promotions actuelles</a></li>
                     <li><a href='/~XAMMM/pages/prestations.php'>Nos offres</a></li>
                     <li><a href='/~XAMMM/pages/avis_clients.php'>Avis des clients</a></li>

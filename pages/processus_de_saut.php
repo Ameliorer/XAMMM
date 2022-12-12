@@ -7,13 +7,6 @@ include("head.php");
 
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-echo("<main>");
-$html_acceuil = "<div><a href='/~XAMMM/index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
 <div id=#title>
 <h1> Le saut en Tandem</h1>
 

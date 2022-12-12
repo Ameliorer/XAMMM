@@ -9,14 +9,6 @@ echo "<script src='../scripts/avis.js' defer></script>\n";
 
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
-
 <main> 
 <div id="boutons">
 <button type="button" id="button5stars">

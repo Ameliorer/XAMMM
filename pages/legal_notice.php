@@ -6,16 +6,6 @@
 include("head.php");
 
 ?>
-
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
-
 <header id="headerLegalNotice">
     <h1>Mentions légales</h1>
 </header>

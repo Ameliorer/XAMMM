@@ -7,14 +7,6 @@ include("head.php");
 
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-$html_acceuil= "<div><a href='../index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
-
 <div id=#title>
 <h1> L'histoire du parachutisme</h1>
 </div>

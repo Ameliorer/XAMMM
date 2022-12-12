@@ -10,8 +10,6 @@ include("head.php");
 <script src='../scripts/axios.min.js'></script>
 <script src='../scripts/actualites.js' defer></script>
 
-<div><a href='../index.php'>ACCUEIL</a></div>
-
 <main></main>
 
 <?php 

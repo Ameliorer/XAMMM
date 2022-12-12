@@ -7,14 +7,6 @@ include("head.php");
 
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
-
 <header id="header_codes">
     <h1>Nos codes promos</h1>
     <p>Retrouver ci-dessous les codes promos actuels</p>

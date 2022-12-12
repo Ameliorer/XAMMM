@@ -8,15 +8,6 @@ include("../db/db_connect.php");
 include("../crud/crud_products.php");
 
 ?>
-
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-$html_acceuil = "<div><a href='../index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
-
 <header>
     <h1>Nos prestations / Offres</h1>
     <p>Retrouver ci-dessous nos prestations et offres ! </p>

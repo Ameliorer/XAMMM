@@ -7,15 +7,6 @@ include("head.php");
 
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-
-
-$html_acceuil = "<div><a href='/~XAMMM/index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
-
 <header id="headerFAQ">
     <h1>FAQ</h1>
     <h4>Des questions ? Peut-être que les réponses existent déja :</h4>

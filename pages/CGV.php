@@ -2,12 +2,6 @@
 include("head.php");
 ?>
 
-<?php
-//Header of
-$html_accueil = "<div><a href='../index.php'>ACCUEIL</a></div>";
-echo($html_accueil);
-?>
-
 <header id="headerCGV">
     <h1>Conditions Générales de Vente</h1>
     <p>Les présentes conditions de vente sont conclues d’une part par le site <a href="www.diagonale-chute-libre.com">
