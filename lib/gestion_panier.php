@@ -6,7 +6,7 @@ include("../crud/crud_products.php");
 include("../crud/crud_reservations.php");
 
 $today = date('Y-m-d');
-Deletcart_today($conn, $today)
+Deletcart_today($conn, $today);
 
 if($_POST['action'] == "addToCart"){
     $product = SelectProduit($conn, $_POST['nameProduct']);
