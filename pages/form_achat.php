@@ -24,6 +24,7 @@ if(isset($_SESSION['id'])){
 <div>
     <h3><?php echo $nameProduct; ?></h3>
     <h4><?php echo $produit["price"]; ?></h4>
+    <span id="result"></span>
     <form action="" method="post" name="reservationForm" id="reservationForm" class="form">
         <label for="reservationTailleUser">Veulllez confirmer votre taille : </label>
         <input type="number" value="<?php echo $user["height"]; ?>" name="reservationTailleUser" id="reservationTailleUser"/>
