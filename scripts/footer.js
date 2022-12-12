@@ -47,7 +47,7 @@ axios.get("/~XAMMM/lib/opinion.php?opinionAction=5").then(Response => {
     });
 });
 
-window.onload = function(){
+screen.addEventListener('load', event => {
     var slides = document.getElementsByClassName('carousel-item'),
         addActive = function(slide) {slide.classList.add('active')},
         addUnactive = function(slide) {slide.classList.add('unactive')},
@@ -81,5 +81,4 @@ window.onload = function(){
 
         }
     }, 7000);
-}
-
+})
