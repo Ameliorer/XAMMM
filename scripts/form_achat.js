@@ -1,4 +1,4 @@
-let form = document.querySelector("form");
+let form = document.querySelector("#reservationForm");
 let res = document.querySelector("#result");
 
 form.addEventListener("submit", function(e){
@@ -13,6 +13,7 @@ form.addEventListener("submit", function(e){
     finalData.append('today', PHPdata.today);
     finalData.append('action', "addToCart");
     axios.post("../lib/gestion_panier.php", finalData).then( Response => {
+        console.log(Response);
         if(Response.data == "OK"){
             window.location.replace('/~XAMMM/pages/prestations.php');
         }else{

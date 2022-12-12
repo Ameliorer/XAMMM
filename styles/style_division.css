@@ -25,7 +25,7 @@ main a{
     display : flex;
     flex-direction: row;
     
-    width: 100vw;
+    width: 100%;
     justify-content: center;
 }
 

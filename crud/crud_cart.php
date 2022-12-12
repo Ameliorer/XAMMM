@@ -57,7 +57,7 @@ Deletcart_today($conn, $today) -> $return
     $return : boolean := Indicate the status of the query
 */
 function Deletcart_today($conn, $today){
-    $query="DELETE FROM `cart` WHERE `today`<'$today'" ;
+    $query="DELETE FROM `cart` WHERE `dateReservation`<'$today'" ;
 	if($response=mysqli_query($conn, $query)){
 		$return=mysqli_fetch_assoc($response);
 	} else {

@@ -23,7 +23,12 @@ if(isset($_SESSION['id'])){
 
 <div>
     <h3><?php echo $nameProduct; ?></h3>
-    <h4><?php echo $produit["price"]; ?></h4>
+    <h4>Prix : <?php echo $produit["price"]; ?></h4>
+    <div>
+    <p>votre taille doit être comprise entre <?php echo $produit["minHeight"]; ?>cm et <?php echo $produit["maxHeight"]; ?>cm</p>
+    <p>votre poids doit être comprise entre <?php echo $produit["minWeight"]; ?>Kg et <?php echo $produit["maxWeight"]; ?>Kg</p>
+    <p>votre age doit être comprise entre <?php echo $produit["minAge"]; ?>ans et <?php echo $produit["maxAge"]; ?>ans</p>
+    </div>
     <span id="result"></span>
     <form action="" method="post" name="reservationForm" id="reservationForm" class="form">
         <label for="reservationTailleUser">Veulllez confirmer votre taille : </label>
