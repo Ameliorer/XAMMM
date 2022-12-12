@@ -20,14 +20,33 @@
         if ($verif){ //if everything is okay in the form
             
             if(CreateUser($conn, $_POST['utilisateurNom'], $_POST['utilisateurPrenom'], $_POST['utilisateurMail'],md5( $_POST['utilisateurPassword']), $_POST['utilisateurNumTel'], $_POST['utilisateurTaille'], $_POST['utilisateurPoids'],$_POST['utilisateurAge'], 0)){
-                echo("User is created and stocked in the DB");
-            }
-            else{
-                echo("Creation of the User FAILED");
-            }
-            
-        }
+                echo("Votre compte est crée !");
+                $login = $_POST['utilisateurMail'];
+                $password = md5($_POST['utilisateurPassword']);
+
+                //look for the user in the db
+                $sql = "SELECT * FROM  `users` WHERE `mail`='$login' AND `password`='$password'";
+                $result = mysqli_query($conn, $sql);
+                if (!$result) {
+                    echo "Erreur de requête SQL: ".mysqli_error($link);
+                exit();
+                }
+
+                $row = mysqli_fetch_assoc($result);
+
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['lastName'] = $row['lastName'];
+                $_SESSION['firstname'] = $row['firstname'];
+                $_SESSION['mail'] = $row['mail'];
+                $_SESSION['phoneNum'] = $row['phoneNum'];
+                $_SESSION['height'] = $row['height'];
+                $_SESSION['weight'] = $row['weight'];
+                $_SESSION['age'] = $row['age'];
+                $_SESSION['admin'] = $row['admin'];
+                header('Location: redirection_acreditation.php');
     }
+            }
+        }
  
 ?>
 <main>
