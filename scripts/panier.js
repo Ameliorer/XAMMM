@@ -88,6 +88,7 @@ axios.get('../lib/panier.php?id='+ PHPdata.idUser).then(Response => {
                 e.preventDefault(); 
                 Fmodif(form, cartReserv[0].id, cartReserv[0].idUser); 
                 form.style.display = "none";
+                modifier.innerHTML = "modifier"
                 datereserv.innerHTML = "Date : "+ form.dateInput.value;
             });
         });
