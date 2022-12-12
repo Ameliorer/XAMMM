@@ -8,8 +8,24 @@ include("../crud/crud_reservations.php");
 if($_POST['action'] == "addToCart"){
     $product = SelectProduit($conn, $_POST['nameProduct']);
     $user = SelectUser($conn, $_POST['idUser']);
-    $crC = Createcart($conn, $_POST['idUser'], $product['id'], $_POST['dateReservation'], $_POST['today']);
-    $upU = UpdateUser($conn, $_POST['idUser'], $user['lastName'], $user['firstname'], $user['mail'], $user['password'], $user['phoneNum'], $_POST['tailleUser'], $_POST['poidsUser'], $_POST['ageUser'], $user['admin']);
+    $heightCheck = ($_POST['tailleUser'] <= $product['maxHeight']) && ($_POST['tailleUser'] >= $product['minHeight']);
+    $weightCheck = ($_POST['poidsUser'] <= $product['maxWeight']) && ($_POST['poidsUser'] >= $product['minWeight']);
+    $ageCheck = ($_POST['ageUser'] <= $product['maxAge']) && ($_POST['ageUser'] >= $product['minAge']);
+    if($heightCheck && $weightCheck $$ $ageCheck){
+        $crC = Createcart($conn, $_POST['idUser'], $product['id'], $_POST['dateReservation'], $_POST['today']);
+        $upU = UpdateUser($conn, $_POST['idUser'], $user['lastName'], $user['firstname'], $user['mail'], $user['password'], $user['phoneNum'], $_POST['tailleUser'], $_POST['poidsUser'], $_POST['ageUser'], $user['admin']);
+        echo "OK";
+    }else{
+        if(!($heightCheck)){
+            echo "age";
+        }else{
+            if(!($weightCheck)){
+                echo "weight";
+            }else{
+                echo "height";
+            }
+        }
+    }
 }
 
 if($_POST['action'] == "retirer"){

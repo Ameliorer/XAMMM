@@ -1,4 +1,5 @@
 let form = document.querySelector("form");
+let res = document.querySelector("#result");
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -11,8 +12,20 @@ form.addEventListener("submit", function(e){
     finalData.append('nameProduct', PHPdata.nameProduct);
     finalData.append('today', PHPdata.today);
     finalData.append('action', "addToCart");
-    axios.post("../lib/gestion_panier.php", finalData).then( Response =>
-        {window.location.replace('/~XAMMM/pages/prestations.php');}
-    );
+    axios.post("../lib/gestion_panier.php", finalData).then( Response => {
+        if(Response.data == "OK"){
+            window.location.replace('/~XAMMM/pages/prestations.php');
+        }else{
+            if(Response.data == "age"){
+                res.innerHTML = "Votre age est invalide";
+            }else{
+                if(Response.data == "weight"){
+                    res.innerHTML = "Votre poids est invalide";
+                }else{
+                    res.innerHTML = "Votre taille est invalide";
+                }
+            }
+        }
+    });
 });
 

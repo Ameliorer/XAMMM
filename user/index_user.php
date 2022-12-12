@@ -72,7 +72,7 @@ $products = SelectAllProduit($conn);
 <a href='../index.php'>Retour accueil</a>
 <script>
 	let session = <?php echo(json_encode($_SESSION)); ?>;
-	let mdp = <?php echo(json_encode($userPassword)); ?>;
+	let mdp = <?php echo(json_encode(md5($userPassword)); ?>;
 	let products = <?php echo(json_encode($products)); ?>;
 </script>
 <script src="../scripts/axios.min.js"></script>
