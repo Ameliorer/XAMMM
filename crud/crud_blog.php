@@ -14,6 +14,7 @@ CreateBlog($conn, $title, $content, $datePost) -> $return
     $return : boolean := Indicate the status of the query
 */
 function CreateBlog($conn, $title, $content, $datePost){
+    $content = addslashes($content);
     $query="INSERT INTO `blog` (`title`, `content`, `datePost`) VALUES ('$title', '$content', '$datePost')";
     $return=mysqli_query($conn, $query);
     return $return ;
