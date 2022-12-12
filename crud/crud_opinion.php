@@ -12,6 +12,7 @@ CreateOpinion($conn, $name, $idblog) -> $return
     $return : boolean := Indicate the status of the query
 */
 function CreateOpinion($conn, $iduser, $text, $grade){
+    $text = addslashes($text);
     $query = "INSERT INTO `opinion`( `iduser`, `text`, `grade`) VALUES ('$iduser','$text','$grade')";
 	$return = mysqli_query($conn, $query);
 	return $return ;
@@ -28,6 +29,7 @@ UpdateOpinion($conn, $name, $idblog) -> $return
     $return : boolean := Indicate the status of the query
 */
 function UpdateOpinion($conn, $id, $iduser, $text, $grade){
+    $text = addslashes($text);
 	$query = "UPDATE `opinion` set `iduser`='$iduser', `text`='$text', `grade`='$grade' WHERE `id`='$id'";
 	$return = mysqli_query($conn, $query);
     return $return;
