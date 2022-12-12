@@ -89,6 +89,7 @@ header a {
 
 .headerMenuList li {
    width: fit-content;
+   padding-top: 5%;
 }
 
 .headerMenuList li a {
