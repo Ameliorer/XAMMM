@@ -1,5 +1,9 @@
-
 <?php
+/*
+
+Cette page permet d'envoyer un utilisateur connecté sur la bonne page de profil selon si il est administrateur ou non
+
+*/
     
     session_start();
     //check the role of the personne ...

@@ -1,5 +1,14 @@
-
 <?php
+/*
+
+Cette page permet à un utilisateur de se connecter à son compte précédament créé
+
+inclue :
+ - /~XAMMM/crud/crud_users.php
+ - /~XAMMM/db/db_connect.php
+ - /~XAMMM/pages/head.php
+
+*/
     // Connection form for admin and user
     //Ask to connect by asking mail and password
     include('../db/db_connect.php');

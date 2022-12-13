@@ -20,9 +20,6 @@ inclue :
  - /~XAMMM/scripts/admin.js
  - /~XAMMM/scripst.axios.min.js
 
-est utilisé :
- - /~XAMMM/admin.index_admin.php
-
 */
 
 //Include of each cruds

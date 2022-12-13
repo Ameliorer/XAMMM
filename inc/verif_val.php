@@ -1,5 +1,9 @@
-
 <?php
+/*
+
+Cette page permet de checker si le formulaire d'inscription est correctement remplie
+
+*/
     if(!isset($_POST)){
         $verif = false;
     }

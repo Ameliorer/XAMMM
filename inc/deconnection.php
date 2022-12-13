@@ -1,6 +1,13 @@
-
-
 <?php
+/*
+
+Cette page déclenche la procédure de déconnexion de l'utilisateur puis le redirige vers l'index.
+
+inclue :
+ - /~XAMMM/crud/crud_users.php
+ - /~XAMMM/db/db_disconnect.php
+
+*/
     // Connection form for admin and user
     //Ask to connect by asking mail and password
     session_start(); //Start or retrieve the session already started

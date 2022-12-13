@@ -1,4 +1,9 @@
 <?php
+/*
+
+Cette page permet de valider ou non le formualire d'inscription donné par l'utilisateur.
+
+*/
     if(!isset($_POST)){
         $verif = false;
     }
