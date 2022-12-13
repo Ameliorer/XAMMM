@@ -212,6 +212,6 @@ include("head.php");
 //–––––––––––––––
 
 //Include du footer
-include("footer.php");
+include("footer.html");
 
 ?>

@@ -233,6 +233,6 @@ Après l'atterrissage, un débrief vidéo est fait  pour vous préparer au proch
 //–––––––––––––––
 
 //Include du footer
-include("footer.php");
+include("footer.html");
 
 ?>

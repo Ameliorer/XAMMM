@@ -110,3 +110,12 @@ include("head.php");
         transactions bancaires sont réalisées via Paypal. Par ailleurs le site
         <a href="www.diagonale-chute-libre.com">www.diagonale-chute-libre.com</a>  ne conserve jamais vos informations de cartes bancaires.
     </p>
+
+<?php
+//Troisieme balise PHP pour include le(s) fichier(s) du footer
+//–––––––––––––––
+
+//Include du footer
+include("footer.html");
+
+?>
