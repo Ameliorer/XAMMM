@@ -16,6 +16,7 @@ include("pages/head.php");
     <p>Il totalise aujourd'hui plus de 20.000 sauts et a exploré toutes les facettes du parachutisme : progression, loisir, enseignement, compétition (sky-surf et free-fly), prise de vue professionnelle, sauts de démonstration (Soul flyers), formation au monitorat (avec la fédération Française de Parachutisme), soufflerie (Tunnelinstructor A, A+, B).</p>
     <p>Avec son experience de 20 ans d'enseignement, il peut vous faire progresser quelque soit votre niveau et la discipline souhaitée (Progression Brevet A, B, B2 (vol relatif), Bi4 (free-fly tête en haut), B4 (free-fly tête en bas), formation au monitorat et soufflerie).</p>
     
+    <h2> Nos actualitées </h2>
     <div id="blogWrapperWrapper"></div>
 </main>
 

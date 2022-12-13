@@ -1,17 +1,13 @@
 #blogWrapperWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-items: center;
+    margin-left: 8vw;
+    margin-right: 8vw;
     flex-wrap: nowrap;
 }
 
-.blogWrapper {
-    background-color: rgb(31, 221, 255);
-    border-radius: 1em;
-    margin-top: 2em;
-    padding: 0.5em;
-}
+
 
 .blogTitle {
     background-color: none;
@@ -19,8 +15,33 @@
 
 .blogDate {
     background-color: none;
+    font-size: .9em;
+    color: rgb(22, 72, 171);
+    font-weight: bold;
+    align-self: end;
+    order: -1;
 }
 
 .blogContent {
     background-color: none;
+    font-size: 1.1em;
+    
 }
+
+
+.blogWrapper{
+    border:1px solid rgb(72, 106, 156);
+    margin-top: 2em;
+    padding: 0.5em;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(146, 179, 228, 0.438);
+ 
+ }
+ 
+ .blogWrapper h3{
+    align-self: center;
+    font-size: 1.5em;
+    color: rgb(24, 39, 69);
+ }
