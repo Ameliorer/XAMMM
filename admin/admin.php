@@ -3,6 +3,23 @@
 //CSS UNIQUEMENT POUR POUVOIR CONSTRUIRE LA PAGE PLUS FACILEMENT !
 /*
 
+inclue : 
+ - /~XAMM/crud/crud_blog.php
+ - /~XAMM/crud/crud_codes.php
+ - /~XAMM/crud/crud_discounts.php
+ - /~XAMM/crud/crud_imags.php
+ - /~XAMM/crud/crud_opinion.php
+ - /~XAMM/crud/crud_products.php
+ - /~XAMM/crud/crud_reservations.php
+ - /~XAMM/crud/crud_users.php
+ - /~XAMMM/db/db_connect.php
+ - /~XAMMM/db/db_disconnect.php
+ - /~XAMMM/lib/showElements_admin.php
+ - /~XAMMM/pages/head.php
+ - /~XAMMM/pages/footer.php
+ - /~XAMMM/scripts/admin.js
+ - /~XAMMM/scripst.axios.min.js
+
 est utilisé :
  - /~XAMMM/admin.index_admin.php
 
@@ -688,16 +705,6 @@ include("../lib/showElements_admin.php");
 
 <script src="../scripts/axios.min.js"></script>
 <script src="../scripts/admin.js" defer></script>
-<!-- <script>
-    let forms = document.querySelectorAll(".form");
-
-    for(let i = 0; i < forms.length; i++){
-        for(let j = 0; j < forms[i].length; j++){
-            console.log(forms[i].elements[j].value);
-        }
-
-    }   
-</script> -->
 
 <?php
 //----- BLOG -----
