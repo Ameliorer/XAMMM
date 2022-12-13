@@ -128,7 +128,7 @@ Attention vous serez dépendant de la météo, il est bien évident que pour des
 <img class="picture"
      src="/~XAMMM/images/miseaporte.jpg"
      alt="ici une image ">
-<p>Une fois le feu vert du pilote, les parachutistes confirmés quitteront l'avion en premier. Puis ce sera à vous ! Vous approcherez de la porte avec votre moniteur pour vous asseoir au sol (Mains sur le harnais et tête en arrière) Une dernière inspiration et votre moniteur donnera l’impulsion qui vous ejectera dans le nouvel espace de jeu le CIEL !</p>
+<p>Vous revêtirez une combinaison de saut, et vous vous équiperez d'un casque, de lunettes, d'un altimètre et bien entendu d'un parachute adapté à votre morphologie. Après une ultime vérification, vous serez prêt pour l'embarquement.</p>
 </div>
 </div>
 
@@ -153,9 +153,9 @@ Après l'atterrissage, un débrief vidéo est fait  pour vous préparer au proch
 </div>
 
 
-<a id="chutelibre"></a>
+<a id="sautsuivants"></a>
 <div class="division">
-<h2>La chute libre</h2>
+<h2>Les saut suivants </h2>
 <div class="division_contenu">
 
 <img class="picture "
@@ -167,61 +167,23 @@ Après l'atterrissage, un débrief vidéo est fait  pour vous préparer au proch
 </div>
 
 
-<a id="ouverture"></a>
+<a id="fin"></a>
 <div class="division">
-<h2>L’ouverture du parachute</h2>
+<h2>La fin du stage</h2>
 
 <div class="division_contenu">
 
 <img class="picture"
      src="/~XAMMM/images/ouverture.jpg"
      alt="ici une image ">
-<p>A 1500 mètres le moniteur déclenchera l'ouverture du parachute. Votre voile commencera à prendre l'air, pour s’ouvrir progressivement en quelques secondes durant lesquelles notre vitesse passera de 200 km/h à 20 km/h. L’ouverture n’est pourtant pas brutale : rassurez vous !</p>
+<p>A la fin de la PAC, vous pourrez sauter en autonomie sur toutes les Drop Zones de France en présentant  votre carnet de saut ou votre carte de licence.
+Plus tard avec au moins 15 sauts,  le brevet A puis le brevet B vous tendrons les bras et donneront plus d'autonomie.
+</p>
 </div>
 </div>
 
 
-<a id="vol"></a>
-<div class="division">
-<h2>Le vol sous le parachute</h2>
 
-<div class="division_contenu">
-
-<img class="picture"
-     src="/~XAMMM/images/vol.jpg"
-     alt="ici une image ">
-
-<p>Après l’ouverture le plus confortable est de décompresser comme en plongée sous marine (manœuvre de Valsalva). Le moniteur vous montrera comment piloter le parachute ! Il vous invitera a retirer vos lunettes de chute pour plus de confort vous demandera vos impressions souvent raconté de façon très expressive ! Ensuite vous vous entrainerez à prendre la position pour un atterrissage sans encombres !</p>
-</div>
-</div>
-
-
-<a id="atterrissage"></a>
-<div class="division">
-<h2>L'atterrissage</h2>
-
-<div class="division_contenu">
-
-<img class="picture"
-     src="/~XAMMM/images/atterrissage.jpg"
-     alt="ici une image ">
-<p>Le moniteur effectuera la manœuvre d’arrondi qui permet de se poser en douceur ; votre rôle consistera à bien lever les jambes pour que ce que ce soit celles du moniteur qui touche le sol en premier pour éviter tout choc ! </p>
-</div>
-</div>
-
-
-<a id="video"></a>
-<div class="division">
-<h2>La vidéo embarquée</h2>
-<div class="division_contenu">
-
-<img class="picture"
-     src="/~XAMMM/images/video.jpg"
-     alt="ici une image ">
-
-<p>Le moniteur filmera toute la préparation du saut, la montée en avion et le paysage, la mise en place à la porte, toute la chute libre ou vous serez  filmé en gros plan. Après l’ouverture le moniteur vous interviewera sous voile en direct live ! Puis vos dédicaces éventuelles et vos impressions une fois posé ! Le tout est filmé en HD et vous sera remis sur une clef USB !</p>
-</div>
-</div>
 </main>
 
 

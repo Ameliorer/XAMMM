@@ -15,7 +15,7 @@ main {
 
 header a {
    text-decoration: none;
-   color: black;
+   color: rgb(0, 0, 0);
 }
 
 #userLogoWrapper {
@@ -27,7 +27,7 @@ header a {
    width: 100%;
    height: 20vh;
    margin: 0;
-   background-color: rgb(43, 73, 206);
+   background-color: rgb(83, 101, 180);
    display: flex;
    position: relative;
 }
