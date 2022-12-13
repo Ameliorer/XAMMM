@@ -16,7 +16,7 @@ inclue :
  - /~XAMMM/db/db_disconnect.php
  - /~XAMMM/lib/showElements_admin.php
  - /~XAMMM/pages/head.php
- - /~XAMMM/pages/footer.php
+ - /~XAMMM/pages/footer.html
  - /~XAMMM/scripts/admin.js
  - /~XAMMM/scripst.axios.min.js
 
@@ -1219,7 +1219,7 @@ if(isset($_POST["utilisateurSubmit5"])){
 
 <?php 
 
-include("../pages/footer.php");
+include("../pages/footer.html");
 include("../db/db_disconnect.php");
 
 ?>

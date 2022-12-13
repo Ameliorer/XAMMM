@@ -175,6 +175,6 @@ Ces images, vues par des millions de personnes, donnent au sport une image très
 //–––––––––––––––
 
 //Include du footer
-include("footer.php");
+include("footer.html");
 
 ?>

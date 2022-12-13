@@ -16,7 +16,10 @@ if(isset($_SESSION['id'])){
     $produit = SelectProduit($conn, $nameProduct);
     $today = date('Y-m-d');
 }else{
-    echo("<script type='text/javascript'> window.location.replace('/~XAMMM/inc/form_connection.php') </script>");
+    if($_GET["lastPage"] == "/~XAMMM/pages/prestations.php"){
+        $lastPage = $_GET["lastPage"];
+    }
+    echo("<script type='text/javascript'> window.location.replace('/~XAMMM/inc/form_connection.php?lastPage=$lastPage') </script>");
 }
 ?>
 <script src='../scripts/axios.min.js'></script>
@@ -60,6 +63,6 @@ if(isset($_SESSION['id'])){
 include("../db/db_disconnect.php");
 
 //Include du footer
-include("footer.php");
+include("footer.html");
 
 ?>

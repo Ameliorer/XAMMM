@@ -106,7 +106,14 @@ button1star.addEventListener('click', e => {
 
 function createAOpinion(post){
     let div = create("div", avis);
-    let user = create("h2", div, "Utilisateur : " + post.iduser)
+
+    axios.get("/~XAMMM/lib/getName.php?iduser="+post.iduser).then(Response => {
+        Response.data.forEach(post1 => {
+            let element = document.createElement("h2");
+            div.prepend(element);
+            element.appendChild(document.createTextNode("Utilisateur : "+ post1.firstname));
+        })
+    })
     let gradetxt ="";
 
     if (post.grade == 5 ) {

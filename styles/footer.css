@@ -152,6 +152,17 @@ input::placeholder, textarea::placeholder{
     -webkit-box-shadow: none;
     box-shadow: none; }
 
+#form-message-warning, #form-message-success {
+    display: none; }
+
+#form-message-warning {
+    color: #B90B0B; }
+
+#form-message-success {
+    color: #55A44E;
+    font-size: 18px;
+    font-weight: bold; }
+
 .submitting {
     float: left;
     width: 100%;
@@ -161,7 +172,12 @@ input::placeholder, textarea::placeholder{
     font-size: 12px;
     color: #000; }
 
+
 .link{
     text-decoration: none;
     color: black;
 }
+
+label.error {
+    font-size: 12px;
+    color: #9f1f1f; }
