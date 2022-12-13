@@ -1,6 +1,5 @@
 // Gather all the divisions 
 let divisions = document.querySelectorAll(".division"); 
-console.log(divisions); // check in the console
 
 let i = 0; 
 //iterate for each divisions
@@ -38,7 +37,6 @@ const handleIntersect = function (entries, observer) {
       entry.target.classList.add('reveal-visible');
       observer.unobserve(entry.target); //we stop observing when we had it once 
     }
-    console.log(entry.intersectionRatio);
   })
 }
 

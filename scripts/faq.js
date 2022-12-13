@@ -12,7 +12,6 @@ axios.get('../lib/read_data.php').then((response) => {
 
    //Add listener to show the answer of the question when the mouse is on the question
    let questions = document.querySelectorAll(".question"); //All the questions
-   console.log(questions); // check in the console
    //iterate for each questions
    for (let question of questions){
       question.addEventListener('click', e=>{
@@ -50,7 +49,6 @@ function aff_question_response(DATA, id) {
 
    //Append the question in the FAQ
    FAQContent.appendChild(div);
-   /*console.log(div);*/
 }
 
 function recupTitle(DATA, id) {

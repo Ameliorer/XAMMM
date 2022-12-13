@@ -26,7 +26,6 @@ function createDO(tagName, container, text=null, class_=null, id=null) {
 }
 
 axios.get("/~XAMMM/lib/blog.php?blogAction=3").then(Response => {
-    console.log(Response.data);
     Response.data.forEach(post => {
         let div = createDO("div", blogWrapperWrapper, null, "blogWrapper");
         let title = createDO("h3", div, post.title, "blogTitle");

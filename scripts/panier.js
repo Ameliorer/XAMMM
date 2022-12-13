@@ -32,7 +32,6 @@ function Fdelete(data){
 }
 
 function Fmodif(formData, idC, idUser){
-    console.log(formData);
     let post = new FormData();
     post.append("age", formData.ageInput.value);
     post.append("height", formData.heightInput.value);

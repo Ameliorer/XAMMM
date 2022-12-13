@@ -16,10 +16,8 @@ function create(tagName, container, text = null, class_ = null, id = null) {
 
 //The variable where we'll show all the codes
 let main = document.querySelector('#main_codes');
-console.log(main);
 
 axios.get('../lib/codes.php').then((response) => {
-   console.log(response.data);
 
    //Creation of HTML balise to show a codes
    response.data.forEach((code) => {
