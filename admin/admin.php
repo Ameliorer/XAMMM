@@ -1,6 +1,12 @@
 <?php 
 //Page admin où ce(s) dernier(s) pourront réaliser toutes les actions sur la BDD
 //CSS UNIQUEMENT POUR POUVOIR CONSTRUIRE LA PAGE PLUS FACILEMENT !
+/*
+
+est utilisé :
+ - /~XAMMM/admin.index_admin.php
+
+*/
 
 //Include of each cruds
 include("../db/db_connect.php");

@@ -1,5 +1,11 @@
-
 <?php
+/*
+cette page redirige vers l'index si l'utilisateur n'est pas connecté ou n'est pas un administrateur.
+
+est utilisé :
+ - /~XAMMM/admin/verif_admin.php
+
+*/
     //permet de récupérer et annalyser les paramètres de session.
     session_start();
     //si il existe une session
