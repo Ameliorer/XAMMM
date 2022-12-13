@@ -44,7 +44,6 @@ inclue :
 
 <?php
 $explode = (explode('~', $_SERVER['HTTP_REFERER']));
-var_dump($explode);
 $url = $explode[1];
 $urlPlus = "/~$url";
 if(!empty($explode[2])){
