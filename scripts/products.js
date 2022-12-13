@@ -22,7 +22,6 @@ function create(tagName, container, text = null, class_ = null, id = null) {
 let main = document.querySelector('#aff_products');
 
 axios.get('../lib/products.php').then((response) => {
-
    //Creation of HTML balise to show a product to the client
    response.data.forEach((product) => {
       let div = create('div', main, null, 'product');
@@ -78,6 +77,9 @@ axios.get('../lib/products.php').then((response) => {
 
       let achatSpan = create('span', div, null, 'add_to_the_cart');
       let achatLink = create('a', achatSpan, 'ajouter au panier');
-      achatLink.setAttribute('href', 'form_achat.php?name=' + product.name);
+      achatLink.setAttribute(
+         'href',
+         'form_achat.php?name=' + product.name + '&lastPage=' + lastPage,
+      );
    });
 });

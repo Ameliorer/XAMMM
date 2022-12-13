@@ -15,6 +15,9 @@ include("../crud/crud_products.php");
 <main id='main_products'>
     <div id='aff_products'></div>
 </main>
+<script>
+    let lastPage = <?php echo(json_encode($_SERVER["REQUEST_URI"])); ?>
+</script>
 <script src="../scripts/axios.min.js"></script>
 <script src="../scripts/products.js" defer></script>
 

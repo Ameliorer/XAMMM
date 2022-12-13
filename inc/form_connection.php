@@ -43,12 +43,20 @@ inclue :
     <p> Si vous n'avez pas encore de compte inscrivez vous ici : <a href="../inc/form_adhesion.php">Inscription</a></p>
 
 <?php
-// if a connexion id is set redirect to rediracion by aceditation
-if(isset($_SESSION['id'])){
-    header('Location: redirection_acreditation.php');
+$explode = (explode('~', $_SERVER['HTTP_REFERER']));
+$url = $explode[1];
+$urlPlus = "/~$url";
+if(!empty($explode[2])){
+    $urlOffre =  "/~$explode[2]";
+    $_SESSION["lastPage"] = $urlOffre;
 }
+else if ($urlPlus != $_SERVER['REQUEST_URI']){
+    $_SESSION["lastPage"] = $urlPlus;
+}
+
+
 //else if connexion form complete 
-else if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword'])){
+if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword'])){
     
     //stock the infos 
     $login = $_POST['utilisateurMail'];
@@ -76,7 +84,7 @@ else if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword']
         $_SESSION['weight'] = $row['weight'];
         $_SESSION['age'] = $row['age'];
         $_SESSION['admin'] = $row['admin'];
-        header('Location: redirection_acreditation.php');
+        header("Location: $_SESSION[lastPage]");
     }
 
     else{
