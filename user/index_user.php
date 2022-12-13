@@ -1,4 +1,18 @@
-<?php 
+<?php
+/*
+
+Cette page est le page de profile d'utilisateur où il peut consulter / modifier ses donnée et supprimmer ses reservations
+
+inclue :
+ - /~XAMMM/crud/crud_users.php
+ - /~XAMMM/crud/crud_products.php
+ - /~XAMMM/db/db_connect.php
+ - /~XAMMM/pages/head.php
+ - /~XAMMM/scripts/axios.min.js
+ - /~XAMMM/scripts/user.js
+ - /~XAMMM/user/verif_user.php
+
+*/
 
 include("../db/db_connect.php");
 include("verif_user.php");

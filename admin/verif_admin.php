@@ -1,6 +1,7 @@
 <?php
 /*
-cette page redirige vers l'index si l'utilisateur n'est pas connecté ou n'est pas un administrateur.
+
+cette page redirige vers le formulaire de connexion si l'utilisateur n'est pas connecté ou n'est pas un administrateur.
 
 */
     //permet de récupérer et annalyser les paramètres de session.
