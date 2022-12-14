@@ -4,6 +4,8 @@
 Cette page permet de checker si le formulaire d'inscription est correctement remplie
 
 */
+$vide = false;
+$verif = false;
     if(!isset($_POST)){
         $verif = false;
     }
