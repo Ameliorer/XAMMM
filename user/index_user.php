@@ -125,5 +125,5 @@ if(isset($_POST["lastname"]) && isset($_POST["firstname"]) && isset($_POST["emai
 		}
 	}	
 }
-
+include("../pages/footer.html");
 ?>

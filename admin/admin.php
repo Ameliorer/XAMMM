@@ -1219,7 +1219,6 @@ if(isset($_POST["utilisateurSubmit5"])){
 
 <?php 
 
-include("../pages/footer.html");
 include("../db/db_disconnect.php");
 
 ?>
