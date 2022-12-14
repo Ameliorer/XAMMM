@@ -21,6 +21,12 @@ header a {
 
 #userLogoWrapper {
    align-items: center;
+   margin-top: 3.5vh;
+}
+
+#userCartWrapper{
+   align-items: center;
+   margin-top: 3.5vh;
 }
 
 #header {
