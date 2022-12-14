@@ -25,12 +25,14 @@ include("head.php");
         alt="ici une image ">
     <p> Le parchute de vinci </p>
 </a>
+
 <a href="#garnerin">
     <img class="picture"
         src="/~XAMMM/images/garnerin.png"
         alt="ici une image ">
     <p> Le parachute de Garnerin </p>
 </a>
+
 <a href="#militaire">
     <img class="picture"
         src="/~XAMMM/images/militaire.png"
