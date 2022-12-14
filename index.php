@@ -7,6 +7,7 @@ include("pages/head.php");
 
 ?>
 <script src='/~XAMMM/scripts/index.js' defer></script>
+<link rel='stylesheet' href='/~XAMMM/styles/index.css' />
 <img id='imgbg' src='/~XAMMM/images/bg2.png'></img>
 <main>
    

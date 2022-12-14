@@ -50,6 +50,11 @@ if(stripos($_SERVER["REQUEST_URI"],'index.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/index.css' />\n");
 }
 
+if(stripos($_SERVER["REQUEST_URI"],'')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/index.css' />\n");
+}
+
+
 if(stripos($_SERVER["REQUEST_URI"],'CGV.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/officiel.css' />\n");
 }
