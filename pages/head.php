@@ -145,6 +145,10 @@ if(stripos($_SERVER["REQUEST_URI"],'form_connection.php')){
             </ul>
             <ul class='headerMenu logoTitleMenu'>
                 <span class='headerMenuTitle' id='userCartWrapper'><a href='/~XAMMM/pages/confirmation_commande.php'><img id='userCart' class='imgHeader' src='/~XAMMM/images/959c6f8c79625a6cc346801aa5fe990f.png'></img></a></span>
+                <ul class='headerMenuList hidden'>
+                    <li><a href='/~XAMMM/pages/confirmation_commande.php'>Panier</a></li>
+                   
+                </ul>
             </ul>
         </ul>
     </header>

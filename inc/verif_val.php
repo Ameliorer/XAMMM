@@ -5,12 +5,8 @@ Cette page permet de checker si le formulaire d'inscription est correctement rem
 
 */
 
-include('../db/db_connect.php');
 
-    if(!isset($_POST)){
-        $verif = false;
-    }
-    else {
+    if(isset($_POST)) {
         $error = array();
 
         /* verif l'intrgralité du mail */ 
@@ -28,12 +24,6 @@ include('../db/db_connect.php');
             }
         }
 
- 
-        
-        /* Gestion formulaire vide*/
-        if (!isset($_POST['utilisateurNom']) and !isset($_POST['utilisateurPrenom']) and !isset($_POST['utilisateurMail']) and !isset($_POST['utilisateurPassword']) and !isset($_POST['utilisateurNumTel'])and !isset($_POST['utilisateurTaille']) and !isset($_POST['utilisateurPoids']) and !isset($_POST['utilisateurAge'])){
-            $error[] = "Veuillez remplir le formulaire il est vide";
-        }
         
         /*Gestion mdp trop court*/
         if (isset($_POST['utilisateurPassword'])){
@@ -82,7 +72,9 @@ include('../db/db_connect.php');
             echo "Formulaire valide";
             $verif = true;
         }
+    } else {
+        $verif = false;
     }
 
-    include('../db/db_disconnect.php');
+    
 ?>

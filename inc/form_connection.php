@@ -43,7 +43,7 @@ inclue :
     <p> Si vous n'avez pas encore de compte inscrivez vous ici : <a href="../inc/form_adhesion.php">Inscription</a></p>
 
 <?php
-/*$explode = (explode('~', $_SERVER['HTTP_REFERER']));
+$explode = (explode('~', $_SERVER['HTTP_REFERER']));
 $url = $explode[1];
 $urlPlus = "/~$url";
 if(!empty($explode[2])){
@@ -53,7 +53,7 @@ if(!empty($explode[2])){
 else if ($urlPlus != $_SERVER['REQUEST_URI']){
     $_SESSION["lastPage"] = $urlPlus;
 }
-*/
+
 
 //else if connexion form complete 
 if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword'])){

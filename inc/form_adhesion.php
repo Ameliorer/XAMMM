@@ -13,9 +13,9 @@ inclue :
 */
     // Page to create a new account user
     include("../pages/head.php");
-    include('verif_val.php');
     include('../db/db_connect.php');
     include('../crud/crud_users.php');
+    include('verif_val.php');
 
     if(isset($_SESSION['id'])){
         if($_SESSION['admin'] == 0){
