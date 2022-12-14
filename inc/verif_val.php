@@ -4,8 +4,6 @@
 Cette page permet de checker si le formulaire d'inscription est correctement remplie
 
 */
-$vide = false;
-$verif = false;
 
 include('../db/db_connect.php');
 
@@ -14,22 +12,24 @@ include('../db/db_connect.php');
     }
     else {
         $error = array();
-        if (isset($_POST['mail'])){
-            if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
+        if (isset($_POST['utilsateurMail'])){
+            if (!filter_var($_POST['utilisateurMail'], FILTER_VALIDATE_EMAIL)){
                 $error[] = "Email invalide";
             }
         }
 
         if (isset($_POST['utilisateurMail'])){
             $mailForQuery = $_POST['utilisateurMail'];
-            $query="SELECT * FROM `users` WHERE `mail`='$mailForQuery';";
+            $query="SELECT `mail` FROM `users` WHERE `mail`='$mailForQuery';";
             if(!($response=mysqli_query($conn, $query))){ 
                 $error[] = "Cette adresse mail est déjà utilisée";
             }
         }
 
-        if (!isset($_POST['utilisateurNom']) and !isset($_POST['utilisateurPrenom']) and !isset($_POST['utilisateurMail']) and !isset($_POST['utilisateurPassword']) and !isset($_POST['utilisateurNumTel'])and !isset($_POST['utilisateurTaille']) and !isset($_POST['utilisateurPoids']) and !isset($_POST['utilisateurAge'])){
+        if (!isset($_POST['utilisateurNom']) or !isset($_POST['utilisateurPrenom']) or !isset($_POST['utilisateurMail']) or !isset($_POST['utilisateurPassword']) or !isset($_POST['utilisateurNumTel']) or !isset($_POST['utilisateurTaille']) or !isset($_POST['utilisateurPoids']) or !isset($_POST['utilisateurAge'])){
             $vide = true;
+        } else {
+            $vide = false;
         }
         
         if (isset($_POST['utilisateurPassword'])){
