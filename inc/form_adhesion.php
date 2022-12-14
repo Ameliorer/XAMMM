@@ -54,9 +54,9 @@ inclue :
                 $_SESSION['age'] = $row['age'];
                 $_SESSION['admin'] = $row['admin'];
                 header('Location: redirection_acreditation.php');
-    }
             }
         }
+    }
  
 ?>
 <main>
