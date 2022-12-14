@@ -32,7 +32,7 @@ include("head.php");
     <img class="picture"
         src="/~XAMMM/images/miseaporte.jpg"
         alt="ici une image ">
-    <p> Misa à porte </p>
+    <p> Mise à porte </p>
 </a>
 <a href="#premieresec">
     <img class="picture"
