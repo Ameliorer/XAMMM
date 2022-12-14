@@ -5,6 +5,7 @@ Cette page permet de checker si le formulaire d'inscription est correctement rem
 
 */
 
+include('../db/db_connect.php');
 
     if(!isset($_POST)){
         $verif = false;
@@ -18,6 +19,16 @@ Cette page permet de checker si le formulaire d'inscription est correctement rem
                 $error[] = "Email invalide";
             }
         }
+
+        if (isset($_POST['utilisateurMail'])){
+            $mailForQuery = $_POST['utilisateurMail'];
+            $query="SELECT `mail` FROM `users` WHERE `mail`='$mailForQuery';";
+            if(!($response=mysqli_query($conn, $query))){ 
+                $error[] = "Cette adresse mail est déjà utilisée";
+            }
+        }
+
+ 
         
         /* Gestion formulaire vide*/
         if (!isset($_POST['utilisateurNom']) and !isset($_POST['utilisateurPrenom']) and !isset($_POST['utilisateurMail']) and !isset($_POST['utilisateurPassword']) and !isset($_POST['utilisateurNumTel'])and !isset($_POST['utilisateurTaille']) and !isset($_POST['utilisateurPoids']) and !isset($_POST['utilisateurAge'])){
@@ -34,7 +45,7 @@ Cette page permet de checker si le formulaire d'inscription est correctement rem
         /* Verif les manquants*/
 
         if (!isset($_POST['utilisateurNom'])){
-            $error[] = " Nom manquant";
+            $error[] = "Nom manquant";
         }
 
         if (!isset($_POST['utilisateurPrenom'])){
@@ -72,4 +83,6 @@ Cette page permet de checker si le formulaire d'inscription est correctement rem
             $verif = true;
         }
     }
+
+    include('../db/db_disconnect.php');
 ?>

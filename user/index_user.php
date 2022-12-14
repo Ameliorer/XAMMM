@@ -84,7 +84,6 @@ $products = SelectAllProduit($conn);
 	</div>
 </main>
 
-<a href='../index.php'>Retour accueil</a>
 <script>
 	let session = <?php echo(json_encode($_SESSION)); ?>;
 	let mdp = <?php echo(json_encode(md5($userPassword))); ?>;
