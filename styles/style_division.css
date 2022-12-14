@@ -33,7 +33,6 @@ main a{
     width: 11vw;
     filter: grayscale(100%);
     height: 7vw;
-    object-fit: cover;
     transition: all 0.2s;
     object-fit: cover;
     background-color: brown;
@@ -91,6 +90,9 @@ h2{
 .division_contenu p{
     text-align: justify;
     padding: 2vw;
+    font-size: 1.5em;
+    line-height: 150%;
+
 }
 
 .division_contenu img{

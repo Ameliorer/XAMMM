@@ -7,6 +7,44 @@
     flex-wrap: nowrap;
 }
 
+#imgbg{
+width: 100%;
+}
+
+
+
+.division{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: center;
+    margin-left: 17vw;
+    margin-right: 17vw;
+}
+
+.division_contenu{
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    align-items: center;
+}
+
+.division_contenu p{
+    text-align: justify;
+    padding: 2vw;
+    font-size: 1.5em;
+    line-height: 150%;
+
+}
+
+.division_contenu img{
+    max-height: 30vh;
+    margin:2vw;
+    max-width: 50vw;
+    border-radius: 9px;
+}
+
+
 
 
 .blogTitle {
