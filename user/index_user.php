@@ -20,6 +20,7 @@ include("../pages/head.php");
 include("../crud/crud_users.php");
 include("../crud/crud_products.php");
 
+
 ?>
 
 <?php 
