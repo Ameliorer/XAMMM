@@ -1,4 +1,4 @@
-let blogWrapper = document.querySelector("#blogWrapperWrapper");
+let blogWrapperWrapper = document.querySelector("#blogWrapperWrapper");
 
 /* Create an element based on the DOM
 create(tagName, container, text, class_, id) -> element
@@ -27,7 +27,7 @@ function create(tagName, container, text=null, class_=null, id=null) {
 
 axios.get("/~XAMMM/lib/blog.php?blogAction=3").then(Response => {
     Response.data.forEach(post => {
-        let div = create("div", blogWrapper, null, "blogWrapper");
+        let div = create("div", blogWrapperWrapper, null, "blogWrapper");
         let title = create("h3", div, post.title, "blogTitle");
         let date = create("p", div, post.datePost, "blogDate")
         let content = create("p", div, post.content, "blogContent");
