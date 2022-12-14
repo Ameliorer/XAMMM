@@ -26,7 +26,6 @@ h1::before {
    margin-top: 15px;
    width: 5px;
    border-radius: 15px;
-   background-color: #418ae9;
 }
 /* POURQUOI */
 h1::after {
@@ -38,7 +37,6 @@ h1::after {
    margin-top: 15px;
    width: 5px;
    border-radius: 15px;
-   background-color: #418ae9;
 }
 
 #imgAdmin {
