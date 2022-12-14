@@ -36,6 +36,10 @@ if(stripos($_SERVER["REQUEST_URI"],'parachutisme_histoire.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/style_division.css' />\n");
 }
 
+if(stripos($_SERVER["REQUEST_URI"],'stagePAC.php')){
+    echo("<link rel='stylesheet' href='/~XAMMM/styles/style_division.css' />\n");
+}
+
 if(stripos($_SERVER["REQUEST_URI"],'avis_clients.php')){
     echo("<link rel='stylesheet' href='/~XAMMM/styles/opinion.css' />\n");
 }

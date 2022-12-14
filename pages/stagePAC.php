@@ -10,76 +10,59 @@ include("head.php");
 
 ?>
 
-<?php 
-//Deuxieme balise PHP : La page
-//–––––––––––––––
-echo("<main>");
-$html_acceuil = "<div><a href='/~XAMMM/index.php'>ACCEUIL</a></div>";
-echo($html_acceuil);
-?>
 <div id=#title>
-<h1> Le saut en Tandem</h1>
+<h1> Le stage PAC</h1>
 
-<p>Le saut en Parachute Tandem est la façon la plus facile est sûre de découvrir la chute libre ; le rêve d’Icare ! C’est une expérience incomparable avec tout ce que vous auriez pu  essayé avant ! Accroché à un moniteur hyper expérimenté vous avez juste à profiter de cette sensation autant intense qu’inoubliable !
-</p>
 </div>
     
 <div id="imagesIntro">
-<a href="#preparation">
+<a href="#presentation">
     <img class="picture"
-        src="/~XAMMM/images/preparation.jpg"
-        alt="preparation ">
-    <p> Preparation </p>
+        src="/~XAMMM/images/presentation.png"
+        alt="ici une image ">
+    <p> Presentation </p>
 </a>
 
-<a href="#monteeavion">
+<a href="#formation">
     <img class="picture"
-        src="/~XAMMM/images/monteeavion.jpg"
+        src="/~XAMMM/images/formation.png"
         alt="ici une image ">
-    <p> Montee en avion </p>
+    <p> Formation </p>
 </a>
-<a href="#miseaporte">
+
+<a href="#equipement">
     <img class="picture"
-        src="/~XAMMM/images/miseaporte.jpg"
+        src="/~XAMMM/images/equipement.png"
         alt="ici une image ">
-    <p> Misa a porte </p>
+    <p> Equipement </p>
 </a>
-<a href="#premieresec">
+
+<a href="#premiersaut">
     <img class="picture"
-        src="/~XAMMM/images/premieresec.jpg"
+        src="/~XAMMM/images/premiersaut.png"
         alt="ici une image ">
-    <p> Première secondes </p>
+    <p> Premier saut </p>
 </a>
-<a href="#chutelibre">
-    <img class="picture "
-        src="/~XAMMM/images/chutelibre.jpg"
-        alt="ici une image ">
-    <p> Chute libre </p>
-</a>
-<a href="#ouverture">
-    <img class="picture"
-        src="/~XAMMM/images/ouverture.jpg"
-        alt="ici une image ">
-    <p> Ouverture </p>
- </a>
-<a href="#vol">
-    <img class="picture"
-        src="/~XAMMM/images/vol.jpg"
-        alt="ici une image ">
-    <p> Le vol </p>
-</a>
+
 <a href="#atterrissage">
-    <img class="picture"
-        src="/~XAMMM/images/atterrissage.jpg"
+    <img class="picture "
+        src="/~XAMMM/images/atterrissage.png"
         alt="ici une image ">
     <p> Atterrissage </p>
 </a>
-<a href="#video">
+<a href="#sautsuivant">
     <img class="picture"
-        src="/~XAMMM/images/video.jpg"
+    src="/~XAMMM/images/sautsuivant.png"
         alt="ici une image ">
-    <p> Vidéo </p>
+    <p> Sauts suivants </p>
+ </a>
+<a href="#fin">
+    <img class="picture"
+        src="/~XAMMM/images/fin.png"
+        alt="ici une image ">
+    <p> Aprés </p>
 </a>
+
 </div>
 
 
@@ -91,8 +74,8 @@ echo($html_acceuil);
 <h2>Presentation </h2>
 <div class="division_contenu">
 <img class="picture"
-     src="/~XAMMM/images/preparation.jpg"
-     alt="preparation ">
+     src="/~XAMMM/images/presentation.png"
+     alt="ici une image ">
 <p>La PAC est un moyen moderne et rapide de permettre la pratique du parachutisme, d'explorer la chute libre et la maîtrise de soi dans la chute et le sous voile.
 Pierre et ses moniteurs sont tous des professionnels diplômés d'Etat ayant au minimum 5 000 sauts à leur actif.
 L'entraînement se fait généralement sur une semaine car le meilleur moyen de progresser est d'enchaîner les sauts.
@@ -110,7 +93,7 @@ Attention vous serez dépendant de la météo, il est bien évident que pour des
 <div class="division_contenu">
 
 <img class="picture"
-     src="/~XAMMM/images/monteeavion.jpg"
+     src="/~XAMMM/images/formation.png"
      alt="ici une image ">
 
 <p>Une formation d'une demi-journée au cours de laquelle on vous expliquera : les différents éléments d'un parachute, les règles de sécurité, la methode de conduite sous voile, la position en chute libre et les conseils pour une pratique éthique.
@@ -126,7 +109,7 @@ Attention vous serez dépendant de la météo, il est bien évident que pour des
 <div class="division_contenu ">
 
 <img class="picture"
-     src="/~XAMMM/images/miseaporte.jpg"
+     src="/~XAMMM/images/equipement.png"
      alt="ici une image ">
 <p>Vous revêtirez une combinaison de saut, et vous vous équiperez d'un casque, de lunettes, d'un altimètre et bien entendu d'un parachute adapté à votre morphologie. Après une ultime vérification, vous serez prêt pour l'embarquement.</p>
 </div>
@@ -141,25 +124,37 @@ Attention vous serez dépendant de la météo, il est bien évident que pour des
 <div class="division_contenu">
 
 <img class="picture"
-     src="/~XAMMM/images/premieresec.jpg"
+     src="/~XAMMM/images/premiersaut.png"
      alt="ici une image ">
 <p>Le premier saut se déroule depuis une hauteur de 4000 m avec deux moniteurs qui vous suivront durant toute chute libre.
 Un moniteur sera devant vous pour communiquer au moyen de signes appris durant la formation.
 Un autre reste sur le coté en vous tenant afin de maintenir votre stabilité.
-Sous voile, vous serez guidé par radio.
+</p>
+</div>
+</div>
+
+<a id="atterrissage"></a>
+<div class="division">
+<h2>L'atterrissage</h2>
+
+<div class="division_contenu">
+
+<img class="picture"
+     src="/~XAMMM/images/atterrissage.png"
+     alt="ici une image ">
+<p>Sous voile, pas de panique vous n'êtes pas livrés à vous même, vous serez guidé par radio.
 Après l'atterrissage, un débrief vidéo est fait  pour vous préparer au prochain saut.
 !</p>
 </div>
 </div>
 
-
-<a id="sautsuivants"></a>
+<a id="sautsuivant"></a>
 <div class="division">
 <h2>Les saut suivants </h2>
 <div class="division_contenu">
 
 <img class="picture "
-     src="/~XAMMM/images/chutelibre.jpg"
+     src="/~XAMMM/images/sautsuivant.png"
      alt="ici une image ">
 
 <p>2500 mètres de chute libre à 200 kilomètres heure ça fait environ  50 secondes de chute libre ! N’oubliez pas de respirer l’air pur des hautes alpes, ouvrez grand les yeux profitez de ce sentiment de flotter dans les airs ! A cette vitesse le vent relatif est un fluide ! Souriez ! Regardez le superbe paysage ! Réalisez que vous êtes en train de faire un saut en parachute depuis 4000 mètres ! Kiffez ! Profitez de la minute de votre vie !</p>
@@ -169,12 +164,12 @@ Après l'atterrissage, un débrief vidéo est fait  pour vous préparer au proch
 
 <a id="fin"></a>
 <div class="division">
-<h2>La fin du stage</h2>
+<h2>Et aprés ? </h2>
 
 <div class="division_contenu">
 
 <img class="picture"
-     src="/~XAMMM/images/ouverture.jpg"
+     src="/~XAMMM/images/fin.png"
      alt="ici une image ">
 <p>A la fin de la PAC, vous pourrez sauter en autonomie sur toutes les Drop Zones de France en présentant  votre carnet de saut ou votre carte de licence.
 Plus tard avec au moins 15 sauts,  le brevet A puis le brevet B vous tendrons les bras et donneront plus d'autonomie.
@@ -188,7 +183,7 @@ Plus tard avec au moins 15 sauts,  le brevet A puis le brevet B vous tendrons le
 
 
 
-<script src="/~XAMMM/scripts/processus_saut.js"></script>
+<script src="/~XAMMM/scripts/histoire.js"></script>
 
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer

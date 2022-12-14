@@ -2,10 +2,12 @@ section{
     display: flex;
     flex-direction: column;
     height: 60vh;
-    align-items: center;
     flex-wrap: wrap;
+    margin: 10vh 10vw 10vh 10vw;
 
 }
+
+
 
 form{
     display: flex;
