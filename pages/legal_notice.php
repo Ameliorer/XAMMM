@@ -83,6 +83,6 @@ include("head.php");
 //–––––––––––––––
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

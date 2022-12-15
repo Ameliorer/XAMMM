@@ -67,6 +67,6 @@ include("pages/head.php");
 //–––––––––––––––
 
 //Include du footer
-include("pages/footer.html");
+include("pages/footer.php");
 
 ?>

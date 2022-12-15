@@ -1,14 +1,5 @@
+
 <?php
-/*
-
-Cette page permet à un utilisateur de se connecter à son compte précédament créé
-
-inclue :
- - /~XAMMM/crud/crud_users.php
- - /~XAMMM/db/db_connect.php
- - /~XAMMM/pages/head.php
-
-*/
     // Connection form for admin and user
     //Ask to connect by asking mail and password
     include('../db/db_connect.php');
@@ -53,9 +44,7 @@ if(!empty($explode[2])){
 else if ($urlPlus != $_SERVER['REQUEST_URI']){
     $_SESSION["lastPage"] = $urlPlus;
 }
-
-
-//else if connexion form complete 
+//connexion form complete 
 if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword'])){
     
     //stock the infos 
@@ -85,6 +74,8 @@ if(isset($_POST['utilisateurMail']) and isset($_POST['utilisateurPassword'])){
         $_SESSION['age'] = $row['age'];
         $_SESSION['admin'] = $row['admin'];
         header("Location: $_SESSION[lastPage]");
+
+        
     }
 
     else{

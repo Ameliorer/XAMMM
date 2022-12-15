@@ -16,6 +16,7 @@ function create(tagName, container, text=null, class_=null, id=null) {
 }
 
 axios.get("../lib/blog.php?blogAction=select_all").then(Response => {
+    console.log(Response);
     Response.data.forEach(post => {
         let div = create("div", main);
         let span = create("span", div);

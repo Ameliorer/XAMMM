@@ -30,6 +30,6 @@ if(isset($_SESSION['id'])){
 //–––––––––––––––
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

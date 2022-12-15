@@ -1,22 +1,8 @@
-<?php
-/*
-
-Cette page est le page de profile d'utilisateur où il peut consulter / modifier ses donnée et supprimmer ses reservations
-
-inclue :
- - /~XAMMM/crud/crud_users.php
- - /~XAMMM/crud/crud_products.php
- - /~XAMMM/db/db_connect.php
- - /~XAMMM/pages/head.php
- - /~XAMMM/scripts/axios.min.js
- - /~XAMMM/scripts/user.js
- - /~XAMMM/user/verif_user.php
-
-*/
+<?php 
 
 include("../db/db_connect.php");
-include("verif_user.php");
 include("../pages/head.php");
+include("verif_user.php");
 include("../crud/crud_users.php");
 include("../crud/crud_products.php");
 
@@ -83,12 +69,14 @@ $products = SelectAllProduit($conn);
 	</div>
 </main>
 
-<script>
+
+<script src="../scripts/axios.min.js"></script>
+<script defer>
 	let session = <?php echo(json_encode($_SESSION)); ?>;
 	let mdp = <?php echo(json_encode(md5($userPassword))); ?>;
 	let products = <?php echo(json_encode($products)); ?>;
 </script>
-<script src="../scripts/axios.min.js"></script>
+
 <script src="../scripts/user.js" defer ></script>
 </body>
 
@@ -124,5 +112,6 @@ if(isset($_POST["lastname"]) && isset($_POST["firstname"]) && isset($_POST["emai
 		}
 	}	
 }
-include("../pages/footer.html");
+include("../pages/footer.php");
+
 ?>

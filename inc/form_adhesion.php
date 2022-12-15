@@ -1,16 +1,6 @@
+
 <?php
-/*
-
-Cette page permet à un utilisateur de s'inscrire sur le site
-
-inclue :
- - /~XAMMM/crud/crud_users.php
- - /~XAMMM/db/db_connect.php
- - /~XAMMM/inc/verif_val.php
- - /~XAMMM/pages/head.php
- - /~XAMMM/pages/footer.html
-
-*/
+  
     // Page to create a new account user
     include("../pages/head.php");
 
@@ -54,9 +44,9 @@ inclue :
                 $_SESSION['age'] = $row['age'];
                 $_SESSION['admin'] = $row['admin'];
                 header('Location: redirection_acreditation.php');
+    }
             }
         }
-    }
  
 ?>
 <main>

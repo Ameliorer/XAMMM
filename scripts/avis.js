@@ -19,6 +19,7 @@ function create(tagName, container, text=null, class_=null, id=null) {
 
 // Get the content of the bd opinion and put them in the page opinion.php
 axios.get("../lib/opinion.php?opinionAction=select_all").then(Response => {
+    console.log(Response); // just for testing
     // create a div for each with all infos in it 
     Response.data.forEach(post => {
         createAOpinion(post);
@@ -32,6 +33,7 @@ button5star.addEventListener('click', e => {
     let titre = create("h1", avis, "Les avis 5 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
     axios.get("../lib/opinion.php?opinionAction=5").then(Response => {
+        console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
             createAOpinion(post);
@@ -45,6 +47,7 @@ button4star.addEventListener('click', e => {
     let titre = create("h1", avis, "Les avis 4 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
     axios.get("../lib/opinion.php?opinionAction=4").then(Response => {
+        console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
             createAOpinion(post);
@@ -58,6 +61,7 @@ button3star.addEventListener('click', e => {
     let titre = create("h1", avis, "Les avis 3 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
     axios.get("../lib/opinion.php?opinionAction=3").then(Response => {
+        console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
             createAOpinion(post);
@@ -71,6 +75,7 @@ buttonAllstar.addEventListener('click', e => {
     let titre = create("h1", avis, "Tous les avis");
     // Get the content of the bd opinion and put them in the page opinion.php
     axios.get("../lib/opinion.php?opinionAction=select_all").then(Response => {
+        console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
             createAOpinion(post);
@@ -84,6 +89,7 @@ button2star.addEventListener('click', e => {
     let titre = create("h1", avis, "Les avis 2 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
     axios.get("../lib/opinion.php?opinionAction=2").then(Response => {
+        console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
             createAOpinion(post);
@@ -97,6 +103,7 @@ button1star.addEventListener('click', e => {
     let titre = create("h1", avis, "Les avis 1 étoiles");
     // Get the content of the bd opinion and put them in the page opinion.php
     axios.get("../lib/opinion.php?opinionAction=1").then(Response => {
+        console.log(Response); // just for testing
         // create a div for each with all infos in it 
         Response.data.forEach(post => {
             createAOpinion(post);
@@ -106,14 +113,7 @@ button1star.addEventListener('click', e => {
 
 function createAOpinion(post){
     let div = create("div", avis);
-
-    axios.get("/~XAMMM/lib/getName.php?iduser="+post.iduser).then(Response => {
-        Response.data.forEach(post1 => {
-            let element = document.createElement("h2");
-            div.prepend(element);
-            element.appendChild(document.createTextNode("Utilisateur : "+ post1.firstname));
-        })
-    })
+    let user = create("h2", div, "Utilisateur : " + post.iduser)
     let gradetxt ="";
 
     if (post.grade == 5 ) {

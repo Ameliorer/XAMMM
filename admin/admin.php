@@ -16,9 +16,12 @@ inclue :
  - /~XAMMM/db/db_disconnect.php
  - /~XAMMM/lib/showElements_admin.php
  - /~XAMMM/pages/head.php
- - /~XAMMM/pages/footer.html
+ - /~XAMMM/pages/footer.php
  - /~XAMMM/scripts/admin.js
  - /~XAMMM/scripst.axios.min.js
+
+est utilisé :
+ - /~XAMMM/admin.index_admin.php
 
 */
 

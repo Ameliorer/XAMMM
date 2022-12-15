@@ -25,6 +25,6 @@ echo "<script src='../scripts/reservations_display.js' defer></script>\n";
 //–––––––––––––––
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

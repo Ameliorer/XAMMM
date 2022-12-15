@@ -32,6 +32,7 @@ function Fdelete(data){
 }
 
 function Fmodif(formData, idC, idUser){
+    console.log(formData);
     let post = new FormData();
     post.append("age", formData.ageInput.value);
     post.append("height", formData.heightInput.value);
@@ -53,12 +54,13 @@ function confirmer(idU){
 }
 
 let main = document.querySelector('#aff_panier');
+let main_panier = document.querySelector('#main_panier');
 
 axios.get('../lib/panier.php?id='+ PHPdata.idUser).then(Response => {
     if(Response.data == "No products in Cart[]"){
         let err = create("p", main, "Votre panier est vide");
     }else{
-        let Bconf = create("button", main, "Confirmer le panier", null, "ConfirmationPanier");
+        let Bconf = create("button", main_panier, "Confirmer le panier", null, "ConfirmationPanier");
         Response.data.forEach(cartReserv => {
             let div = create("div", main, null, "cartReserv");
             let NomProduct = create("h2", div, cartReserv[1].name);

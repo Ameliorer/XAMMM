@@ -46,6 +46,6 @@ echo "<script src='../scripts/avis.js' defer></script>\n";
 //–––––––––––––––
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

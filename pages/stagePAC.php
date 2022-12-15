@@ -190,6 +190,6 @@ Plus tard avec au moins 15 sauts, le brevet A puis le brevet B vous tendrons les
 //–––––––––––––––
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

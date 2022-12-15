@@ -20,8 +20,11 @@ function create(tagName, container, text = null, class_ = null, id = null) {
 //Retrieve of the balise for where we'll show the products
 
 let main = document.querySelector('#aff_products');
+console.log(main);
 
 axios.get('../lib/products.php').then((response) => {
+   console.log(response.data);
+
    //Creation of HTML balise to show a product to the client
    response.data.forEach((product) => {
       let div = create('div', main, null, 'product');
@@ -30,6 +33,7 @@ axios.get('../lib/products.php').then((response) => {
       axios
          .get('../lib/nb_reservations_for_product.php?name=' + product.name)
          .then((response) => {
+            console.log(response.data);
             nbDispo = response.data;
             if (nbDispo == 15) {
                productName.innerHTML += "<h4>Il n'y a plus de place pour ce produit</h4>";

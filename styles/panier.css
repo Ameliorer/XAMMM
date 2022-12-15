@@ -1,0 +1,78 @@
+#aff_panier{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.cartReserv{
+    border:1px solid rgb(72, 106, 156);
+    margin-top: 2em;
+    padding: 0.5em;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(146, 179, 228, 0.438);
+    margin-left: 12vw;
+    margin-right: 12vw;
+}
+
+.cartReserv > h2 {
+    align-self: center;
+    font-size: 1.5em;
+    color: rgb(24, 39, 69);
+}
+
+.cartReserv > h4 {
+    font-size: 1.1em;
+}
+
+.cartReserv > p {
+    font-size: 1.1em;
+}
+.divButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 75%;
+    align-self: center;
+    font-size: 2em;
+}
+
+.btn, .form-control {
+    height: 35px; }
+
+.button {
+    border: none;
+    border-radius: 0; }
+
+.button {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    color: #adadad;
+}
+
+.button:active, .button:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.formModif{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.formModif >input{
+    align-self: start;
+    margin: 5px 2px;
+}
+
+.formModif >label{
+    margin: 5px 2px;
+}

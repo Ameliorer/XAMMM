@@ -63,6 +63,6 @@ if(isset($_SESSION['id'])){
 include("../db/db_disconnect.php");
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

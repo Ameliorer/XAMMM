@@ -1,51 +1,5 @@
 let avisfooter = document.querySelector(".carousel");
 
-function create(tagName, container, text=null, class_=null, id=null) {
-    let element = document.createElement(tagName);
-    container.appendChild(element);
-    if (text){
-        element.appendChild(document.createTextNode(text));
-    }
-    if (class_){
-        element.classList.add(class_);
-    }
-    if (id){
-        element.id = id;
-    }
-    return element
-}
-
-axios.get("/~XAMMM/lib/opinion.php?opinionAction=5").then(Response => {
-    Response.data.forEach(post => {
-        let div = create("div", avisfooter, null, "carousel-item");
-        let grade = create("span", div, null, "grade");
-
-        axios.get("/~XAMMM/lib/getName.php?iduser="+post.iduser).then(Response => {
-            Response.data.forEach(post1 => {
-                let user = create("span", div, null, "user");
-                let user1 = create("h4", user, "- "+ post1.firstname + ", " + post1.age + " ans");
-            });
-        });
-        let content = create("span", div, null, "textAvis");
-        let textAvis = create("p", content, post.text.slice(0,200));
-        if (post.text.length > 200){
-            textAvis.innerText += " [...]";
-        }
-        if (post.grade == 5 ) {
-            grade.innerText = "⭐⭐⭐⭐⭐";
-        }
-        else if (post.grade == 4 ) {
-            grade.innerText = "⭐⭐⭐⭐";
-        }
-        else if (post.grade == 3 ) {
-            grade.innerText = "⭐⭐⭐";
-        }
-        else if (post.grade == 2 ) {
-            grade.innerText = "⭐⭐";
-        }
-        else {grade.innerText = "⭐";}
-    });
-});
 
 window.onload = function(){
     var slides = document.getElementsByClassName('carousel-item'),

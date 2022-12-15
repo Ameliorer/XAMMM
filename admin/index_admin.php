@@ -16,5 +16,6 @@ include("verif_admin.php");
 
 ?>
 
+<a href='../index.php'>Retour accueil</a>
 </section>
 </body>

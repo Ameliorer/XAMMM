@@ -22,11 +22,12 @@ include("../crud/crud_products.php");
 <script src="../scripts/products.js" defer></script>
 
 
+
 <?php 
 //Troisieme balise PHP pour include le(s) fichier(s) du footer
 //–––––––––––––––
 
 //Include du footer
-include("footer.html");
+include("footer.php");
 
 ?>

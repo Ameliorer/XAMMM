@@ -16,10 +16,13 @@ function create(tagName, container, text=null, class_=null, id=null) {
     return element
 }
 
+console.log(form);
 form.addEventListener("submit", function(e){
     e.preventDefault();
     axios.get("../lib/reservations.php?reservationsAction=select_date&date="+form.date.value).then(Response => {
+        console.log(Response);
         reserva.innerText = "";
+        console.log(form.date.value);
         Response.data.forEach(reserv => {
             let div = create("div", reserva);
             let date = create("p", div, "date : " +reserv.date);
